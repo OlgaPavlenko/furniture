@@ -13,6 +13,7 @@ export const useStyle = makeStyles(() => ({
   },
 
   logo: {
+    width: "40px",
     flexShrink: 0,
     display: "block",
   },
@@ -27,5 +28,8 @@ export const useStyle = makeStyles(() => ({
     display: "flex",
     justifyContent: "space-between",
     minWidth: "50px",
+  },
+  logoImg: {
+    width: "40px",
   },
 }));

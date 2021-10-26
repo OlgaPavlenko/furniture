@@ -9,7 +9,11 @@ export const Header: FunctionComponent = () => {
       <div className={classes.container}>
         <div className={classes.logo}>
           <a href="#" className={classes.logoLink}>
-            <img src="../../assets/icons/logo.svg" alt="logo" />
+            <img
+              src="../../assets/icons/logo.svg"
+              alt="logo"
+              className={classes.logoImg}
+            />
           </a>
         </div>
 
