@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const InterpolateHtmlPlugin = require("interpolate-html-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const path = require("path");
@@ -23,8 +24,9 @@ module.exports = {
         use: ["style-loader", "css-loader", "less-loader"],
       },
       {
-        test: /\.(jpg|jpeg|png|svg)/,
-        use: "file-loader",
+        test: /\.(png|svg|jpg|jpeg|gif|ico)$/,
+        exclude: /node_modules/,
+        use: ["file-loader?name=[name].[ext]"], // ?name=[name].[ext] is only necessary to preserve the original file name
       },
     ],
   },
@@ -53,6 +55,9 @@ module.exports = {
     new CleanWebpackPlugin(),
     new Dotenv({
       path: "./.env",
+    }),
+    new InterpolateHtmlPlugin({
+      PUBLIC_URL: "static", // can modify `static` to another name or get it from `process`
     }),
   ],
 };
