@@ -1,20 +1,16 @@
-import { FunctionComponent } from "react";
-import { useStyle } from "./styles";
+import { FunctionComponent } from 'react';
+import { useStyle } from './styles';
+import { NavBarLink } from './NavBarLink/NavBarLink';
+import { navBarLink } from 'enums/enums';
 
 export const NavBar: FunctionComponent = () => {
   const classes = useStyle();
   return (
     <div>
       <ul className={classes.navigation}>
-        <li className={classes.navigationItem}>
-          <a className={classes.navigationItemLink}>Catalog</a>
-        </li>
-        <li className={classes.navigationItem}>
-          <a className={classes.navigationItemLink}>Delivery</a>
-        </li>
-        <li className={classes.navigationItem}>
-          <a className={classes.navigationItemLink}>About Us</a>
-        </li>
+        {Object.values(navBarLink).map((option) => {
+          return <NavBarLink key={option} option={option} />;
+        })}
       </ul>
     </div>
   );

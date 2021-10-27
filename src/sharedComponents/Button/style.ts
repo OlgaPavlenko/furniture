@@ -1,9 +1,9 @@
 import { makeStyles } from "@material-ui/core";
 
 export const useStyle = makeStyles(() => ({
-  navigation: {
+  localizeButtons: {
     display: "flex",
-    flexDirection: "row",
-    columnGap: "20px",
+    justifyContent: "space-between",
+    minWidth: "30px",
   },
 }));

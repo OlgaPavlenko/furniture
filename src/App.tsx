@@ -1,6 +1,6 @@
-import { Layout } from "./sharedComponents/Layout/Layout";
-import "./App.css";
-import "./reset.css";
+import { Layout } from './sharedComponents/Layout/Layout';
+import './App.css';
+import './reset.css';
 
 function App() {
   return (

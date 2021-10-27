@@ -26,9 +26,5 @@ export const useStyle = makeStyles(() => ({
     display: "flex",
   },
 
-  localizeButtons: {
-    display: "flex",
-    justifyContent: "space-between",
-    minWidth: "30px",
-  },
+ 
 }));

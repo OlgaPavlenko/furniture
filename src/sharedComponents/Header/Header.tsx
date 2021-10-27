@@ -1,13 +1,23 @@
-import { FunctionComponent } from "react";
-import { NavBar } from "sharedComponents/NavBar/NavBar";
-import { Search } from "sharedComponents/Search/Search";
-import { useStyle } from "./styles";
+import { userMenuItems } from 'constants/constants';
+import { FunctionComponent } from 'react';
+import { useStyle } from './styles';
+
+import { Button } from 'sharedComponents/Button/Button';
+import { NavBar } from 'sharedComponents/NavBar/NavBar';
+import { Search } from 'sharedComponents/Search/Search';
+import { UserMenuItem } from 'sharedComponents/UserMenuItem/UserMenuItem';
+import { language } from 'enums/enums';
 
 export const Header: FunctionComponent = () => {
-  const logo = require("assets/icons/logo.svg").default as string;
-  const login = require("assets/icons/login.svg").default as string;
-  const cart = require("assets/icons/shopping-cart.svg").default as string;
+  const logo = require('assets/icons/logo.svg').default as string;
+
   const classes = useStyle();
+
+  interface IUserMenuItem {
+    name: string;
+    src: string;
+  }
+
   return (
     <header className={classes.header}>
       <div className={classes.container}>
@@ -21,17 +31,16 @@ export const Header: FunctionComponent = () => {
         <Search />
 
         <div className={classes.localize}>
-          <button className={classes.localizeButtons}>en</button>
-          <button className={classes.localizeButtons}>ru</button>
+          {Object.values(language).map((language) => {
+            return <Button key={language} language={language} />;
+          })}
         </div>
 
         <div>
-          <a href="#">
-            <img src={login} />
-          </a>
-          <a href="#">
-            <img src={cart} />
-          </a>
+          {Object.values(userMenuItems).map((item: IUserMenuItem) => {
+            console.log(item);
+            return <UserMenuItem key={item.name} src={item.src} />;
+          })}
         </div>
       </div>
     </header>
