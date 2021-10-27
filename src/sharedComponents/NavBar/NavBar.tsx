@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
 import { useStyle } from './styles';
 import { NavBarLink } from './NavBarLink/NavBarLink';
-import { navBarLink } from 'enums/enums';
+import { navBarLink } from 'utils/enums/enums';
 
 export const NavBar: FunctionComponent = () => {
   const classes = useStyle();

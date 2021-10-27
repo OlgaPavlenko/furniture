@@ -6,7 +6,7 @@ import { Button } from 'sharedComponents/Button/Button';
 import { NavBar } from 'sharedComponents/NavBar/NavBar';
 import { Search } from 'sharedComponents/Search/Search';
 import { UserMenuItem } from 'sharedComponents/UserMenuItem/UserMenuItem';
-import { language } from 'enums/enums';
+import { language } from 'utils/enums/enums';
 
 export const Header: FunctionComponent = () => {
   const logo = require('assets/icons/logo.svg').default as string;
