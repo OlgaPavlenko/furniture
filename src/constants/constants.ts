@@ -1,10 +1,4 @@
-export const userMenuItems = [
-  {
-    name: 'login',
-    src: require('assets/icons/login.svg').default as string,
-  },
-  {
-    name: 'cart',
-    src: require('assets/icons/shopping-cart.svg').default as string,
-  },
-];
+export const userMenuItems = {
+  login: require('assets/icons/login.svg').default as string,
+  cart: require('assets/icons/shopping-cart.svg').default as string,
+};

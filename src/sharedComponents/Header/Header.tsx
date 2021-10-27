@@ -12,10 +12,9 @@ export const Header: FunctionComponent = () => {
   const logo = require('assets/icons/logo.svg').default as string;
 
   const classes = useStyle();
-
   interface IUserMenuItem {
-    name: string;
-    src: string;
+    login: string;
+    cart: string;
   }
 
   return (
@@ -37,9 +36,8 @@ export const Header: FunctionComponent = () => {
         </div>
 
         <div>
-          {Object.values(userMenuItems).map((item: IUserMenuItem) => {
-            console.log(item);
-            return <UserMenuItem key={item.name} src={item.src} />;
+          {Object.values(userMenuItems).map((item: any) => {
+            return <UserMenuItem key={item} src={item} />;
           })}
         </div>
       </div>
