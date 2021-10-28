@@ -1,6 +1,6 @@
 import { contactItems } from 'constants/constants';
 import { FunctionComponent } from 'react';
-import { FooterContact } from 'sharedComponents/footerContact';
+import { FooterContact } from 'sharedComponents/Footer/FooterContact';
 import { useStyle } from './styles';
 
 interface IFooterContacts {
