@@ -11,9 +11,7 @@ export const SocialLink: FunctionComponent<ISocialLink> = ({ href }) => {
     <li className={classes.socialLink}>
       <a href="#">
         <div>
-          <svg className={classes.iconNetwork}>
-            <use href={href}></use>
-          </svg>
+          <img src={href} alt="social networks" />
         </div>
       </a>
     </li>

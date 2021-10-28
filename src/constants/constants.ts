@@ -4,10 +4,10 @@ export const userMenuItems = {
 };
 
 export const socialNetworkItems = {
-  instagram: require('assets/icons/symbol-defs.svg#instagram').default as string,
-  twitter: require('assets/icons/symbol-defs.svg#twitter').default as string,
-  facebook: require('assets/icons/symbol-defs.svg#facebook').default as string,
-  linkedin: require('assets/icons/symbol-defs.svg#linkedin').default as string,
+  instagram: require('assets/icons/instagram.svg').default as string,
+  twitter: require('assets/icons/twitter.svg').default as string,
+  facebook: require('assets/icons/facebook.svg').default as string,
+  linkedin: require('assets/icons/linkedin.svg').default as string,
 };
 
 export const contactItems = [
