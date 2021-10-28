@@ -1,23 +1,16 @@
 import { ButtonHTMLAttributes, DOMAttributes, FunctionComponent } from 'react';
 import { useStyle } from './style';
 
-interface INavBarButton {
-  language?: string;
-  badge?: string;
-  classnames?: string;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-}
-interface ButtonProps
+interface IButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
-    DOMAttributes<HTMLButtonElement>,
-    INavBarButton {
+    DOMAttributes<HTMLButtonElement> {
   language?: string;
   badge?: string;
   classnames?: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
-export const Button: FunctionComponent<ButtonProps> = ({
+export const Button: FunctionComponent<IButtonProps> = ({
   language,
   badge,
   classnames,
