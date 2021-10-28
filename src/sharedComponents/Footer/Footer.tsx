@@ -26,8 +26,8 @@ export const Footer: FunctionComponent = () => {
           <p className={classes.footerSocialsLabel}></p>
           <ul className={classes.socialLinks}>
             <li className={classes.socialLink}>
-              <a className={classes.socialNetwork} href="#">
-                <div className={classes.network}>
+              <a href="#">
+                <div>
                   <svg className={classes.iconNetwork}>
                     <use href="assets/icons/symbol-defs.svg#instagram"></use>
                   </svg>
@@ -35,22 +35,22 @@ export const Footer: FunctionComponent = () => {
               </a>
             </li>
             <li className={classes.socialLink}>
-              <a className={classes.socialNetwork} href="">
-                <svg className={classes.socialNetwork}>
+              <a href="">
+                <svg className={classes.iconNetwork}>
                   <use href="assets/icons/symbol-defs.svg#twitter"></use>
                 </svg>
               </a>
             </li>
             <li className={classes.socialLink}>
-              <a className={classes.socialNetwork} href="">
-                <svg className={classes.socialNetwork}>
+              <a href="">
+                <svg className={classes.iconNetwork}>
                   <use href="assets/icons/symbol-defs.svg#facebook"></use>
                 </svg>
               </a>
             </li>
             <li className={classes.socialLink}>
-              <a className={classes.socialNetwork} href="">
-                <svg className={classes.socialNetwork}>
+              <a href="">
+                <svg className={classes.iconNetwork}>
                   <use href="assets/icons/symbol-defs.svg#linkedin"></use>
                 </svg>
               </a>
