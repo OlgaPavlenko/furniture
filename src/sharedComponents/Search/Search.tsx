@@ -3,7 +3,7 @@ import { useStyle } from './styles';
 
 import { Button } from 'sharedComponents/Button/Button';
 import { Input } from 'sharedComponents/Input/Input';
-import { searchType } from 'utils/enums/enums';
+import { searchType } from 'utils/interfaces/interfaces';
 
 export const Search: FunctionComponent = () => {
   const classes = useStyle();

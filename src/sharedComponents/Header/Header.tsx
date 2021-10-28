@@ -1,10 +1,10 @@
 import { FunctionComponent } from 'react';
 import { useStyle } from './styles';
 
-import { NavBar } from 'sharedComponents/NavBar/NavBar';
-import { Search } from 'sharedComponents/Search/Search';
-import { Buttons } from 'sharedComponents/Buttons/Buttons';
-import { UserMenuItems } from 'sharedComponents/Button/UserMenuItems/UserMenuItems';
+import { NavBar } from 'sharedComponents/NavBar';
+import { Search } from 'sharedComponents/Search';
+import { Buttons } from 'sharedComponents/Buttons';
+import { UserMenuItems } from 'sharedComponents/UserMenuItems';
 
 export const Header: FunctionComponent = () => {
   const logo = require('assets/icons/logo.svg').default as string;

@@ -1,10 +1,9 @@
 import { FunctionComponent } from 'react';
 
-interface IUserMenuItems {
+interface IUserMenuItemsSrc {
   src: string;
 }
-
-export const UserMenuItem: FunctionComponent<IUserMenuItems> = ({ src }) => {
+export const UserMenuItem: FunctionComponent<IUserMenuItemsSrc> = ({ src }) => {
   return (
     <a href="#">
       <img src={src} />
