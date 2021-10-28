@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
 import { useStyle } from "./style";
 
-export const Header: FunctionComponent = () => {
+export const Footer: FunctionComponent = () => {
   const classes = useStyle();
 
   return (
@@ -22,35 +22,35 @@ export const Header: FunctionComponent = () => {
             </a>
           </li>
         </ul>
-        <div className={footerSocials}>
-          <p className={footerSocialsLabel}></p>
-          <ul className={socialLinks}>
-            <li className={socialLink}>
-              <a className={socialNetwork} href="#">
-                <div className={network}>
-                  <svg className={iconNetwork}>
+        <div className={classes.footerSocials}>
+          <p className={classes.footerSocialsLabel}></p>
+          <ul className={classes.socialLinks}>
+            <li className={classes.socialLink}>
+              <a className={classes.socialNetwork} href="#">
+                <div className={classes.network}>
+                  <svg className={classes.iconNetwork}>
                     <use href="assets/icons/symbol-defs.svg#instagram"></use>
                   </svg>
                 </div>
               </a>
             </li>
-            <li className={socialLink}>
-              <a className={socialNetwork} href="">
-                <svg className={socialNetwork}>
+            <li className={classes.socialLink}>
+              <a className={classes.socialNetwork} href="">
+                <svg className={classes.socialNetwork}>
                   <use href="assets/icons/symbol-defs.svg#twitter"></use>
                 </svg>
               </a>
             </li>
-            <li className={socialLink}>
-              <a className={socialNetwork} href="">
-                <svg className={socialNetwork}>
+            <li className={classes.socialLink}>
+              <a className={classes.socialNetwork} href="">
+                <svg className={classes.socialNetwork}>
                   <use href="assets/icons/symbol-defs.svg#facebook"></use>
                 </svg>
               </a>
             </li>
-            <li className={socialLink}>
-              <a className={socialNetwork} href="">
-                <svg className={socialNetwork}>
+            <li className={classes.socialLink}>
+              <a className={classes.socialNetwork} href="">
+                <svg className={classes.socialNetwork}>
                   <use href="assets/icons/symbol-defs.svg#linkedin"></use>
                 </svg>
               </a>

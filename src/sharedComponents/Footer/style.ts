@@ -1,4 +1,4 @@
-import { makeStyles } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core",
 
 export const useStyle = makeStyles(() => ({
   footer: {
@@ -42,4 +42,31 @@ export const useStyle = makeStyles(() => ({
     flexDirection: "column",
     rowGap: "20px",
   },
-}));
+
+  footerSocialsLabel: {
+    fontWeight: 700,
+    lineHeight: "1.14",
+    letterSpacing: "0.03em",
+    color: "#ffffff",
+    textTransform: "uppercase",
+  },
+
+  socialLinks: {
+    display: "inherit",
+    columnGap: "15px",
+  },
+
+  socialLink: {
+    display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            background: "rgb(233, 230, 230)",
+            borderRadius: "50%",
+            width: "44px",
+            height: "44px",
+
+            '&:hover': {
+                backgroundColor: "rgb(89, 0, 255)",
+            }
+  }
+})),
