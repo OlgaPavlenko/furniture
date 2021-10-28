@@ -22,9 +22,9 @@ export const useStyle = makeStyles(() => ({
     fontWeight: 400,
     color: "#484848",
   },
-  localize: {
-    display: "flex",
-  },
+  // localize: {
+  //   display: "flex",
+  // },
 
  
 }));
