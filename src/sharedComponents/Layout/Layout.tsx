@@ -1,8 +1,8 @@
-import { FunctionComponent } from "react";
-import { useStyle } from "./styles";
+import { FunctionComponent } from 'react';
+import { useStyle } from './styles';
 
-import { Footer } from "sharedComponents/Footer";
-import { Header } from "sharedComponents/Header/Header";
+import { Footer } from 'sharedComponents/Footer';
+import { Header } from 'sharedComponents/Header';
 
 export const Layout: FunctionComponent = () => {
   const classes = useStyle();
