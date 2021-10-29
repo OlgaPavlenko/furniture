@@ -25,7 +25,7 @@ export const Button: FunctionComponent<IButtonProps> = ({
     );
   }
   return (
-    <button>
+    <button className={classnames}>
       <img src={badge} alt="search" />
     </button>
   );

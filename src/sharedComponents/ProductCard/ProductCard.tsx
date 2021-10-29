@@ -1,4 +1,5 @@
 import { FunctionComponent, SyntheticEvent, useState } from 'react';
+import { Button } from 'sharedComponents/Button';
 import { IProductImage } from 'utils/interfaces/productInterface/image.interface';
 import { ProductCardImgs } from './ProductCardImgs';
 import { useStyle } from './styles';
@@ -37,9 +38,7 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
             <p className={classes.productCardDescripion}>{description}</p>
             <span className={classes.productCardPrice}>{price} uah</span>
           </div>
-          <button className={classes.productCardCartButton}>
-            <img src={cart} alt="cart" />
-          </button>
+          <Button badge={cart} classnames={classes.productCardCartButton} />
         </div>
       </a>
       <div>
