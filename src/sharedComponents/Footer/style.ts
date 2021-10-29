@@ -7,10 +7,10 @@ export const useStyle = makeStyles(() => ({
 
   container: {
     display: 'flex',
-    flexWrap: 'nowrap',
     justifyContent: 'space-around',
     alignItems: 'center',
     paddingBottom: '19px',
+    paddingTop: '19px',
     fontSize: '14px',
   },
 }));

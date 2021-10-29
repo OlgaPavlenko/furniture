@@ -14,7 +14,6 @@ export const SocialLinks: FunctionComponent = () => {
   const classes = useStyle();
   return (
     <div className={classes.footerSocials}>
-      <p className={classes.footerSocialsLabel}></p>
       <ul className={classes.socialLinks}>
         {Object.keys(socialNetworkItems).map((key) => {
           return <SocialLink key={key} href={socialNetworkItems[key as keyof ISocialLink]} />;
