@@ -1,5 +1,5 @@
 export interface IProductImage {
-  color: string;
   baseUrl: string;
+  color: string;
   url: string;
 }

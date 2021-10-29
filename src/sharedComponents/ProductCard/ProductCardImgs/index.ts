@@ -1,0 +1,1 @@
+export { ProductCardImgs } from './ProductCardImgs';

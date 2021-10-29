@@ -6,6 +6,7 @@ import { IMaterial } from './material.interface';
 import { IProductSize } from './size.interface';
 
 export interface IProduct {
+  product: any;
   id: string;
   name: string;
   category: ICategory;
