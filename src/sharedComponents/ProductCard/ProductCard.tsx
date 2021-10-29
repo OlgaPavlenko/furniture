@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, SyntheticEvent, useState } from 'react';
 import { IProductImage } from 'utils/interfaces/productInterface/image.interface';
 import { ProductCardImgs } from './ProductCardImgs';
 import { useStyle } from './styles';
@@ -18,11 +18,18 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
 }) => {
   const cart = require('assets/icons/shopping-cart.svg').default;
   const classes = useStyle();
+
+  const [src, setSrs] = useState(images[0].baseUrl);
+
+  const switchVariants = (url: string) => {
+    setSrs(url);
+  };
+
   return (
     <li className={classes.productCard}>
       <a className={classes.productCardUnit} href="#">
         <div className={classes.media}>
-          <img src={images[0].baseUrl} alt="chair" className={classes.productCardImg} />
+          <img src={src} alt="chair" className={classes.productCardImg} />
         </div>
         <div className={classes.productCardBlock}>
           <div className={classes.productCardInfo}>
@@ -39,7 +46,7 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
         <p className={classes.productCardVariantsLabel}>More variants</p>
         <div className={classes.cardVariantContainer}>
           {images.map((image) => (
-            <ProductCardImgs key={image.color} url={image.url} />
+            <ProductCardImgs key={image.color} url={image.url} switchVariants={switchVariants} />
           ))}
         </div>
       </div>

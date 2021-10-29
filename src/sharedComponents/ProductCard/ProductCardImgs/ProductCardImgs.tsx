@@ -1,15 +1,16 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, SyntheticEvent } from 'react';
 import { useStyle } from './styles';
 
 interface IProductCardImgs {
   url: string;
+  switchVariants: any;
 }
 
-export const ProductCardImgs: FunctionComponent<IProductCardImgs> = ({ url }) => {
+export const ProductCardImgs: FunctionComponent<IProductCardImgs> = ({ url, switchVariants }) => {
   const classes = useStyle();
 
   return (
-    <a className={classes.cardVariant}>
+    <a onClick={() => switchVariants(url)} className={classes.cardVariant}>
       <img src={url} alt="" className={classes.variantsCardImg} />
     </a>
   );
