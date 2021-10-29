@@ -10,9 +10,7 @@ export const SocialLink: FunctionComponent<ISocialLink> = ({ href }) => {
   return (
     <li className={classes.socialLink}>
       <a href="#">
-        <div>
-          <img src={href} alt="social networks" />
-        </div>
+        <img src={href} alt="social networks" />
       </a>
     </li>
   );
