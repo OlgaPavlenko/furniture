@@ -2,8 +2,7 @@ import { FunctionComponent } from 'react';
 import { useStyle } from './styles';
 
 export const ProductCard: FunctionComponent = () => {
-  const logo = require('assets/icons/logo.svg').default as string;
-
+  const cart = require('assets/icons/shopping-cart.svg').default;
   const classes = useStyle();
 
   return (
@@ -14,12 +13,12 @@ export const ProductCard: FunctionComponent = () => {
         </div>
         <div className={classes.productCardBlock}>
           <div className={classes.productCardInfo}>
-            <p className={classes.productCardName}></p>
-            <p className={classes.productCardDescripion}></p>
+            <p className={classes.productCardName}>rwtywty</p>
+            <p className={classes.productCardDescripion}>rwtywrtyrwtywrtywrty yrwtywrt r wrtyw</p>
             <span className={classes.productCardPrice}></span>
           </div>
           <button className={classes.productCardCartButton}>
-            <img src="assets/icons/shopping-cart.svg" alt="cart" />
+            <img src={cart} alt="cart" />
           </button>
         </div>
       </a>
