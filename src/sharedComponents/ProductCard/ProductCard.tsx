@@ -46,7 +46,12 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
         <p className={classes.productCardVariantsLabel}>More variants</p>
         <div className={classes.cardVariantContainer}>
           {images.map((image) => (
-            <ProductCardImgs key={image.color} url={image.url} switchVariants={switchVariants} />
+            <ProductCardImgs
+              key={image.color}
+              url={image.url}
+              baseUrl={image.baseUrl}
+              switchVariants={switchVariants}
+            />
           ))}
         </div>
       </div>
