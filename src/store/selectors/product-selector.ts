@@ -1,4 +1,4 @@
-import { IProduct } from '../../utils/interfaces/productInterface/product.interface';
+import { IProduct } from 'utils/interfaces/productInterface/product.interface';
 
 interface IState {
   product: IProduct[];

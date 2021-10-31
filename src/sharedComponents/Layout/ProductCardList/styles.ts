@@ -3,8 +3,7 @@ import { makeStyles } from '@material-ui/core';
 export const useStyle = makeStyles(() => ({
   main: {
     display: 'flex',
-
-    margin: '25px 0px',
+    marginBottom: '25px',
   },
 
   catalog: {

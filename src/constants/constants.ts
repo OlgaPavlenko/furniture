@@ -27,4 +27,7 @@ export const language = ['en', 'ru'];
 
 export const PATH = {
   products: '/products',
+  countries: '/countries',
+  companies: '/companies',
+  materials: '/materials',
 };

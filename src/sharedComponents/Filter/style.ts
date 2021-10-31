@@ -1,11 +1,9 @@
 import { makeStyles } from '@material-ui/core';
 
 export const useStyle = makeStyles(() => ({
-  layout: {
-    width: '100%',
-  },
-  main: {
-    display: 'flex',
-    marginTop: '25px',
+  filter: {
+    marginLeft: '20px',
+    minWidth: '300px',
+    border: '1px solid #15166d',
   },
 }));
