@@ -1,5 +1,7 @@
-import { FunctionComponent } from "react";
-import { useStyle } from "./styles";
+import { FunctionComponent } from 'react';
+import { useStyle } from './styles';
+
+import { ListLink } from 'sharedComponents/ListLink';
 
 interface INavBarLink {
   option: string;
@@ -9,10 +11,10 @@ export const NavBarLink: FunctionComponent<INavBarLink> = ({ option }) => {
   const classes = useStyle();
 
   return (
-    <li className={classes.navigationItem}>
-      <a href="#" className={classes.navigationItemLink}>
-        {option}
-      </a>
-    </li>
+    <ListLink
+      className={classes.navigationItem}
+      linkClassName={classes.navigationItemLink}
+      text={option}
+    />
   );
 };
