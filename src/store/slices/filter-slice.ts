@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { PATH } from 'constants/constants';
-import HTTPService from 'services/httpService';
-import { ICompany } from 'utils/interfaces/productInterface/company.interface';
-import { ICountry } from 'utils/interfaces/productInterface/country.interface';
-import { IMaterial } from 'utils/interfaces/productInterface/material.interface';
+import HTTPService from '../../utils/services/httpService';
+import { ICompany } from 'utils/interfaces/product';
+import { ICountry } from 'utils/interfaces/product';
+import { IMaterial } from 'utils/interfaces/product';
 
 export interface IInitialState {
   countriesList: ICountry[];
