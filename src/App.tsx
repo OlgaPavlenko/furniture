@@ -1,4 +1,4 @@
-import { Layout } from './sharedComponents/Layout/Layout';
+import { Layout } from './sharedComponents/LanguageButtons/Layout/Layout';
 import './App.css';
 import './reset.css';
 

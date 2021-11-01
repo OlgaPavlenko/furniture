@@ -1,5 +1,5 @@
-import { FunctionComponent } from "react";
-import { useStyle } from "./styles";
+import { FunctionComponent } from 'react';
+import { useStyle } from './styles';
 
 interface INavBarLink {
   option: string;
