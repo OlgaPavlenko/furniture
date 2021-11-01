@@ -8,6 +8,7 @@ interface ILinkProps extends DOMAttributes<HTMLElement> {
   className?: string;
   linkClassName?: string;
   onClick?: (event: SyntheticEvent) => void;
+  shouldConcatHref?: boolean;
 }
 
 export const ListLink: FunctionComponent<ILinkProps> = ({
@@ -17,10 +18,11 @@ export const ListLink: FunctionComponent<ILinkProps> = ({
   className,
   linkClassName,
   alt,
+  shouldConcatHref,
 }) => {
   return (
     <li className={className}>
-      <a href={`${href}${text}`} className={linkClassName}>
+      <a href={shouldConcatHref ? `${href}${text}` : href} className={linkClassName}>
         {src ? <img src={src} alt={alt} /> : text}
       </a>
     </li>
