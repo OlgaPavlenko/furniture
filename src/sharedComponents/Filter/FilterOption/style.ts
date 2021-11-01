@@ -1,21 +1,21 @@
 import { makeStyles } from '@material-ui/core';
 
 export const useStyle = makeStyles(() => ({
-  accordion: {
-    backgroundColor: '#eee',
-    color: '#444',
-    cursor: 'pointer',
-    padding: '18px',
-    width: '100%',
-    textAlign: 'left',
-    border: 'none',
-    outline: 'none',
-    transition: '0.4s',
+  // accordion: {
+  //   backgroundColor: '#eee',
+  //   color: '#444',
+  //   cursor: 'pointer',
+  //   padding: '18px',
+  //   width: '100%',
+  //   textAlign: 'left',
+  //   border: 'none',
+  //   outline: 'none',
+  //   transition: '0.4s',
 
-    '&:hover': {
-      backgroundColor: ' #ccc',
-    },
-  },
+  //   '&:hover': {
+  //     backgroundColor: ' #ccc',
+  //   },
+  // },
   panel: {
     padding: '0 18px',
     backgroundColor: 'white',

@@ -40,15 +40,12 @@ export const filterSlice = createSlice({
     builder
       .addCase(getCountriesAsync.fulfilled, (state, action) => {
         state.countriesList = [...state.countriesList, ...action.payload.data];
-        // console.log(state.countriesList);
       })
       .addCase(getMaterialsAsync.fulfilled, (state, action) => {
         state.companiesList = [...state.companiesList, ...action.payload.data];
-        // console.log(state.companiesList);
       })
       .addCase(getCompaniesAsync.fulfilled, (state, action) => {
         state.materialsList = [...state.materialsList, ...action.payload.data];
-        // console.log(state.materialsList);
       });
   },
 });

@@ -4,6 +4,6 @@ interface IState {
   filter: [];
 }
 
-export const stateSelector = (state: IState) => state.filter;
+export const filterListSelector = (state: IState) => state.filter;
 
-export const filterListSelector = (state: IInitialState) => state;
+// export const filterListSelector = (state: IInitialState) => state;

@@ -15,13 +15,17 @@ export const Filter: FunctionComponent = () => {
     dispatch(getCountriesAsync());
     dispatch(getCompaniesAsync());
     dispatch(getMaterialsAsync());
-    console.log(filter);
   }, []);
 
   return (
     <form className={classes.filter}>
-      {}
-      <FilterOption />
+      <div className={classes.accordion}>
+        {Object.values(filter)?.map((filterOption: any) => {
+          return filterOption.map((filterItem: any) => (
+            <FilterOption key={filterItem.id} name={filterItem.name} />
+          ));
+        })}
+      </div>
     </form>
   );
 };
