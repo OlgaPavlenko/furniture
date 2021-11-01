@@ -1,13 +1,13 @@
-import { FunctionComponent, SyntheticEvent } from 'react';
+import { FunctionComponent } from 'react';
 import { useStyle } from './styles';
 
-interface IProductCardImgs {
+interface IProductCardImg {
   url: string;
   baseUrl: string;
   switchVariants: any;
 }
 
-export const ProductCardImgs: FunctionComponent<IProductCardImgs> = ({
+export const ProductCardVariantImg: FunctionComponent<IProductCardImg> = ({
   url,
   baseUrl,
   switchVariants,
