@@ -11,7 +11,7 @@ export const Search: FunctionComponent = () => {
 
   return (
     <div className={classes.searchWrap}>
-      <Button badge={search} />
+      <Button label={search} />
       <Input type={searchType.search} />
     </div>
   );

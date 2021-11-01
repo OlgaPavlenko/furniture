@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { useStyle } from './styles';
+import { useStyle } from './style';
 
 interface IFooterContact {
   href: string;
