@@ -19,7 +19,16 @@ export const Button: FunctionComponent<IButtonProps> = ({
 }) => {
   return (
     <button onClick={onClick} className={className}>
-      {badgeSrc ? <img src={badgeSrc} alt={alt} /> : text}
+      {!!badgeSrc && !!text ? (
+        <>
+          <img src={badgeSrc} alt={alt} />
+          <p>{text}</p>
+        </>
+      ) : badgeSrc ? (
+        <img src={badgeSrc} alt={alt} />
+      ) : (
+        text
+      )}
     </button>
   );
 };
