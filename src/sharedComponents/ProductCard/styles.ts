@@ -89,4 +89,19 @@ export const useStyle = makeStyles(() => ({
     display: 'flex',
     minHeight: '40px',
   },
+
+  variantsCardImg: {
+    width: '100%',
+    height: '100%',
+    padding: '3px 5px',
+  },
+
+  cardVariant: {
+    display: 'block',
+    width: '80px',
+
+    '&:hover': {
+      border: '1px solid black',
+    },
+  },
 }));

@@ -1,8 +1,11 @@
-import { FunctionComponent, SyntheticEvent, useState } from 'react';
+import { FunctionComponent, useState } from 'react';
 import { Button } from 'sharedComponents/Button';
 import { IProductImage } from 'utils/interfaces/productInterface/image.interface';
-import { ProductCardImgs } from './ProductCardImgs';
+import { ProductMainImg } from './ProductMainImg';
+import { ProductCardVariantImg } from './ProductCardVariantImg';
 import { useStyle } from './styles';
+import { ProductDescription } from './ProductDescription';
+import { ProductColorVariants } from './ProductColorVariants';
 
 interface IProductCard {
   name: string;
@@ -17,7 +20,6 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
   images,
   price,
 }) => {
-  const cart = require('assets/icons/shopping-cart.svg').default;
   const classes = useStyle();
 
   const [src, setSrs] = useState(images[0].baseUrl);
@@ -29,23 +31,15 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
   return (
     <li className={classes.productCard}>
       <a className={classes.productCardUnit} href="#">
-        <div className={classes.media}>
-          <img src={src} alt="chair" className={classes.productCardImg} />
-        </div>
-        <div className={classes.productCardBlock}>
-          <div className={classes.productCardInfo}>
-            <p className={classes.productCardName}>{name}</p>
-            <p className={classes.productCardDescripion}>{description}</p>
-            <span className={classes.productCardPrice}>{price} uah</span>
-          </div>
-          <Button badge={cart} classnames={classes.productCardCartButton} />
-        </div>
+        <ProductMainImg src={src} />
+        <ProductDescription name={name} description={description} price={price} />
       </a>
-      <div>
+      <ProductColorVariants images={images} switchVariants={switchVariants} />
+      {/* <div>
         <p className={classes.productCardVariantsLabel}>More variants</p>
         <div className={classes.cardVariantContainer}>
           {images.map((image) => (
-            <ProductCardImgs
+            <ProductCardVariantImg
               key={image.color}
               url={image.url}
               baseUrl={image.baseUrl}
@@ -53,7 +47,7 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
             />
           ))}
         </div>
-      </div>
+      </div> */}
     </li>
   );
 };

@@ -1,10 +1,35 @@
-import { ICategory } from './category.interface';
-import { ICompany } from './company.interface';
-import { ICountry } from './country.interface';
-import { IProductImage } from './image.interface';
-import { IMaterial } from './material.interface';
-import { IProductSize } from './size.interface';
+export interface ICategory {
+  id: string;
+  name: string;
+}
 
+export interface ICompany {
+  id: string;
+  name: string;
+  countryId: string;
+}
+
+export interface ICountry {
+  id: string;
+  name: string;
+}
+
+export interface IProductImage {
+  color: string;
+  baseUrl: string;
+  url: string;
+}
+
+export interface IMaterial {
+  id: string;
+  name: string;
+}
+
+export interface IProductSize {
+  width: string;
+  height: string;
+  length: string;
+}
 export interface IProduct {
   product: any;
   id: string;

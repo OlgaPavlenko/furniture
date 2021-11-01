@@ -3,7 +3,7 @@ import { useStyle } from './styles';
 
 import { Footer } from 'sharedComponents/Footer';
 import { Header } from 'sharedComponents/Header';
-import { ProductCardList } from './ProductCardList';
+import { ProductCardList } from 'pages/ProductCardList';
 
 export const Layout: FunctionComponent = () => {
   const classes = useStyle();

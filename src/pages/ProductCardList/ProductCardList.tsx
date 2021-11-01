@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useStyle } from './styles';
 
 import { ProductCard } from 'sharedComponents/ProductCard';
-import { getProductsAsync } from 'store/slices/product-slice';
+import { getProductsAsync } from 'store/slices/product';
 import { productListSelector } from 'store/selectors/product-selector';
 import { IProduct } from 'utils/interfaces/productInterface/product.interface';
 
@@ -26,7 +26,6 @@ export const ProductCardList: FunctionComponent = () => {
             description={product.description}
             images={product.images}
             price={product.price}
-         
           />
         ))}
       </ul>
