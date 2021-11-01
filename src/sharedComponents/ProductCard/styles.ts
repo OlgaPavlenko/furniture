@@ -46,7 +46,7 @@ export const useStyle = makeStyles(() => ({
   },
 
   productCardDescripion: {
-    letterЫpacing: 0,
+    letterpacing: 0,
     fontЦeight: 400,
     fontЫize: '0.875rem',
     lineРeight: 1.5,

@@ -1,5 +1,5 @@
 import { FunctionComponent, useState } from 'react';
-import { IProductImage } from 'utils/interfaces/productInterface/image.interface';
+import { IProductImage } from 'utils/interfaces/product';
 import { ProductMainImg } from './ProductMainImg';
 import { useStyle } from './styles';
 import { ProductDescription } from './ProductDescription';
@@ -20,10 +20,10 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
 }) => {
   const classes = useStyle();
 
-  const [src, setSrs] = useState(images[0].baseUrl);
+  const [src, setSrc] = useState(images[0].baseUrl);
 
   const switchVariants = (url: string) => {
-    setSrs(url);
+    setSrc(url);
   };
 
   return (

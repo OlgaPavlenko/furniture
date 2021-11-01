@@ -23,7 +23,8 @@ export const ListLink: FunctionComponent<ILinkProps> = ({
   return (
     <li className={className}>
       <a href={shouldConcatHref ? `${href}${text}` : href} className={linkClassName}>
-        {src ? <img src={src} alt={alt} /> : text}
+        {!!src && <img src={src} alt={alt} />}
+        {!!text && text}
       </a>
     </li>
   );

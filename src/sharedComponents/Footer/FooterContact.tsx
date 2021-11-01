@@ -16,7 +16,7 @@ export const FooterContact: FunctionComponent<IFooterContact> = ({ descr, href }
       linkClassName={classes.footerColor}
       text={descr}
       href={href}
-      shouldConcatHref={true}
+      shouldConcatHref
     />
   );
 };

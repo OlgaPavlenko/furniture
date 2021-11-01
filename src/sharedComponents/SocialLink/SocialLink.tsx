@@ -4,17 +4,10 @@ import { useStyle } from './styles';
 
 interface ISocialLink {
   href: string;
-  shouldConcatHref: boolean;
+  shouldConcatHref?: boolean;
 }
 
 export const SocialLink: FunctionComponent<ISocialLink> = ({ href }) => {
   const classes = useStyle();
-  return (
-    <ListLink
-      className={classes.socialLink}
-      src={href}
-      shouldConcatHref={false}
-      alt="social networks"
-    />
-  );
+  return <ListLink className={classes.socialLink} src={href} alt="social networks" />;
 };

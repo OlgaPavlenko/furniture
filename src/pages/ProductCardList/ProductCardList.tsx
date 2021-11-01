@@ -4,8 +4,8 @@ import { useStyle } from './styles';
 
 import { ProductCard } from 'sharedComponents/ProductCard';
 import { getProductsAsync } from 'store/slices/product';
-import { productListSelector } from 'store/selectors/product-selector';
-import { IProduct } from 'utils/interfaces/productInterface/product.interface';
+import { productListSelector } from 'store/selectors/product';
+import { IProduct } from 'utils/interfaces/product';
 
 export const ProductCardList: FunctionComponent = () => {
   const classes = useStyle();

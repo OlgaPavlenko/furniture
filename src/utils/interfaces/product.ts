@@ -32,6 +32,7 @@ export interface IProductSize {
 }
 
 export interface IProduct {
+  product: any;
   id: string;
   name: string;
   category: ICategory;

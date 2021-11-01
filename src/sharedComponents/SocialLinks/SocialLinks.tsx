@@ -16,13 +16,7 @@ export const SocialLinks: FunctionComponent = () => {
     <div className={classes.footerSocials}>
       <ul className={classes.socialLinks}>
         {Object.keys(SOCIAL_NETWORK_ITEMS).map((key) => {
-          return (
-            <SocialLink
-              key={key}
-              href={SOCIAL_NETWORK_ITEMS[key as keyof ISocialLink]}
-              shouldConcatHref={false}
-            />
-          );
+          return <SocialLink key={key} href={SOCIAL_NETWORK_ITEMS[key as keyof ISocialLink]} />;
         })}
       </ul>
     </div>
