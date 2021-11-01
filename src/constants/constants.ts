@@ -23,4 +23,8 @@ export const CONTACT_ITEMS = [
 
 export const NAV_BAR_LINK = ['Catalog', 'About Us', 'Delivery'];
 
+export const PATH = {
+  products: '/products',
+};
+
 export const LANGUAGE = ['en', 'ru'];

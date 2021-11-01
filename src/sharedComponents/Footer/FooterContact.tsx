@@ -1,4 +1,5 @@
 import { FunctionComponent } from 'react';
+import { ListLink } from 'sharedComponents/ListLink';
 import { useStyle } from './style';
 
 interface IFooterContact {
@@ -10,10 +11,12 @@ export const FooterContact: FunctionComponent<IFooterContact> = ({ descr, href }
   const classes = useStyle();
 
   return (
-    <li className={classes.footerContactItem}>
-      <a href={`${href}${descr}`} className={classes.footerColor}>
-        {descr}
-      </a>
-    </li>
+    <ListLink
+      className={classes.footerContactItem}
+      linkClassName={classes.footerColor}
+      text={descr}
+      href={href}
+      shouldConcatHref
+    />
   );
 };

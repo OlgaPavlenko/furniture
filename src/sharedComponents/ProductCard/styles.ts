@@ -46,7 +46,7 @@ export const useStyle = makeStyles(() => ({
   },
 
   productCardDescripion: {
-    letterЫpacing: 0,
+    letterpacing: 0,
     fontЦeight: 400,
     fontЫize: '0.875rem',
     lineРeight: 1.5,
@@ -85,15 +85,15 @@ export const useStyle = makeStyles(() => ({
     minWidth: '150px',
   },
 
+  cardVariantContainer: {
+    display: 'flex',
+    minHeight: '40px',
+  },
+
   variantsCardImg: {
     width: '100%',
     height: '100%',
     padding: '3px 5px',
-  },
-
-  cardVariantContainer: {
-    display: 'flex',
-    minHeight: '40px',
   },
 
   cardVariant: {

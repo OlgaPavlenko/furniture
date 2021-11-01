@@ -1,353 +1,353 @@
 {
-    "categories": [
-        {
-            "id": "1",
-            "name": "Armchairs and couches"
-        },
-        {
-            "id": "2",
-            "name": "Chairs for work"
-        },
-        {
-            "id": "3",
-            "name": "Kitchen chairs"
-        },
-        {
-            "id": "4",
-            "name": "Stools and benches"
-        },
-        {
-            "id": "5",
-            "name": "Dining room furniture set"
-        },
-        {
-            "id": "6",
-            "name": "Bar stools"
-        },
-        {
-            "id": "7",
-            "name": "Children's chairs"
-        },
-        {
-            "id": "8",
-            "name": "Chairs for cafe"
-        },
-        {
-            "id": "9",
-            "name": "Pillows on the chair"
-        },
-        {
-            "id": "10",
-            "name": "Ladders and stools-ladders"
-        },
-        {
-            "id": "11",
-            "name": "Baby chairs and highchairs"
-        }
-    ],
-    "countries": [
-        {
-            "id": "1",
-            "name": "Italy"
-        },
-        {
-            "id": "2",
-            "name": "Germany"
-        },
-        {
-            "id": "3",
-            "name": "Canada"
-        }
-    ],
-    "companies": [
-        {
-            "id": "1",
-            "name": "Ikea",
-            "countryId": "3"
-        },
-        {
-            "id": "2",
-            "name": "Felliny",
-            "countryId": "1"
-        },
-        {
-            "id": "3",
-            "name": "Otto",
-            "countryId": "2"
-        }
-    ],
-    "materials": [
-        {
-            "id": "1",
-            "name": "wood"
-        },
-        {
-            "id": "2",
-            "name": "metal"
-        }
-    ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Armchairs and couches"
+    },
+    {
+      "id": "2",
+      "name": "Chairs for work"
+    },
+    {
+      "id": "3",
+      "name": "Kitchen chairs"
+    },
+    {
+      "id": "4",
+      "name": "Stools and benches"
+    },
+    {
+      "id": "5",
+      "name": "Dining room furniture set"
+    },
+    {
+      "id": "6",
+      "name": "Bar stools"
+    },
+    {
+      "id": "7",
+      "name": "Children's chairs"
+    },
+    {
+      "id": "8",
+      "name": "Chairs for cafe"
+    },
+    {
+      "id": "9",
+      "name": "Pillows on the chair"
+    },
+    {
+      "id": "10",
+      "name": "Ladders and stools-ladders"
+    },
+    {
+      "id": "11",
+      "name": "Baby chairs and highchairs"
+    }
+  ],
+  "countries": [
+    {
+      "id": "1",
+      "name": "Italy"
+    },
+    {
+      "id": "2",
+      "name": "Germany"
+    },
+    {
+      "id": "3",
+      "name": "Canada"
+    }
+  ],
+  "companies": [
+    {
+      "id": "1",
+      "name": "Ikea",
+      "countryId": "3"
+    },
+    {
+      "id": "2",
+      "name": "Felliny",
+      "countryId": "1"
+    },
+    {
+      "id": "3",
+      "name": "Otto",
+      "countryId": "2"
+    }
+  ],
+  "materials": [
+    {
+      "id": "1",
+      "name": "wood"
+    },
+    {
+      "id": "2",
+      "name": "metal"
+    }
+  ],
 
-    "products": [
+  "products": [
+    {
+      "id": "1",
+      "name": "GURSKEN ГУРСКЕН Italy",
+      "category": "2",
+      "company": {
+        "id": "1",
+        "name": "Ikea",
+        "countryId": "1"
+      },
+      "size": {
+        "width": 50,
+        "height": 100,
+        "length": 50
+      },
+      "country": {
+        "id": "1",
+        "name": "Italy"
+      },
+      "material": {
+        "id": "2",
+        "name": "metal"
+      },
+      "description": "Armchair with headrest",
+      "images": [
         {
-            "id": "1",
-            "name": "GURSKEN ГУРСКЕН Italy",
-            "category": "2",
-            "company": {
-                "id": "1",
-                "name": "Ikea",
-                "countryId": "1"
-            },
-            "size": {
-                "width": 50,
-                "height": 100,
-                "length": 50
-            },
-            "country": {
-                "id": "1",
-                "name": "Italy"
-            },
-            "material": {
-                "id": "2",
-                "name": "metal"
-            },
-            "description": "Armchair with headrest",
-            "images": [
-                {
-                    "color": "white",
-                    "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kelinge-bezheviy__0950942_pe800822_s5.jpg",
-                    "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kelinge-bezheviy__0950941_pe800821_s5.jpg"
-                },
-                {
-                    "color": "blue",
-                    "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kvillsfors-temno-siniy-siniy__0961699_pe807716_s5.jpg",
-                    "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kvillsfors-temno-siniy-siniy__0961698_pe807715_s5.jpg"
-                },
-                {
-                    "color": "gray",
-                    "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-nordvalla-temno-siriy__0836849_pe601178_s5.jpg",
-                    "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-nordvalla-temno-siriy__0325432_pe517964_s5.jpg"
-                },
-                {
-                    "color": "black",
-                    "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-dyuparp-temno-zeleniy__0841150_pe647266_s5.jpg",
-                    "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-dyuparp-temno-zeleniy__0531313_pe647261_s5.jpg"
-                },
-                {
-                    "color": "gray",
-                    "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-skiftebu-zhovtiy__0837297_pe601176_s5.jpg",
-                    "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-skiftebu-zhovtiy__0325450_pe517970_s5.jpg"
-                }
-            ],
-            "price": 500
+          "color": "white",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kelinge-bezheviy__0950942_pe800822_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kelinge-bezheviy__0950941_pe800821_s5.jpg"
         },
         {
-            "id": "2",
-            "name": "GURSKEN ГУРСКЕН Germany",
-            "category": "1",
-            "company": {
-                "id": "2",
-                "name": "Felliny",
-                "countryId": "1"
-            },
-            "size": {
-                "width": 50,
-                "height": 100,
-                "length": 50
-            },
-            "country": {
-                "id": "2",
-                "name": "Germany"
-            },
-            "material": {
-                "id": "2",
-                "name": "metal"
-            },
-            "description": "Armchair with headrest",
-            "images": [
-                {
-                    "color": "white",
-                    "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kelinge-bezheviy__0950942_pe800822_s5.jpg",
-                    "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kelinge-bezheviy__0950941_pe800821_s5.jpg"
-                },
-                {
-                    "color": "blue",
-                    "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kvillsfors-temno-siniy-siniy__0961699_pe807716_s5.jpg",
-                    "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kvillsfors-temno-siniy-siniy__0961698_pe807715_s5.jpg"
-                },
-                {
-                    "color": "gray",
-                    "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-nordvalla-temno-siriy__0836849_pe601178_s5.jpg",
-                    "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-nordvalla-temno-siriy__0325432_pe517964_s5.jpg"
-                },
-                {
-                    "color": "black",
-                    "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-dyuparp-temno-zeleniy__0841150_pe647266_s5.jpg",
-                    "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-dyuparp-temno-zeleniy__0531313_pe647261_s5.jpg"
-                },
-                {
-                    "color": "gray",
-                    "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-skiftebu-zhovtiy__0837297_pe601176_s5.jpg",
-                    "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-skiftebu-zhovtiy__0325450_pe517970_s5.jpg"
-                }
-            ],
-            "price": 500
+          "color": "blue",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kvillsfors-temno-siniy-siniy__0961699_pe807716_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kvillsfors-temno-siniy-siniy__0961698_pe807715_s5.jpg"
         },
         {
-            "id": "3",
-            "name": "GURSKEN ГУРСКЕН Canada",
-            "category": "1",
-            "company": {
-                "id": "2",
-                "name": "Felliny",
-                "countryId": "1"
-            },
-            "size": {
-                "width": 50,
-                "height": 100,
-                "length": 50
-            },
-            "country": {
-                "id": "3",
-                "name": "Canada"
-            },
-            "material": {
-                "id": "1",
-                "name": "wood"
-            },
-
-            "description": "Armchair with headrest",
-            "images": [
-                {
-                    "color": "white",
-                    "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kelinge-bezheviy__0950942_pe800822_s5.jpg",
-                    "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kelinge-bezheviy__0950941_pe800821_s5.jpg"
-                },
-                {
-                    "color": "blue",
-                    "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kvillsfors-temno-siniy-siniy__0961699_pe807716_s5.jpg",
-                    "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kvillsfors-temno-siniy-siniy__0961698_pe807715_s5.jpg"
-                },
-                {
-                    "color": "gray",
-                    "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-nordvalla-temno-siriy__0836849_pe601178_s5.jpg",
-                    "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-nordvalla-temno-siriy__0325432_pe517964_s5.jpg"
-                },
-                {
-                    "color": "black",
-                    "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-dyuparp-temno-zeleniy__0841150_pe647266_s5.jpg",
-                    "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-dyuparp-temno-zeleniy__0531313_pe647261_s5.jpg"
-                },
-                {
-                    "color": "gray",
-                    "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-skiftebu-zhovtiy__0837297_pe601176_s5.jpg",
-                    "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-skiftebu-zhovtiy__0325450_pe517970_s5.jpg"
-                }
-            ],
-            "price": 500
+          "color": "gray",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-nordvalla-temno-siriy__0836849_pe601178_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-nordvalla-temno-siriy__0325432_pe517964_s5.jpg"
         },
         {
-            "id": "4",
-            "name": "GURSKEN ГУРСКЕН Italy",
-            "category": "1",
-            "company": {
-                "id": "3",
-                "name": "Otto",
-                "countryId": "1"
-            },
-            "size": {
-                "width": 50,
-                "height": 100,
-                "length": 50
-            },
-            "country": {
-                "id": "1",
-                "name": "Italy"
-            },
-            "material": {
-                "id": "2",
-                "name": "metal"
-            },
-            "description": "Armchair with headrest",
-            "images": [
-                {
-                    "color": "white",
-                    "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kelinge-bezheviy__0950942_pe800822_s5.jpg",
-                    "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kelinge-bezheviy__0950941_pe800821_s5.jpg"
-                },
-                {
-                    "color": "blue",
-                    "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kvillsfors-temno-siniy-siniy__0961699_pe807716_s5.jpg",
-                    "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kvillsfors-temno-siniy-siniy__0961698_pe807715_s5.jpg"
-                },
-                {
-                    "color": "gray",
-                    "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-nordvalla-temno-siriy__0836849_pe601178_s5.jpg",
-                    "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-nordvalla-temno-siriy__0325432_pe517964_s5.jpg"
-                },
-                {
-                    "color": "black",
-                    "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-dyuparp-temno-zeleniy__0841150_pe647266_s5.jpg",
-                    "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-dyuparp-temno-zeleniy__0531313_pe647261_s5.jpg"
-                },
-                {
-                    "color": "gray",
-                    "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-skiftebu-zhovtiy__0837297_pe601176_s5.jpg",
-                    "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-skiftebu-zhovtiy__0325450_pe517970_s5.jpg"
-                }
-            ],
-            "price": 50
+          "color": "black",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-dyuparp-temno-zeleniy__0841150_pe647266_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-dyuparp-temno-zeleniy__0531313_pe647261_s5.jpg"
         },
         {
-            "id": "5",
-            "name": "GURSKEN ГУРСКЕН Canada",
-            "category": "1",
-            "company": {
-                "id": "1",
-                "name": "Ikea",
-                "countryId": "1"
-            },
-            "size": {
-                "width": 50,
-                "height": 100,
-                "length": 50
-            },
-            "country": {
-                "id": "3",
-                "name": "Canada"
-            },
-            "material": {
-                "id": "1",
-                "name": "wood"
-            },
-            "description": "Armchair with headrest",
-            "images": [
-                {
-                    "color": "white",
-                    "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kelinge-bezheviy__0950942_pe800822_s5.jpg",
-                    "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kelinge-bezheviy__0950941_pe800821_s5.jpg"
-                },
-                {
-                    "color": "blue",
-                    "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kvillsfors-temno-siniy-siniy__0961699_pe807716_s5.jpg",
-                    "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kvillsfors-temno-siniy-siniy__0961698_pe807715_s5.jpg"
-                },
-                {
-                    "color": "gray",
-                    "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-nordvalla-temno-siriy__0836849_pe601178_s5.jpg",
-                    "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-nordvalla-temno-siriy__0325432_pe517964_s5.jpg"
-                },
-                {
-                    "color": "black",
-                    "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-dyuparp-temno-zeleniy__0841150_pe647266_s5.jpg",
-                    "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-dyuparp-temno-zeleniy__0531313_pe647261_s5.jpg"
-                },
-                {
-                    "color": "gray",
-                    "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-skiftebu-zhovtiy__0837297_pe601176_s5.jpg",
-                    "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-skiftebu-zhovtiy__0325450_pe517970_s5.jpg"
-                }
-            ],
-            "price": 200
+          "color": "yellow",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-skiftebu-zhovtiy__0837297_pe601176_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-skiftebu-zhovtiy__0325450_pe517970_s5.jpg"
         }
-    ]
+      ],
+      "price": 500
+    },
+    {
+      "id": "2",
+      "name": "GURSKEN ГУРСКЕН Germany",
+      "category": "1",
+      "company": {
+        "id": "2",
+        "name": "Felliny",
+        "countryId": "1"
+      },
+      "size": {
+        "width": 50,
+        "height": 100,
+        "length": 50
+      },
+      "country": {
+        "id": "2",
+        "name": "Germany"
+      },
+      "material": {
+        "id": "2",
+        "name": "metal"
+      },
+      "description": "Armchair with headrest",
+      "images": [
+        {
+          "color": "white",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kelinge-bezheviy__0950942_pe800822_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kelinge-bezheviy__0950941_pe800821_s5.jpg"
+        },
+        {
+          "color": "blue",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kvillsfors-temno-siniy-siniy__0961699_pe807716_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kvillsfors-temno-siniy-siniy__0961698_pe807715_s5.jpg"
+        },
+        {
+          "color": "gray",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-nordvalla-temno-siriy__0836849_pe601178_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-nordvalla-temno-siriy__0325432_pe517964_s5.jpg"
+        },
+        {
+          "color": "black",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-dyuparp-temno-zeleniy__0841150_pe647266_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-dyuparp-temno-zeleniy__0531313_pe647261_s5.jpg"
+        },
+        {
+          "color": "yellow",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-skiftebu-zhovtiy__0837297_pe601176_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-skiftebu-zhovtiy__0325450_pe517970_s5.jpg"
+        }
+      ],
+      "price": 500
+    },
+    {
+      "id": "3",
+      "name": "GURSKEN ГУРСКЕН Canada",
+      "category": "1",
+      "company": {
+        "id": "2",
+        "name": "Felliny",
+        "countryId": "1"
+      },
+      "size": {
+        "width": 50,
+        "height": 100,
+        "length": 50
+      },
+      "country": {
+        "id": "3",
+        "name": "Canada"
+      },
+      "material": {
+        "id": "1",
+        "name": "wood"
+      },
+
+      "description": "Armchair with headrest",
+      "images": [
+        {
+          "color": "white",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kelinge-bezheviy__0950942_pe800822_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kelinge-bezheviy__0950941_pe800821_s5.jpg"
+        },
+        {
+          "color": "blue",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kvillsfors-temno-siniy-siniy__0961699_pe807716_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kvillsfors-temno-siniy-siniy__0961698_pe807715_s5.jpg"
+        },
+        {
+          "color": "gray",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-nordvalla-temno-siriy__0836849_pe601178_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-nordvalla-temno-siriy__0325432_pe517964_s5.jpg"
+        },
+        {
+          "color": "black",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-dyuparp-temno-zeleniy__0841150_pe647266_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-dyuparp-temno-zeleniy__0531313_pe647261_s5.jpg"
+        },
+        {
+          "color": "yellow",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-skiftebu-zhovtiy__0837297_pe601176_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-skiftebu-zhovtiy__0325450_pe517970_s5.jpg"
+        }
+      ],
+      "price": 500
+    },
+    {
+      "id": "4",
+      "name": "GURSKEN ГУРСКЕН Italy",
+      "category": "1",
+      "company": {
+        "id": "3",
+        "name": "Otto",
+        "countryId": "1"
+      },
+      "size": {
+        "width": 50,
+        "height": 100,
+        "length": 50
+      },
+      "country": {
+        "id": "1",
+        "name": "Italy"
+      },
+      "material": {
+        "id": "2",
+        "name": "metal"
+      },
+      "description": "Armchair with headrest",
+      "images": [
+        {
+          "color": "white",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kelinge-bezheviy__0950942_pe800822_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kelinge-bezheviy__0950941_pe800821_s5.jpg"
+        },
+        {
+          "color": "blue",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kvillsfors-temno-siniy-siniy__0961699_pe807716_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kvillsfors-temno-siniy-siniy__0961698_pe807715_s5.jpg"
+        },
+        {
+          "color": "gray",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-nordvalla-temno-siriy__0836849_pe601178_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-nordvalla-temno-siriy__0325432_pe517964_s5.jpg"
+        },
+        {
+          "color": "black",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-dyuparp-temno-zeleniy__0841150_pe647266_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-dyuparp-temno-zeleniy__0531313_pe647261_s5.jpg"
+        },
+        {
+          "color": "yellow",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-skiftebu-zhovtiy__0837297_pe601176_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-skiftebu-zhovtiy__0325450_pe517970_s5.jpg"
+        }
+      ],
+      "price": 50
+    },
+    {
+      "id": "5",
+      "name": "GURSKEN ГУРСКЕН Canada",
+      "category": "1",
+      "company": {
+        "id": "1",
+        "name": "Ikea",
+        "countryId": "1"
+      },
+      "size": {
+        "width": 50,
+        "height": 100,
+        "length": 50
+      },
+      "country": {
+        "id": "3",
+        "name": "Canada"
+      },
+      "material": {
+        "id": "1",
+        "name": "wood"
+      },
+      "description": "Armchair with headrest",
+      "images": [
+        {
+          "color": "white",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kelinge-bezheviy__0950942_pe800822_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kelinge-bezheviy__0950941_pe800821_s5.jpg"
+        },
+        {
+          "color": "blue",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kvillsfors-temno-siniy-siniy__0961699_pe807716_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kvillsfors-temno-siniy-siniy__0961698_pe807715_s5.jpg"
+        },
+        {
+          "color": "gray",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-nordvalla-temno-siriy__0836849_pe601178_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-nordvalla-temno-siriy__0325432_pe517964_s5.jpg"
+        },
+        {
+          "color": "black",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-dyuparp-temno-zeleniy__0841150_pe647266_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-dyuparp-temno-zeleniy__0531313_pe647261_s5.jpg"
+        },
+        {
+          "color": "yellow",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-skiftebu-zhovtiy__0837297_pe601176_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-skiftebu-zhovtiy__0325450_pe517970_s5.jpg"
+        }
+      ],
+      "price": 200
+    }
+  ]
 }

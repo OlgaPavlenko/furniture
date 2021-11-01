@@ -1,35 +1,38 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useState } from 'react';
+import { IProductImage } from 'utils/interfaces/product';
+import { ProductMainImg } from './ProductMainImg';
 import { useStyle } from './styles';
+import { ProductDescription } from './ProductDescription';
+import { ProductColorVariants } from './ProductColorVariants';
 
-export const ProductCard: FunctionComponent = () => {
-  const cart = require('assets/icons/shopping-cart.svg').default;
+interface IProductCard {
+  name: string;
+  description: string;
+  images: IProductImage[];
+  price: number;
+}
+
+export const ProductCard: FunctionComponent<IProductCard> = ({
+  name,
+  description,
+  images,
+  price,
+}) => {
   const classes = useStyle();
 
+  const [src, setSrc] = useState(images[0].baseUrl);
+
+  const switchVariants = (url: string) => {
+    setSrc(url);
+  };
+
   return (
-    <div className={classes.productCard}>
+    <li className={classes.productCard}>
       <a className={classes.productCardUnit} href="#">
-        <div className={classes.media}>
-          <img src="src" alt="chair" className={classes.productCardImg} />
-        </div>
-        <div className={classes.productCardBlock}>
-          <div className={classes.productCardInfo}>
-            <p className={classes.productCardName}>rwtywty</p>
-            <p className={classes.productCardDescripion}>rwtywrtyrwtywrtywrty yrwtywrt r wrtyw</p>
-            <span className={classes.productCardPrice}></span>
-          </div>
-          <button className={classes.productCardCartButton}>
-            <img src={cart} alt="cart" />
-          </button>
-        </div>
+        <ProductMainImg src={src} />
+        <ProductDescription name={name} description={description} price={price} />
       </a>
-      <div>
-        <p className={classes.productCardVariantsLabel}>More variants</p>
-        <div className={classes.cardVariantContainer}>
-          <a className={classes.cardVariant}>
-            <img src="image.url" alt="" className={classes.variantsCardImg} />
-          </a>
-        </div>
-      </div>
-    </div>
+      <ProductColorVariants images={images} switchVariants={switchVariants} />
+    </li>
   );
 };
