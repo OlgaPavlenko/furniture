@@ -3,7 +3,7 @@ import { useStyle } from './styles';
 
 import { Button } from 'sharedComponents/Button/Button';
 import { Input } from 'sharedComponents/Input/Input';
-import { searchType } from 'utils/interfaces/interfaces';
+import { searchType } from 'utils/interfaces/enums';
 
 export const Search: FunctionComponent = () => {
   const classes = useStyle();
@@ -11,7 +11,7 @@ export const Search: FunctionComponent = () => {
 
   return (
     <div className={classes.searchWrap}>
-      <Button label={search} />
+      <Button badgeSrc={search} alt="search" />
       <Input type={searchType.search} />
     </div>
   );
