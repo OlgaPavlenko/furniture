@@ -1,32 +1,31 @@
 import { ButtonHTMLAttributes, DOMAttributes, FunctionComponent } from 'react';
-import { useStyle } from './style';
 
 interface IButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     DOMAttributes<HTMLButtonElement> {
-  language?: string;
-  badge?: string;
-  classnames?: string;
+  text?: string;
+  badgeSrc?: string;
+  className?: string;
+  alt?: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
 export const Button: FunctionComponent<IButtonProps> = ({
-  language,
-  badge,
-  classnames,
+  text,
+  badgeSrc,
+  className,
+  alt,
   onClick,
 }) => {
-  const classes = useStyle();
-  if (language) {
-    return (
-      <button onClick={onClick} className={classes.localizeButtons}>
-        {language}
-      </button>
-    );
-  }
   return (
+<<<<<<< HEAD
     <button className={classnames}>
       <img src={badge} alt="search" />
+=======
+    <button onClick={onClick} className={className}>
+      {!!badgeSrc && <img src={badgeSrc} alt={alt} />}
+      {!!text && <p>{text}</p>}
+>>>>>>> a2bac77b3d88b153998e591c18e8fb8a6f9a7e67
     </button>
   );
 };

@@ -7,7 +7,7 @@ interface IProductCardImgs {
   switchVariants: any;
 }
 
-export const ProductCardImgs: FunctionComponent<IProductCardImgs> = ({
+export const ProductCardImg: FunctionComponent<IProductCardImgs> = ({
   url,
   baseUrl,
   switchVariants,

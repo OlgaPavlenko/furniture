@@ -1,7 +1,7 @@
-import { contactItems } from 'constants/constants';
+import { CONTACT_ITEMS } from 'constants/constants';
 import { FunctionComponent } from 'react';
 import { FooterContact } from 'sharedComponents/Footer/FooterContact';
-import { useStyle } from './styles';
+import { useStyle } from './style';
 
 interface IFooterContacts {
   mail: string;
@@ -11,7 +11,7 @@ export const FootersContacts: FunctionComponent = () => {
   const classes = useStyle();
   return (
     <ul className={classes.footerContact}>
-      {contactItems.map((item) => {
+      {CONTACT_ITEMS.map((item) => {
         return <FooterContact key={item.href} descr={item.descr} href={item.href} />;
       })}
     </ul>
