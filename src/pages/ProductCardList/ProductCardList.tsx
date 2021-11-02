@@ -8,10 +8,10 @@ import { productListSelector } from 'store/selectors/product';
 import { IProduct } from 'utils/interfaces/product';
 
 interface IProductCardList {
-  listVeiw: boolean;
+  isListVeiw: boolean;
 }
 
-export const ProductCardList: FunctionComponent<IProductCardList> = ({ listVeiw }) => {
+export const ProductCardList: FunctionComponent<IProductCardList> = ({ isListVeiw }) => {
   const classes = useStyle();
   const dispatch = useDispatch();
   const productList: IProduct[] = useSelector(productListSelector);
@@ -22,7 +22,7 @@ export const ProductCardList: FunctionComponent<IProductCardList> = ({ listVeiw 
 
   return (
     <div className={classes.main}>
-      <ul className={listVeiw ? classes.catalogBlock : classes.catalog}>
+      <ul className={isListVeiw ? classes.catalogBlock : classes.catalog}>
         {productList.map((product: IProduct) => (
           <ProductCard
             key={product.id}

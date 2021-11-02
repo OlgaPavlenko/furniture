@@ -10,10 +10,10 @@ import { TOGGLE_BUTTONS_IMG } from 'constants/constants';
 
 export const Layout: FunctionComponent = () => {
   const classes = useStyle();
-  const [listVeiw, setListVeiw] = useState(false);
+  const [isListVeiw, setListVeiw] = useState(false);
 
   const catalogViewToggle = () => {
-    setListVeiw(!listVeiw);
+    setListVeiw(!isListVeiw);
   };
 
   return (
@@ -21,9 +21,9 @@ export const Layout: FunctionComponent = () => {
       <Header />
       <div className={classes.main}>
         <Filter />
-        <ProductCardList listVeiw={listVeiw} />
+        <ProductCardList isListVeiw={isListVeiw} />
         <Button
-          badgeSrc={listVeiw ? TOGGLE_BUTTONS_IMG.menu : TOGGLE_BUTTONS_IMG.list}
+          badgeSrc={isListVeiw ? TOGGLE_BUTTONS_IMG.menu : TOGGLE_BUTTONS_IMG.list}
           onClick={catalogViewToggle}
           className={classes.viewToggler}
         />
