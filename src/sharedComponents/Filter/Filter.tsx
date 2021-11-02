@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useStyle } from './style';
 
 import { FilterOption } from './FilterOption';
-import { getCompaniesAsync, getCountriesAsync, getMaterialsAsync } from 'store/slices/filter-slice';
+import { getCompaniesAsync, getCountriesAsync, getMaterialsAsync } from 'store/slices/filter';
 import { filterListSelector } from '../../store/selectors/filter';
 
 export const Filter: FunctionComponent = () => {
