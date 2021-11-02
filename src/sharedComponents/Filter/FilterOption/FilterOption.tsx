@@ -16,10 +16,10 @@ export const FilterOption: FunctionComponent<IFilterOption> = ({ name, categorie
       {categories.map((category: ICategory) => {
         return (
           <div key={category.id} className={classes.checkbox}>
-            <label htmlFor="material.name">
+            <label htmlFor={category.name}>
               <input
                 type="checkbox"
-                id="material.name"
+                id={category.name}
                 name={category.name}
                 value={category.name}
                 className={classes.customCheckbox}
