@@ -6,6 +6,7 @@ import { ProductCard } from 'sharedComponents/ProductCard';
 import { getProductsAsync } from 'store/slices/product';
 import { productListSelector } from 'store/selectors/product';
 import { IProduct } from 'utils/interfaces/product';
+import { productsBySearchSelector } from 'store/selectors/search';
 
 interface IProductCardList {
   isListVeiw: boolean;
@@ -15,6 +16,7 @@ export const ProductCardList: FunctionComponent<IProductCardList> = ({ isListVei
   const classes = useStyle();
   const dispatch = useDispatch();
   const productList: IProduct[] = useSelector(productListSelector);
+  const productsWithQuery: any = useSelector(productsBySearchSelector);
 
   useEffect(() => {
     dispatch(getProductsAsync());

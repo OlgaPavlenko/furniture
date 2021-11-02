@@ -1,12 +1,15 @@
-import { ChangeEvent, FunctionComponent, useState } from 'react';
+import { ChangeEvent, FunctionComponent, useEffect, useState } from 'react';
 import { useStyle } from './styles';
 
 import { Button } from 'sharedComponents/Button/Button';
 import { Input } from 'sharedComponents/Input/Input';
 import { SearchType } from 'utils/interfaces/enums';
+import { useDispatch } from 'react-redux';
+import { getProductsWithQuery } from 'store/slices/search';
 
 export const Search: FunctionComponent = () => {
   const classes = useStyle();
+  const dispatch = useDispatch();
   const search = require('assets/icons/icon.svg').default as string;
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -15,12 +18,14 @@ export const Search: FunctionComponent = () => {
     setSearchQuery(event.target?.value);
   };
 
-  console.log(searchQuery);
+  useEffect(() => {
+    dispatch(getProductsWithQuery(searchQuery));
+  }, [searchQuery]);
 
   return (
     <div className={classes.searchWrap}>
       <Button badgeSrc={search} alt="search" />
-      <Input type={SearchType.search} onChange={getSearchQuery} />
+      <Input type={SearchType.search} onChange={getSearchQuery} value={searchQuery} />
     </div>
   );
 };

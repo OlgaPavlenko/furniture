@@ -33,7 +33,7 @@ export const getMaterialsAsync = createAsyncThunk('materials/fetch', async () =>
 });
 
 export const filterSlice = createSlice({
-  name: 'product',
+  name: 'filter',
   initialState,
   reducers: {},
   extraReducers: (builder) => {

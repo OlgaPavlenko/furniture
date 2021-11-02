@@ -2,11 +2,10 @@ import { ChangeEvent, DOMAttributes, FunctionComponent, SyntheticEvent } from 'r
 
 interface IInputProps extends DOMAttributes<HTMLElement> {
   type?: string;
-  onClick?: (event: SyntheticEvent) => void;
-  shouldConcatHref?: boolean;
+  value?: string;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const Input: FunctionComponent<IInputProps> = ({ type, onClick }) => {
-  return <input type={type} onClick={onClick} />;
+export const Input: FunctionComponent<IInputProps> = ({ type, onChange }) => {
+  return <input type={type} onChange={onChange} />;
 };
