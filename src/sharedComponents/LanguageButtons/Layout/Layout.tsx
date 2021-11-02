@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useState } from 'react';
 import { useStyle } from './styles';
 
 import { Footer } from 'sharedComponents/Footer';
@@ -8,6 +8,7 @@ import { ProductCardList } from 'pages/ProductCardList';
 
 export const Layout: FunctionComponent = () => {
   const classes = useStyle();
+
   return (
     <div className={classes.layout}>
       <Header />

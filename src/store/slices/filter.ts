@@ -5,16 +5,16 @@ import { ICompany } from 'utils/interfaces/product';
 import { ICountry } from 'utils/interfaces/product';
 import { IMaterial } from 'utils/interfaces/product';
 
-export interface IInitialState {
-  countriesList: ICountry[];
-  companiesList: ICompany[];
-  materialsList: IMaterial[];
+export interface IInitialFilterState {
+  countries: ICountry[];
+  companies: ICompany[];
+  materials: IMaterial[];
 }
 
-const initialState: IInitialState = {
-  countriesList: [],
-  companiesList: [],
-  materialsList: [],
+const initialState: IInitialFilterState = {
+  countries: [],
+  companies: [],
+  materials: [],
 };
 
 export const getCountriesAsync = createAsyncThunk('countries/fetch', async () => {
@@ -39,13 +39,13 @@ export const filterSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getCountriesAsync.fulfilled, (state, action) => {
-        state.countriesList = [...state.countriesList, ...action.payload.data];
+        state.countries = [...state.countries, ...action.payload.data];
       })
       .addCase(getMaterialsAsync.fulfilled, (state, action) => {
-        state.companiesList = [...state.companiesList, ...action.payload.data];
+        state.companies = [...state.companies, ...action.payload.data];
       })
       .addCase(getCompaniesAsync.fulfilled, (state, action) => {
-        state.materialsList = [...state.materialsList, ...action.payload.data];
+        state.materials = [...state.materials, ...action.payload.data];
       });
   },
 });

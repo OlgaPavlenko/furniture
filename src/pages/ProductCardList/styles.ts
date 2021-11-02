@@ -3,13 +3,10 @@ import { makeStyles } from '@material-ui/core';
 export const useStyle = makeStyles(() => ({
   main: {
     display: 'flex',
-<<<<<<< HEAD
     marginBottom: '25px',
-=======
     flexDirection: 'column',
     margin: '25px 0px',
     rowGap: '15px',
->>>>>>> ec7f514acfc22f8516341fe91395c28a900522a4
   },
 
   catalog: {

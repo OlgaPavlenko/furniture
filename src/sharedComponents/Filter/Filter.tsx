@@ -4,10 +4,12 @@ import { useStyle } from './style';
 
 import { FilterOption } from './FilterOption';
 import { getCompaniesAsync, getCountriesAsync, getMaterialsAsync } from 'store/slices/filter';
-import { filterListSelector } from '../../store/selectors/filter';
+import { filterListSelector } from 'store/selectors/filter';
+
+interface IFilter {}
 
 export const Filter: FunctionComponent = () => {
-  const filter = useSelector(filterListSelector);
+  const filter: IFilter = useSelector(filterListSelector);
   const classes = useStyle();
   const dispatch = useDispatch();
 
@@ -19,13 +21,9 @@ export const Filter: FunctionComponent = () => {
 
   return (
     <form className={classes.filter}>
-      <div className={classes.accordion}>
-        {Object.values(filter)?.map((filterOption: any) => {
-          return filterOption.map((filterItem: any) => (
-            <FilterOption key={filterItem.id} name={filterItem.name} />
-          ));
-        })}
-      </div>
+      {Object.keys(filter).map((name: string) => {
+        return <FilterOption key={name} name={name} categories={filter[name as keyof IFilter]} />;
+      })}
     </form>
   );
 };

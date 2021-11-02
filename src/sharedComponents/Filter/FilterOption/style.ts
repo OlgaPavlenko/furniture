@@ -1,37 +1,43 @@
 import { makeStyles } from '@material-ui/core';
 
 export const useStyle = makeStyles(() => ({
-  // accordion: {
-  //   backgroundColor: '#eee',
-  //   color: '#444',
-  //   cursor: 'pointer',
-  //   padding: '18px',
-  //   width: '100%',
-  //   textAlign: 'left',
-  //   border: 'none',
-  //   outline: 'none',
-  //   transition: '0.4s',
+  accordion: {
+    backgroundColor: '#eee',
+    color: '#444',
+    cursor: 'pointer',
+    padding: '18px',
+    width: '100%',
+    textAlign: 'left',
+    border: 'none',
+    outline: 'none',
+    transition: '0.4s',
 
-  //   '&:hover': {
-  //     backgroundColor: ' #ccc',
-  //   },
-  // },
+    '&:hover': {
+      backgroundColor: ' #ccc',
+    },
+  },
   panel: {
-    padding: '0 18px',
     backgroundColor: 'white',
     display: 'block',
     overflow: 'hidden',
-    marginTop: '7px',
   },
+
   checkbox: {
     margin: '3px 0 5px 0',
+    textAlign: 'left',
+    paddingLeft: '20px',
   },
+
+  customCheckbox: {
+    marginRight: '5px',
+  },
+
   /* для элемента input c type="checkbox" */
   'customCheckbox > input': {
+    marginRight: '5px',
     position: 'absolute',
     zIndex: -1,
     opacity: 0,
-
     /* стили при наведении курсора на checkbox */
     '&::not(:disabled):not(:checked) + span:hover::before': {
       borderColor: '#b3d7ff',
