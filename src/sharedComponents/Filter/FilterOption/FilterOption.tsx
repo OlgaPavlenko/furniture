@@ -17,7 +17,7 @@ export const FilterOption: FunctionComponent<IFilterOption> = ({ name, categorie
       {categories.map((category: ICategory) => {
         return (
           <CustomCheckbox
-            id={category.id}
+            key={category.id}
             name={category.name}
             value={category.name}
             className={classes.checkbox}

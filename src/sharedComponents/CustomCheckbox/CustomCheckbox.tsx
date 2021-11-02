@@ -11,7 +11,6 @@ interface ICheckbox extends DOMAttributes<HTMLElement> {
 }
 
 export const CustomCheckbox: FunctionComponent<ICheckbox> = ({
-  id,
   name,
   value,
   className,
@@ -19,11 +18,10 @@ export const CustomCheckbox: FunctionComponent<ICheckbox> = ({
   onClick,
 }) => {
   return (
-    <div key={id} className={className}>
+    <div className={className}>
       <label htmlFor={name}>
         <input
           type="checkbox"
-          id={id}
           name={name}
           value={value}
           className={classNameCustomCheckbox}
