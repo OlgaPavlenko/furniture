@@ -2,10 +2,9 @@ import { makeStyles } from '@material-ui/core';
 
 export const useStyle = makeStyles(() => ({
   main: {
+    position: 'relative',
     display: 'flex',
-    marginBottom: '25px',
     flexDirection: 'column',
-    margin: '25px 0px',
     rowGap: '15px',
   },
 
@@ -24,18 +23,4 @@ export const useStyle = makeStyles(() => ({
     columnGap: '8%',
     rowGap: '15px',
   },
-
-  viewToggler: {
-    display: 'flex',
-    justifyContent: 'flex-end',
-    margin: '0 20px 15px 0',
-  },
-
-  // list: {
-  //   width: "30px,",
-  // },
-
-  // menu: {
-  //   width: "30px,",
-  // },
 }));
