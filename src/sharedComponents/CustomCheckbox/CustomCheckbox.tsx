@@ -28,7 +28,7 @@ export const CustomCheckbox: FunctionComponent<ICheckbox> = ({
           value={value}
           className={classNameCustomCheckbox}
           onClick={onClick}
-        ></input>
+        />
         <span>{name}</span>
       </label>
     </div>
