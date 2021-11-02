@@ -10,6 +10,11 @@ export const SOCIAL_NETWORK_ITEMS = {
   linkedin: require('assets/icons/linkedin.svg').default as string,
 };
 
+export const TOGGLE_BUTTONS_IMG = {
+  menu: require('assets/icons/menu.svg').default as string,
+  list: require('assets/icons/list.svg').default as string,
+};
+
 export const CONTACT_ITEMS = [
   {
     href: 'mailto:',
