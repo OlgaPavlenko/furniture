@@ -5,10 +5,12 @@ import { IProduct } from 'utils/interfaces/product';
 
 export interface IInitialFilterState {
   searchList: IProduct[];
+  searchQuery: string;
 }
 
 const initialState: IInitialFilterState = {
   searchList: [],
+  searchQuery: '',
 };
 
 export const getProductsWithQuery = createAsyncThunk('search/fetch', (searchQuery: string) => {
@@ -22,8 +24,8 @@ export const searchSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getProductsWithQuery.fulfilled, (state, action) => {
-      state.searchList = [...state.searchList, ...action.payload.data];
-      console.log(state.searchList);
+      state.searchList = [...action.payload.data];
+      state.searchQuery = action.meta.arg;
     });
   },
 });

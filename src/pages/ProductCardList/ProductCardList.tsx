@@ -6,7 +6,7 @@ import { ProductCard } from 'sharedComponents/ProductCard';
 import { getProductsAsync } from 'store/slices/product';
 import { productListSelector } from 'store/selectors/product';
 import { IProduct } from 'utils/interfaces/product';
-import { productsBySearchSelector } from 'store/selectors/search';
+import { querySelector, searchListSelector } from 'store/selectors/search';
 
 interface IProductCardList {
   isListVeiw: boolean;
@@ -15,17 +15,22 @@ interface IProductCardList {
 export const ProductCardList: FunctionComponent<IProductCardList> = ({ isListVeiw }) => {
   const classes = useStyle();
   const dispatch = useDispatch();
+  const searcQuery = useSelector(querySelector);
   const productList: IProduct[] = useSelector(productListSelector);
-  const productsWithQuery: any = useSelector(productsBySearchSelector);
+  const productsWithQuery: IProduct[] = useSelector(searchListSelector);
 
   useEffect(() => {
     dispatch(getProductsAsync());
   }, []);
 
+  // console.log(`productList: ${productList}`);
+  // console.log(`productsWithQuery: ${productsWithQuery}`);
+  const renderList = searcQuery ? productsWithQuery : productList;
+
   return (
     <div className={classes.main}>
       <ul className={isListVeiw ? classes.catalogBlock : classes.catalog}>
-        {productList.map((product: IProduct) => (
+        {renderList.map((product: IProduct) => (
           <ProductCard
             key={product.id}
             name={product.name}
