@@ -15,7 +15,7 @@ interface IProductCardList {
 export const ProductCardList: FunctionComponent<IProductCardList> = ({ isListVeiw }) => {
   const classes = useStyle();
   const dispatch = useDispatch();
-  const searcQuery = useSelector(querySelector);
+  const searchQuery = useSelector(querySelector);
   const productList: IProduct[] = useSelector(productListSelector);
   const productsWithQuery: IProduct[] = useSelector(searchListSelector);
 
@@ -23,9 +23,7 @@ export const ProductCardList: FunctionComponent<IProductCardList> = ({ isListVei
     dispatch(getProductsAsync());
   }, []);
 
-  // console.log(`productList: ${productList}`);
-  // console.log(`productsWithQuery: ${productsWithQuery}`);
-  const renderList = searcQuery ? productsWithQuery : productList;
+  const renderList = searchQuery ? productsWithQuery : productList;
 
   return (
     <div className={classes.main}>

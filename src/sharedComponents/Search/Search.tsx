@@ -1,7 +1,6 @@
-import { ChangeEvent, FunctionComponent, useEffect, useState } from 'react';
+import { ChangeEvent, FunctionComponent, useEffect } from 'react';
 import { useStyle } from './styles';
 
-import { Button } from 'sharedComponents/Button/Button';
 import { Input } from 'sharedComponents/Input/Input';
 import { SearchType } from 'utils/interfaces/enums';
 import { useDispatch, useSelector } from 'react-redux';
@@ -25,8 +24,13 @@ export const Search: FunctionComponent = () => {
 
   return (
     <div className={classes.searchWrap}>
-      <Button badgeSrc={search} alt="search" />
-      <Input type={SearchType.search} onChange={getSearchQuery} value={searchQuery} />
+      <Input
+        type={SearchType.search}
+        onChange={getSearchQuery}
+        value={searchQuery}
+        className={classes.searchInput}
+      />
+      <img src={search} alt="search" className={classes.searchInputImg} />
     </div>
   );
 };
