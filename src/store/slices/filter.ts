@@ -1,16 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { PATH } from 'constants/constants';
 import HTTPService from '../../utils/services/httpService';
-import { ICompany, IProduct } from 'utils/interfaces/product';
-import { ICountry } from 'utils/interfaces/product';
-import { IMaterial } from 'utils/interfaces/product';
-
-export interface ICategories {
-  countries: ICountry[];
-  companies: ICompany[];
-  materials: IMaterial[];
-}
-
+import { IProduct } from 'utils/interfaces/product';
+import { ICategories } from 'utils/interfaces/filter';
 export interface IInitialFilterState {
   categories: ICategories;
   minPrice: number;

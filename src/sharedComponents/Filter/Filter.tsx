@@ -17,11 +17,12 @@ import {
   filterMaxPriceSelector,
   filterMinPriceSelector,
 } from 'store/selectors/filter';
+import { ICategories } from 'utils/interfaces/filter';
 
-interface IFilter {}
+
 
 export const Filter: FunctionComponent = () => {
-  const filter: IFilter = useSelector(filterListSelector);
+  const filter: ICategories = useSelector(filterListSelector);
   const minPrice: number = useSelector(filterMinPriceSelector);
   const maxPrice: number = useSelector(filterMaxPriceSelector);
   const classes = useStyle();
@@ -48,7 +49,9 @@ export const Filter: FunctionComponent = () => {
     <form className={classes.filter}>
       <PriceInputs minPrice={minPrice} maxPrice={maxPrice} />
       {Object.keys(filter).map((name: string) => {
-        return <FilterOption key={name} name={name} categories={filter[name as keyof IFilter]} />;
+        return (
+          <FilterOption key={name} name={name} categories={filter[name as keyof ICategories]} />
+        );
       })}
       <Button name="Reset Options" className={classes.clearButton} onClick={resetFilter} />
     </form>
