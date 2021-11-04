@@ -23,8 +23,8 @@ import { ICategories } from 'utils/interfaces/filter';
 
 export const Filter: FunctionComponent = () => {
   const filter: ICategories = useSelector(filterListSelector);
-  const minPrice: number = useSelector(filterMinPriceSelector);
-  const maxPrice: number = useSelector(filterMaxPriceSelector);
+  const minPrice = useSelector(filterMinPriceSelector);
+  const maxPrice = useSelector(filterMaxPriceSelector);
   const classes = useStyle();
   const dispatch = useDispatch();
 
