@@ -3,7 +3,7 @@ import { ButtonHTMLAttributes, DOMAttributes, FunctionComponent } from 'react';
 interface IButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     DOMAttributes<HTMLButtonElement> {
-  text?: string;
+  name?: string;
   badgeSrc?: string;
   className?: string;
   alt?: string;
@@ -11,16 +11,16 @@ interface IButtonProps
 }
 
 export const Button: FunctionComponent<IButtonProps> = ({
-  text,
+  name,
   badgeSrc,
   className,
   alt,
   onClick,
 }) => {
   return (
-    <button onClick={onClick} className={className}>
+    <button onClick={onClick} className={className} name={name}>
       {!!badgeSrc && <img src={badgeSrc} alt={alt} />}
-      {!!text && <p>{text}</p>}
+      {!!name && <p>{name}</p>}
     </button>
   );
 };

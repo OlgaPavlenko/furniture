@@ -1,29 +1,56 @@
-import { FunctionComponent, useEffect } from 'react';
+import { FunctionComponent, SyntheticEvent, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useStyle } from './style';
 
 import { FilterOption } from './FilterOption';
-import { getCompaniesAsync, getCountriesAsync, getMaterialsAsync } from 'store/slices/filter';
-import { filterListSelector } from 'store/selectors/filter';
+import { PriceInputs } from './PriceInputs';
+import { Button } from '../Button';
+import {
+  clearFilter,
+  getCompaniesAsync,
+  getCountriesAsync,
+  getMaterialsAsync,
+  getPriceAsync,
+} from 'store/slices/filter';
+import {
+  filterListSelector,
+  filterMaxPriceSelector,
+  filterMinPriceSelector,
+} from 'store/selectors/filter';
 
 interface IFilter {}
 
 export const Filter: FunctionComponent = () => {
   const filter: IFilter = useSelector(filterListSelector);
+  const minPrice: number = useSelector(filterMinPriceSelector);
+  const maxPrice: number = useSelector(filterMaxPriceSelector);
   const classes = useStyle();
   const dispatch = useDispatch();
 
   useEffect(() => {
+    getInitialFilters();
+  }, []);
+
+  const resetFilter = (e: SyntheticEvent) => {
+    e.preventDefault();
+    dispatch(clearFilter());
+    getInitialFilters();
+  };
+
+  const getInitialFilters = () => {
     dispatch(getCountriesAsync());
     dispatch(getCompaniesAsync());
     dispatch(getMaterialsAsync());
-  }, []);
+    dispatch(getPriceAsync());
+  };
 
   return (
     <form className={classes.filter}>
+      <PriceInputs minPrice={minPrice} maxPrice={maxPrice} />
       {Object.keys(filter).map((name: string) => {
         return <FilterOption key={name} name={name} categories={filter[name as keyof IFilter]} />;
       })}
+      <Button name="Reset Options" className={classes.clearButton} onClick={resetFilter} />
     </form>
   );
 };
