@@ -17,7 +17,6 @@ import {
   filterMinPriceSelector,
 } from 'store/selectors/filter';
 import { ICategories } from 'utils/interfaces/filter';
-import { ICategory } from 'utils/interfaces/product';
 
 export const Filter: FunctionComponent = () => {
   const filter: ICategories = useSelector(filterListSelector);
@@ -25,7 +24,7 @@ export const Filter: FunctionComponent = () => {
   const maxPrice = useSelector(filterMaxPriceSelector);
   const classes = useStyle();
   const dispatch = useDispatch();
-  const [filterState, setFilterState] = useState<Record<string, boolean>>({});
+  const [filtersChecked, setFiltersChecked] = useState<string[]>([]);
 
   useEffect(() => {
     dispatch(getCountriesAsync());
@@ -34,35 +33,18 @@ export const Filter: FunctionComponent = () => {
     dispatch(getPriceAsync());
   }, []);
 
-  useEffect(() => {
-    setFilterState(() => {
-      return setInitialFilterState();
-    });
-  }, [filter]);
-
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setFilterState({ ...filterState, [event.target.name]: event.target.checked });
+    if (filtersChecked.includes(event.target.name)) {
+      setFiltersChecked(filtersChecked.filter((item) => item !== event.target.name));
+    } else {
+      setFiltersChecked([...filtersChecked, event.target.name]);
+    }
   };
 
   const resetFilter = (e: SyntheticEvent) => {
     e.preventDefault();
-    setFilterState(() => {
-      return setInitialFilterState();
-    });
-  };
 
-  const setInitialFilterState = () => {
-    const checked: Record<string, boolean> = {};
-
-    const filterKeys = Object.values(filter)
-      .map((category) => category.map(({ name }: ICategory) => name))
-      .flat();
-
-    filterKeys.forEach((key: string) => {
-      checked[key] = false;
-    });
-
-    return checked;
+    setFiltersChecked([]);
   };
 
   return (
@@ -74,7 +56,7 @@ export const Filter: FunctionComponent = () => {
             key={name}
             name={name}
             categories={filter[name as keyof ICategories]}
-            filterState={filterState}
+            filterState={filtersChecked}
             onChange={onChange}
           />
         );

@@ -1,12 +1,13 @@
-import { ChangeEvent, FunctionComponent, useEffect, useState } from 'react';
+import { ChangeEvent, FunctionComponent } from 'react';
 import { CustomCheckbox } from 'sharedComponents/CustomCheckbox';
 import { ICategory } from 'utils/interfaces/product';
 import { useStyle } from './style';
 
 interface IFilterOption {
   name: string;
+  value?: string;
   categories: ICategory[];
-  filterState: Record<string, boolean | undefined>;
+  filterState: string[];
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -22,16 +23,16 @@ export const FilterOption: FunctionComponent<IFilterOption> = ({
     <div className={classes.panel}>
       <div className={classes.accordion}>{name}</div>
       {categories.map((category: ICategory) => {
-        return filterState[category.name] !== undefined ? (
+        return (
           <CustomCheckbox
             key={category.id}
             name={category.name}
             className={classes.checkbox}
             classNameCustomCheckbox={classes.customCheckbox}
-            checked={filterState[category.name]}
+            checked={filterState.includes(category.name)}
             onChange={onChange}
           />
-        ) : null;
+        );
       })}
     </div>
   );
