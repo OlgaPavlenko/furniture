@@ -46,11 +46,7 @@ export const getPriceAsync = createAsyncThunk('price/fetch', async () => {
 export const filterSlice = createSlice({
   name: 'filter',
   initialState,
-  reducers: {
-    clearFilter() {
-      return initialState;
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(getCountriesAsync.fulfilled, (state, action) => {
@@ -71,4 +67,3 @@ export const filterSlice = createSlice({
 });
 
 export const filterReducer = filterSlice.reducer;
-export const { clearFilter } = filterSlice.actions;
