@@ -17,6 +17,7 @@ import {
   filterMinPriceSelector,
 } from 'store/selectors/filter';
 import { ICategories } from 'utils/interfaces/filter';
+import { createPath } from '../../utils/url';
 
 export const Filter: FunctionComponent = () => {
   const filter: ICategories = useSelector(filterListSelector);
@@ -31,6 +32,7 @@ export const Filter: FunctionComponent = () => {
     dispatch(getCompaniesAsync());
     dispatch(getMaterialsAsync());
     dispatch(getPriceAsync());
+    createPath({ searchQuery: 'italy', filters: ['metal', 'ikea', 'wood'] });
   }, []);
 
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {

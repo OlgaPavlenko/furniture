@@ -3,10 +3,16 @@ import { PATH } from 'constants/constants';
 import HTTPService from '../../utils/services/httpService';
 import { IProduct } from 'utils/interfaces/product';
 import { ICategories } from 'utils/interfaces/filter';
+import { createPath } from 'utils/url';
 export interface IInitialFilterState {
   categories: ICategories;
+  filters: string[];
   minPrice: number;
   maxPrice: number;
+}
+interface IQuery {
+  searchQuery: string;
+  filters: [];
 }
 
 const initialState: IInitialFilterState = {
@@ -15,6 +21,7 @@ const initialState: IInitialFilterState = {
     companies: [],
     materials: [],
   },
+  filters: [],
   minPrice: 0,
   maxPrice: 500,
 };
@@ -43,6 +50,17 @@ export const getPriceAsync = createAsyncThunk('price/fetch', async () => {
   return { minPrice, maxPrice };
 });
 
+export const getMoviesListWithQuery = createAsyncThunk(
+  'movies/getFilteredMoviesList',
+  async ({ searchQuery, filters }: IQuery) => {
+    const path = createPath({
+      searchQuery,
+      filters,
+    });
+    // return getMovieByQuery(path);
+  },
+);
+
 export const filterSlice = createSlice({
   name: 'filter',
   initialState,
@@ -52,7 +70,7 @@ export const filterSlice = createSlice({
       console.log(action.payload);
     },
     searchMaxPriceValue(state, action) {
-      state.minPrice = action.payload;
+      state.maxPrice = action.payload;
       console.log(action.payload);
     },
   },
