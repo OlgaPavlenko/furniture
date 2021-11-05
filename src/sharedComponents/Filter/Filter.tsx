@@ -66,12 +66,7 @@ export const Filter: FunctionComponent = () => {
   };
 
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-      }}
-      className={classes.filter}
-    >
+    <form className={classes.filter}>
       <PriceInputs minPrice={minPrice} maxPrice={maxPrice} />
       {Object.keys(filter).map((name: string) => {
         return (
