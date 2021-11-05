@@ -24,7 +24,7 @@ export const Filter: FunctionComponent = () => {
   const maxPrice = useSelector(filterMaxPriceSelector);
   const classes = useStyle();
   const dispatch = useDispatch();
-  const [filterState, setFilterState] = useState<string[]>([]);
+  const [filtersChecked, setFiltersChecked] = useState<string[]>([]);
 
   useEffect(() => {
     dispatch(getCountriesAsync());
@@ -34,17 +34,17 @@ export const Filter: FunctionComponent = () => {
   }, []);
 
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {
-    if (filterState.includes(event.target.name)) {
-      setFilterState(filterState.filter((item) => item !== event.target.name));
+    if (filtersChecked.includes(event.target.name)) {
+      setFiltersChecked(filtersChecked.filter((item) => item !== event.target.name));
     } else {
-      setFilterState([...filterState, event.target.name]);
+      setFiltersChecked([...filtersChecked, event.target.name]);
     }
   };
 
   const resetFilter = (e: SyntheticEvent) => {
     e.preventDefault();
 
-    setFilterState([]);
+    setFiltersChecked([]);
   };
 
   return (
@@ -56,7 +56,7 @@ export const Filter: FunctionComponent = () => {
             key={name}
             name={name}
             categories={filter[name as keyof ICategories]}
-            filterState={filterState}
+            filterState={filtersChecked}
             onChange={onChange}
           />
         );
