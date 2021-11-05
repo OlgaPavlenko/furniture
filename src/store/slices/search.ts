@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { PATH } from 'constants/constants';
-import HTTPService from '../../utils/services/httpService';
+import HTTPService from 'utils/services/httpService';
 import { IProduct } from 'utils/interfaces/product';
 
 export interface IInitialFilterState {

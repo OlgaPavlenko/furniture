@@ -1,13 +1,3 @@
-import { IProduct } from 'utils/interfaces/product';
+import { IRootState } from 'store/store';
 
-interface IProductState {
-  product: IProductList;
-}
-
-interface IProductList {
-  productList: IProduct[];
-}
-
-export const stateSelector = (state: IProductState): IProductList => state.product;
-
-export const productListSelector = (state: IProductState) => state.product.productList;
+export const productListSelector = (state: IRootState) => state.product.productList;

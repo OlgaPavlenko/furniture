@@ -13,7 +13,7 @@ export const LanguageButtons: FunctionComponent = () => {
         return (
           <Button
             key={LANGUAGE}
-            text={LANGUAGE}
+            name={LANGUAGE}
             onClick={() => console.log('eeeeeeeeeeee!')}
             className={classes.localizeButtons}
           />

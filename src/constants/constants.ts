@@ -33,6 +33,7 @@ export const PATH = {
   countries: '/countries',
   companies: '/companies',
   materials: '/materials',
+  price: '/price',
 };
 
 export const LANGUAGE = ['en', 'ru'];
