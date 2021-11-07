@@ -10,14 +10,16 @@ import {
   getCountriesAsync,
   getMaterialsAsync,
   getPriceAsync,
+  getProductsListWithQuery,
+  setFiltersQuery,
 } from 'store/slices/filter';
 import {
   filterListSelector,
   filterMaxPriceSelector,
   filterMinPriceSelector,
+  filtersSelector,
 } from 'store/selectors/filter';
 import { ICategories } from 'utils/interfaces/filter';
-import { createPath } from '../../utils/url';
 
 export const Filter: FunctionComponent = () => {
   const filter: ICategories = useSelector(filterListSelector);
@@ -25,28 +27,28 @@ export const Filter: FunctionComponent = () => {
   const maxPrice = useSelector(filterMaxPriceSelector);
   const classes = useStyle();
   const dispatch = useDispatch();
-  const [filtersChecked, setFiltersChecked] = useState<string[]>([]);
+  const filtersQuery = useSelector(filtersSelector);
 
   useEffect(() => {
     dispatch(getCountriesAsync());
     dispatch(getCompaniesAsync());
     dispatch(getMaterialsAsync());
     dispatch(getPriceAsync());
-    createPath({ searchQuery: 'italy', filters: ['metal', 'ikea', 'wood'] });
   }, []);
 
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {
-    if (filtersChecked.includes(event.target.name)) {
-      setFiltersChecked(filtersChecked.filter((item) => item !== event.target.name));
+    if (filtersQuery.includes(event.target.name)) {
+      dispatch(setFiltersQuery(filtersQuery.filter((item) => item !== event.target.name)));
     } else {
-      setFiltersChecked([...filtersChecked, event.target.name]);
+      dispatch(setFiltersQuery([...filtersQuery, event.target.name]));
     }
+    dispatch(getProductsListWithQuery());
   };
 
   const resetFilter = (e: SyntheticEvent) => {
     e.preventDefault();
-
-    setFiltersChecked([]);
+    dispatch(setFiltersQuery([]));
+    dispatch(getProductsListWithQuery());
   };
 
   return (
@@ -58,7 +60,7 @@ export const Filter: FunctionComponent = () => {
             key={name}
             name={name}
             categories={filter[name as keyof ICategories]}
-            filterState={filtersChecked}
+            filterState={filtersQuery}
             onChange={onChange}
           />
         );

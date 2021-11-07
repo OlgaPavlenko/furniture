@@ -1,7 +1,7 @@
 import { ChangeEvent, FunctionComponent } from 'react';
 import { useDispatch } from 'react-redux';
 import { Input } from 'sharedComponents/Input';
-import { searchMaxPriceValue, searchMinPriceValue } from 'store/slices/filter';
+import { setMinPrice, setMaxPrice, getProductsListWithQuery } from 'store/slices/filter';
 import { useStyle } from './style';
 
 interface IPriceInputs {
@@ -14,11 +14,13 @@ export const PriceInputs: FunctionComponent<IPriceInputs> = ({ minPrice, maxPric
   const dispatch = useDispatch();
 
   const getMinPrice = (event: ChangeEvent<HTMLInputElement>) => {
-    dispatch(searchMinPriceValue(event.target.value));
+    dispatch(setMinPrice(event.target.value));
+    dispatch(getProductsListWithQuery());
   };
 
   const getMaxPrice = (event: ChangeEvent<HTMLInputElement>) => {
-    dispatch(searchMaxPriceValue(event.target.value));
+    dispatch(setMaxPrice(event.target.value));
+    dispatch(getProductsListWithQuery());
   };
 
   return (

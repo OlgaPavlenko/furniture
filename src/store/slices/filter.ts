@@ -1,21 +1,27 @@
+import { IRootState } from './../store';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { PATH } from 'constants/constants';
 import HTTPService from '../../utils/services/httpService';
 import { IProduct } from 'utils/interfaces/product';
 import { ICategories } from 'utils/interfaces/filter';
 import { createPath } from 'utils/url';
+import { setProductList } from './product';
+import {
+  filterMaxPriceSelector,
+  filterMinPriceSelector,
+  filtersSelector,
+  querySelector,
+} from 'store/selectors/filter';
 export interface IInitialFilterState {
+  searchQuery: string;
   categories: ICategories;
   filters: string[];
   minPrice: number;
   maxPrice: number;
 }
-interface IQuery {
-  searchQuery: string;
-  filters: [];
-}
 
 const initialState: IInitialFilterState = {
+  searchQuery: '',
   categories: {
     countries: [],
     companies: [],
@@ -50,14 +56,25 @@ export const getPriceAsync = createAsyncThunk('price/fetch', async () => {
   return { minPrice, maxPrice };
 });
 
-export const getMoviesListWithQuery = createAsyncThunk(
-  'movies/getFilteredMoviesList',
-  async ({ searchQuery, filters }: IQuery) => {
+export const getProductsListWithQuery = createAsyncThunk(
+  'products/getFilteredProductsList',
+  async (_, store) => {
+    const searchQuery = querySelector(store.getState() as IRootState);
+
+    const filters = filtersSelector(store.getState() as IRootState);
+
+    const minPrice = filterMinPriceSelector(store.getState() as IRootState);
+    const maxPrice = filterMaxPriceSelector(store.getState() as IRootState);
+
     const path = createPath({
       searchQuery,
       filters,
+      minPrice,
+      maxPrice,
     });
-    // return getMovieByQuery(path);
+
+    const { data: products } = await HTTPService.get(path);
+    store.dispatch(setProductList(products));
   },
 );
 
@@ -65,13 +82,17 @@ export const filterSlice = createSlice({
   name: 'filter',
   initialState,
   reducers: {
-    searchMinPriceValue(state, action) {
+    setMinPrice(state, action) {
       state.minPrice = action.payload;
-      console.log(action.payload);
     },
-    searchMaxPriceValue(state, action) {
+    setMaxPrice(state, action) {
       state.maxPrice = action.payload;
-      console.log(action.payload);
+    },
+    setSearchQuery(state, action) {
+      state.searchQuery = action.payload;
+    },
+    setFiltersQuery(state, action) {
+      state.filters = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -80,10 +101,10 @@ export const filterSlice = createSlice({
         state.categories.countries = [...state.categories.countries, ...action.payload.data];
       })
       .addCase(getMaterialsAsync.fulfilled, (state, action) => {
-        state.categories.companies = [...state.categories.companies, ...action.payload.data];
+        state.categories.materials = [...state.categories.materials, ...action.payload.data];
       })
       .addCase(getCompaniesAsync.fulfilled, (state, action) => {
-        state.categories.materials = [...state.categories.materials, ...action.payload.data];
+        state.categories.companies = [...state.categories.companies, ...action.payload.data];
       })
       .addCase(getPriceAsync.fulfilled, (state, action) => {
         const { minPrice, maxPrice } = action.payload;
@@ -94,4 +115,4 @@ export const filterSlice = createSlice({
 });
 
 export const filterReducer = filterSlice.reducer;
-export const { searchMinPriceValue, searchMaxPriceValue } = filterSlice.actions;
+export const { setMinPrice, setMaxPrice, setSearchQuery, setFiltersQuery } = filterSlice.actions;
