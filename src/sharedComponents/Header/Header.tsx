@@ -3,6 +3,7 @@ import { useStyle } from './styles';
 
 import { NavBar } from 'sharedComponents/NavBar';
 import { Search } from 'sharedComponents/Search';
+import { Sort } from 'sharedComponents/Sort';
 import { LanguageButtons } from 'sharedComponents/LanguageButtons';
 import { UserMenuItems } from 'sharedComponents/UserMenuItems';
 
@@ -22,6 +23,7 @@ export const Header: FunctionComponent = () => {
 
         <NavBar />
         <Search />
+        <Sort />
         <LanguageButtons />
         <UserMenuItems />
       </div>

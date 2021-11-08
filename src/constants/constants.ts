@@ -15,6 +15,11 @@ export const TOGGLE_BUTTONS_IMG = {
   list: require('assets/icons/list.svg').default as string,
 };
 
+export const SORTING_IMGS = {
+  number: require('assets/icons/sort_price.svg').default as string,
+  alphabet: require('assets/icons/sort_alphabetical.svg').default as string,
+};
+
 export const CONTACT_ITEMS = [
   {
     href: 'mailto:',
