@@ -7,6 +7,7 @@ import { ICategories } from 'utils/interfaces/filter';
 import { createPath } from 'utils/url';
 import { setProductList } from './product';
 import {
+  filterListSelector,
   filterMaxPriceSelector,
   filterMinPriceSelector,
   filtersSelector,
@@ -59,6 +60,8 @@ export const getPriceAsync = createAsyncThunk('price/fetch', async () => {
 export const getProductsListWithQuery = createAsyncThunk(
   'products/getFilteredProductsList',
   async (_, store) => {
+    const categories = filterListSelector(store.getState() as IRootState);
+
     const searchQuery = querySelector(store.getState() as IRootState);
 
     const filters = filtersSelector(store.getState() as IRootState);
@@ -67,6 +70,7 @@ export const getProductsListWithQuery = createAsyncThunk(
     const maxPrice = filterMaxPriceSelector(store.getState() as IRootState);
 
     const path = createPath({
+      categories,
       searchQuery,
       filters,
       minPrice,
