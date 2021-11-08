@@ -17,13 +17,13 @@ export const Sort: FunctionComponent = () => {
   };
 
   const sortToUpPrice = () => {
-    const productsToMaxPrice = products.map((product) => product);
+    const productsToMaxPrice = [...products];
     productsToMaxPrice.sort((prev, next) => (prev.price > next.price ? 1 : -1));
     dispatch(setProductList(productsToMaxPrice));
   };
 
   const sortToDownPrice = () => {
-    const productsToMinPrice = products.map((product) => product);
+    const productsToMinPrice = [...products];
     productsToMinPrice.sort((prev, next) => (prev.price > next.price ? -1 : 1));
     dispatch(setProductList(productsToMinPrice));
   };
@@ -34,13 +34,13 @@ export const Sort: FunctionComponent = () => {
   };
 
   const sortFromA = () => {
-    const productsToMaxPrice = products.map((product) => product);
+    const productsToMaxPrice = [...products];
     productsToMaxPrice.sort((prev, next) => (prev.name > next.name ? 1 : -1));
     dispatch(setProductList(productsToMaxPrice));
   };
 
   const sortFromZ = () => {
-    const productsToMinPrice = products.map((product) => product);
+    const productsToMinPrice = [...products];
     productsToMinPrice.sort((prev, next) => (prev.name > next.name ? -1 : 1));
     dispatch(setProductList(productsToMinPrice));
   };
