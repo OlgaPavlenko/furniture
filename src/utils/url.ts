@@ -27,7 +27,6 @@ export const createPath = ({
 
   const pricePath = `&price_gte=${minPrice}&price_lte=${maxPrice}`;
   let finalPath = `/products?name_like=${searchQuery}${filtersPath}${pricePath}`;
-  console.log(finalPath);
   return finalPath;
 };
 
