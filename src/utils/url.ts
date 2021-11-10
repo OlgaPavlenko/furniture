@@ -1,39 +1,41 @@
-import { ICategories } from './interfaces/filter';
+import { ICategory } from './interfaces/product';
+import { IFilter } from './../store/slices/filter';
 
 interface ICreatePath {
   searchQuery?: string;
-  filters?: string[];
-  categories?: ICategories;
+  filters?: ICategory[];
+  categories?: IFilter[];
   minPrice: number;
   maxPrice: number;
 }
 
 export const createPath = ({
-  searchQuery = '',
-  categories = {
-    countries: [],
-    companies: [],
-    materials: [],
-  },
-  filters = [],
+  searchQuery,
+  categories,
+  filters,
   minPrice,
   maxPrice,
 }: ICreatePath): string => {
-  const filtersPath = filters.reduce(
-    (acc: string, filter: string) =>
-      `${acc}&${getCategory(categories, filter)}.name_like=${filter}`,
-    '',
-  );
-
-  const pricePath = `&price_gte=${minPrice}&price_lte=${maxPrice}`;
-  let finalPath = `/products?name_like=${searchQuery}${filtersPath}${pricePath}`;
-  return finalPath;
+  return '';
+  // const filtersPath = filters.reduce(
+  //   (acc: string, filter: string) =>
+  //     `${acc}&${getCategory(categories, filter)}.name_like=${filter}`,
+  //   '',
+  // );
+  // const filtersPath = filters?.reduce((acc, filter) => {
+  //   const names = filter.filterOptions.map((category) => category.name);
+  //   return `${acc}&${filter.name}=${names.join()}`;
+  // }, '');
+  // const pricePath = `&price_gte=${minPrice}&price_lte=${maxPrice}`;
+  // let finalPath = `/products?name_like=${searchQuery}${filtersPath}${pricePath}`;
+  // console.log(filtersPath);
+  // return finalPath;
 };
 
-const getCategory = (categories: ICategories, filter: string) => {
-  for (const [key, values] of Object.entries(categories)) {
-    if (Object.entries(values.includes(filter))) {
-      return key;
-    }
-  }
-};
+// const getCategory = (categories: ICategories, filter: string) => {
+//   for (const [key, values] of Object.entries(categories)) {
+//     if (Object.entries(values.includes(filter))) {
+//       return key;
+//     }
+//   }
+// };

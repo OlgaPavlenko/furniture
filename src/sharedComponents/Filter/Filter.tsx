@@ -1,4 +1,4 @@
-import { ChangeEvent, FunctionComponent, SyntheticEvent, useEffect, useState } from 'react';
+import { FunctionComponent, SyntheticEvent, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useStyle } from './style';
 
@@ -11,18 +11,18 @@ import {
   getMaterialsAsync,
   getPriceAsync,
   getProductsListWithQuery,
+  IFilter,
   setFiltersQuery,
 } from 'store/slices/filter';
 import {
-  filterListSelector,
+  categoriesSelector,
   filterMaxPriceSelector,
   filterMinPriceSelector,
   filtersSelector,
 } from 'store/selectors/filter';
-import { ICategories } from 'utils/interfaces/filter';
 
 export const Filter: FunctionComponent = () => {
-  const filter: ICategories = useSelector(filterListSelector);
+  const filter: IFilter[] = useSelector(categoriesSelector);
   const minPrice = useSelector(filterMinPriceSelector);
   const maxPrice = useSelector(filterMaxPriceSelector);
   const classes = useStyle();
@@ -36,12 +36,8 @@ export const Filter: FunctionComponent = () => {
     dispatch(getPriceAsync());
   }, []);
 
-  const onChange = (event: ChangeEvent<HTMLInputElement>) => {
-    if (filtersQuery.includes(event.target.name)) {
-      dispatch(setFiltersQuery(filtersQuery.filter((item) => item !== event.target.name)));
-    } else {
-      dispatch(setFiltersQuery([...filtersQuery, event.target.name]));
-    }
+  const onChange = (categoryGroupName: string, name: string) => {
+    dispatch(setFiltersQuery({ name, categoryGroupName }));
     dispatch(getProductsListWithQuery());
   };
 
@@ -54,12 +50,12 @@ export const Filter: FunctionComponent = () => {
   return (
     <form className={classes.filter}>
       <PriceInputs minPrice={minPrice} maxPrice={maxPrice} />
-      {Object.keys(filter).map((name: string) => {
+      {filter.map((category: IFilter) => {
         return (
           <FilterOption
-            key={name}
-            name={name}
-            categories={filter[name as keyof ICategories]}
+            key={category.name}
+            name={category.name}
+            categories={category.filterOptions.map(({ name }) => name)}
             filterState={filtersQuery}
             onChange={onChange}
           />
