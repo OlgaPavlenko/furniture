@@ -5,44 +5,31 @@ import { SORTING_IMGS } from 'constants/constants';
 import { useDispatch, useSelector } from 'react-redux';
 import { productListSelector } from 'store/selectors/product';
 import { setProductList } from 'store/slices/product';
+import { IProduct } from 'utils/interfaces/product';
 
 export const Sort: FunctionComponent = () => {
   const products = useSelector(productListSelector);
   const [isDown, setIsUp] = useState(true);
   const dispatch = useDispatch();
 
-  const sortPrice = () => {
-    isDown ? sortToUpPrice() : sortToDownPrice();
-    setIsUp(!isDown);
-  };
+  const sortBy = (type: string) => {
+    const sortedProducts = [...products];
 
-  const sortToUpPrice = () => {
-    const productsToMaxPrice = [...products];
-    productsToMaxPrice.sort((prev, next) => (prev.price > next.price ? 1 : -1));
-    dispatch(setProductList(productsToMaxPrice));
-  };
-
-  const sortToDownPrice = () => {
-    const productsToMinPrice = [...products];
-    productsToMinPrice.sort((prev, next) => (prev.price > next.price ? -1 : 1));
-    dispatch(setProductList(productsToMinPrice));
-  };
-
-  const sortAlphabet = () => {
-    isDown ? sortFromA() : sortFromZ();
-    setIsUp(!isDown);
-  };
-
-  const sortFromA = () => {
-    const productsToMaxPrice = [...products];
-    productsToMaxPrice.sort((prev, next) => (prev.name > next.name ? 1 : -1));
-    dispatch(setProductList(productsToMaxPrice));
-  };
-
-  const sortFromZ = () => {
-    const productsToMinPrice = [...products];
-    productsToMinPrice.sort((prev, next) => (prev.name > next.name ? -1 : 1));
-    dispatch(setProductList(productsToMinPrice));
+    if (type) {
+      if (type && isDown) {
+        sortedProducts.sort((prev, next) =>
+          prev[type as keyof IProduct] < next[type as keyof IProduct] ? -1 : 1,
+        );
+        setIsUp(!isDown);
+        dispatch(setProductList(sortedProducts));
+      } else {
+        sortedProducts.sort((prev, next) =>
+          prev[type as keyof IProduct] > next[type as keyof IProduct] ? -1 : 1,
+        );
+        setIsUp(!isDown);
+        dispatch(setProductList(sortedProducts));
+      }
+    }
   };
 
   return (
@@ -52,7 +39,9 @@ export const Sort: FunctionComponent = () => {
           <Button
             key={image[0]}
             badgeSrc={image[1]}
-            onClick={image[0] === 'number' ? sortPrice : sortAlphabet}
+            onClick={() => {
+              image[0] === 'number' ? sortBy('price') : sortBy('name');
+            }}
           />
         );
       })}
