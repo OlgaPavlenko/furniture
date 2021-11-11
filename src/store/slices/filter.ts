@@ -1,27 +1,31 @@
-import { ICategory } from 'utils/interfaces/product';
+import { ICategory } from './../../utils/interfaces/product';
 import { IRootState } from './../store';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { PATH } from 'constants/constants';
 import HTTPService from '../../utils/services/httpService';
 import { IProduct } from 'utils/interfaces/product';
 import { createPath } from 'utils/url';
+import { setProductList } from './product';
 import {
-  categoriesSelector,
   filterMaxPriceSelector,
   filterMinPriceSelector,
   filtersSelector,
   querySelector,
 } from 'store/selectors/filter';
 
-export interface IFilter {
+export interface ICategoryGroup {
   name: string;
   filterOptions: ICategory[];
 }
 
+export interface IFilter {
+  [key: string]: string[];
+}
+
 export interface IInitialFilterState {
   searchQuery: string;
-  categories: IFilter[];
-  filters: ICategory[];
+  categories: ICategoryGroup[];
+  filters: IFilter;
   minPrice: number;
   maxPrice: number;
 }
@@ -29,7 +33,7 @@ export interface IInitialFilterState {
 const initialState: IInitialFilterState = {
   searchQuery: '',
   categories: [],
-  filters: [],
+  filters: {},
   minPrice: 0,
   maxPrice: 500,
 };
@@ -61,8 +65,6 @@ export const getPriceAsync = createAsyncThunk('price/fetch', async () => {
 export const getProductsListWithQuery = createAsyncThunk(
   'products/getFilteredProductsList',
   async (_, store) => {
-    const categories = categoriesSelector(store.getState() as IRootState);
-
     const searchQuery = querySelector(store.getState() as IRootState);
 
     const filters = filtersSelector(store.getState() as IRootState);
@@ -71,7 +73,6 @@ export const getProductsListWithQuery = createAsyncThunk(
     const maxPrice = filterMaxPriceSelector(store.getState() as IRootState);
 
     const path = createPath({
-      // categories,
       searchQuery,
       filters,
       minPrice,
@@ -79,7 +80,7 @@ export const getProductsListWithQuery = createAsyncThunk(
     });
 
     const { data: products } = await HTTPService.get(path);
-    // store.dispatch(setProductList(products));
+    store.dispatch(setProductList(products));
   },
 );
 
@@ -97,16 +98,14 @@ export const filterSlice = createSlice({
       state.searchQuery = action.payload;
     },
     setFiltersQuery(state, action) {
-      const currentCategory = state.categories.find(
-        ({ name }) => name === action.payload.categoryGroupName,
-      );
-      const currentObject = currentCategory?.filterOptions.find(
-        ({ name }) => name === action.payload.name,
-      );
-      if (state.filters.find(({ name }) => name === action.payload.name)) {
-        state.filters = state.filters.filter(({ name }) => name !== action.payload.name);
+      const { name, categoryGroupName } = action.payload;
+
+      if (state.filters[categoryGroupName]?.includes(name)) {
+        state.filters[categoryGroupName] = state.filters[categoryGroupName]?.filter(
+          (category) => category !== name,
+        );
       } else {
-        if (currentObject) state.filters.push(currentObject);
+        state.filters[categoryGroupName].push(name);
       }
     },
   },
@@ -117,18 +116,21 @@ export const filterSlice = createSlice({
           ...state.categories,
           { name: 'countries', filterOptions: [...action.payload.data] },
         ];
+        state.filters = { ...state.filters, countries: [] };
       })
       .addCase(getMaterialsAsync.fulfilled, (state, action) => {
         state.categories = [
           ...state.categories,
           { name: 'materials', filterOptions: [...action.payload.data] },
         ];
+        state.filters = { ...state.filters, materials: [] };
       })
       .addCase(getCompaniesAsync.fulfilled, (state, action) => {
         state.categories = [
           ...state.categories,
           { name: 'companies', filterOptions: [...action.payload.data] },
         ];
+        state.filters = { ...state.filters, companies: [] };
       })
       .addCase(getPriceAsync.fulfilled, (state, action) => {
         const { minPrice, maxPrice } = action.payload;

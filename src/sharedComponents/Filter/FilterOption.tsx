@@ -1,35 +1,36 @@
 import { FunctionComponent } from 'react';
 import { CustomCheckbox } from 'sharedComponents/CustomCheckbox';
-import { ICategory } from 'utils/interfaces/product';
+import { IFilter } from 'store/slices/filter';
 import { useStyle } from './style';
 
 interface IFilterOption {
-  name: string;
+  categoryGroupName: string;
   value?: string;
   categories: string[];
-  filterState: ICategory[];
+  filterState: IFilter;
   onChange: (categoryGroupName: string, name: string) => void;
 }
 
 export const FilterOption: FunctionComponent<IFilterOption> = ({
-  name,
+  categoryGroupName,
   categories,
   filterState,
   onChange,
 }) => {
   const classes = useStyle();
+
   return (
     <div className={classes.panel}>
-      <div className={classes.accordion}>{name}</div>
-      {categories.map((category) => {
+      <div className={classes.accordion}>{categoryGroupName}</div>
+      {categories.map((category: string) => {
         return (
           <CustomCheckbox
             key={category}
-            name={category} //filterOption
-            categoryGroupName={name}
+            name={category}
+            categoryGroupName={categoryGroupName}
             className={classes.checkbox}
             classNameCustomCheckbox={classes.customCheckbox}
-            checked={filterState.some((filter) => filter.name === category)}
+            checked={filterState[categoryGroupName]?.includes(category)}
             onChange={onChange}
           />
         );

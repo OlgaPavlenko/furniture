@@ -11,6 +11,7 @@ import {
   getMaterialsAsync,
   getPriceAsync,
   getProductsListWithQuery,
+  ICategoryGroup,
   IFilter,
   setFiltersQuery,
 } from 'store/slices/filter';
@@ -22,12 +23,12 @@ import {
 } from 'store/selectors/filter';
 
 export const Filter: FunctionComponent = () => {
-  const filter: IFilter[] = useSelector(categoriesSelector);
+  const categoryGroups: ICategoryGroup[] = useSelector(categoriesSelector);
   const minPrice = useSelector(filterMinPriceSelector);
   const maxPrice = useSelector(filterMaxPriceSelector);
   const classes = useStyle();
   const dispatch = useDispatch();
-  const filtersQuery = useSelector(filtersSelector);
+  const filter = useSelector(filtersSelector);
 
   useEffect(() => {
     dispatch(getCountriesAsync());
@@ -50,13 +51,13 @@ export const Filter: FunctionComponent = () => {
   return (
     <form className={classes.filter}>
       <PriceInputs minPrice={minPrice} maxPrice={maxPrice} />
-      {filter.map((category: IFilter) => {
+      {categoryGroups.map((categoryGroup: ICategoryGroup) => {
         return (
           <FilterOption
-            key={category.name}
-            name={category.name}
-            categories={category.filterOptions.map(({ name }) => name)}
-            filterState={filtersQuery}
+            key={categoryGroup.name}
+            categoryGroupName={categoryGroup.name}
+            categories={categoryGroup.filterOptions.map((filter) => filter.name)}
+            filterState={filter}
             onChange={onChange}
           />
         );
