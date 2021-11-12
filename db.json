@@ -63,17 +63,17 @@
     {
       "id": "1",
       "name": "Ikea",
-      "countryId": "3"
+      "countriesId": "3"
     },
     {
       "id": "2",
       "name": "Felliny",
-      "countryId": "1"
+      "countriesId": "1"
     },
     {
       "id": "3",
       "name": "Otto",
-      "countryId": "2"
+      "countriesId": "2"
     }
   ],
   "materials": [
@@ -92,21 +92,21 @@
       "id": "1",
       "name": "GURSKEN ГУРСКЕН Italy",
       "category": "2",
-      "company": {
+      "companies": {
         "id": "1",
         "name": "Ikea",
-        "countryId": "1"
+        "countriesId": "1"
       },
       "size": {
         "width": 50,
         "height": 100,
         "length": 50
       },
-      "country": {
+      "countries": {
         "id": "1",
         "name": "Italy"
       },
-      "material": {
+      "materials": {
         "id": "2",
         "name": "metal"
       },
@@ -144,21 +144,21 @@
       "id": "2",
       "name": "YGURSKEN ГУРСКЕН Germany",
       "category": "1",
-      "company": {
+      "companies": {
         "id": "2",
         "name": "Felliny",
-        "countryId": "1"
+        "countriesId": "1"
       },
       "size": {
         "width": 50,
         "height": 100,
         "length": 50
       },
-      "country": {
+      "countries": {
         "id": "2",
         "name": "Germany"
       },
-      "material": {
+      "materials": {
         "id": "2",
         "name": "metal"
       },
@@ -196,21 +196,21 @@
       "id": "3",
       "name": "HAGURSKEN ГУРСКЕН Canada",
       "category": "1",
-      "company": {
+      "companies": {
         "id": "2",
         "name": "Felliny",
-        "countryId": "1"
+        "countriesId": "1"
       },
       "size": {
         "width": 50,
         "height": 100,
         "length": 50
       },
-      "country": {
+      "countries": {
         "id": "3",
         "name": "Canada"
       },
-      "material": {
+      "materials": {
         "id": "1",
         "name": "wood"
       },
@@ -249,21 +249,21 @@
       "id": "4",
       "name": "DGURSKEN ГУРСКЕН Italy",
       "category": "1",
-      "company": {
+      "companies": {
         "id": "3",
         "name": "Otto",
-        "countryId": "1"
+        "countriesId": "1"
       },
       "size": {
         "width": 50,
         "height": 100,
         "length": 50
       },
-      "country": {
+      "countries": {
         "id": "1",
         "name": "Italy"
       },
-      "material": {
+      "materials": {
         "id": "2",
         "name": "metal"
       },
@@ -301,21 +301,21 @@
       "id": "5",
       "name": "BGURSKEN ГУРСКЕН Canada",
       "category": "1",
-      "company": {
+      "companies": {
         "id": "1",
         "name": "Ikea",
-        "countryId": "1"
+        "countriesId": "1"
       },
       "size": {
         "width": 50,
         "height": 100,
         "length": 50
       },
-      "country": {
+      "countries": {
         "id": "3",
         "name": "Canada"
       },
-      "material": {
+      "materials": {
         "id": "1",
         "name": "wood"
       },

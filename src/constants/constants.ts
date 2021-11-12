@@ -35,9 +35,11 @@ export const NAV_BAR_LINK = ['Catalog', 'About Us', 'Delivery'];
 
 export const PATH = {
   products: '/products',
-  countries: '/countries',
-  companies: '/companies',
-  materials: '/materials',
+  categories: {
+    countries: '/countries',
+    companies: '/companies',
+    materials: '/materials',
+  },
   price: '/price',
 };
 

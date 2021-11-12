@@ -1,9 +1,10 @@
+import { FilterOption } from './../../sharedComponents/Filter/FilterOption';
+import { ICategory } from './../../utils/interfaces/product';
 import { IRootState } from './../store';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { PATH } from 'constants/constants';
 import HTTPService from '../../utils/services/httpService';
 import { IProduct } from 'utils/interfaces/product';
-import { ICategories } from 'utils/interfaces/filter';
 import { createPath } from 'utils/url';
 import { setProductList } from './product';
 import {
@@ -12,38 +13,54 @@ import {
   filtersSelector,
   querySelector,
 } from 'store/selectors/filter';
+
+export interface ICategoryGroup {
+  name: string;
+  filterOptions: ICategory[];
+}
+
+export interface IFilter {
+  [key: string]: string[];
+}
+
 export interface IInitialFilterState {
   searchQuery: string;
-  categories: ICategories;
-  filters: string[];
+  categories: ICategoryGroup[];
+  filters: IFilter;
   minPrice: number;
   maxPrice: number;
 }
 
 const initialState: IInitialFilterState = {
   searchQuery: '',
-  categories: {
-    countries: [],
-    companies: [],
-    materials: [],
-  },
-  filters: [],
+  categories: [],
+  filters: {},
   minPrice: 0,
   maxPrice: 500,
 };
 
+export const getFiltersAsync = createAsyncThunk('categories/fetch', () => {
+  const response = Promise.all(
+    Object.entries(PATH.categories).map(async ([categoryGroup, category]) => ({
+      categoryGroup: categoryGroup,
+      categories: await HTTPService.get(category),
+    })),
+  );
+  return response;
+});
+
 export const getCountriesAsync = createAsyncThunk('countries/fetch', async () => {
-  const response = await HTTPService.get(PATH.countries);
+  const response = await HTTPService.get(PATH.categories.countries);
   return response;
 });
 
 export const getCompaniesAsync = createAsyncThunk('companies/fetch', async () => {
-  const response = await HTTPService.get(PATH.companies);
+  const response = await HTTPService.get(PATH.categories.companies);
   return response;
 });
 
 export const getMaterialsAsync = createAsyncThunk('materials/fetch', async () => {
-  const response = await HTTPService.get(PATH.materials);
+  const response = await HTTPService.get(PATH.categories.materials);
   return response;
 });
 
@@ -58,13 +75,13 @@ export const getPriceAsync = createAsyncThunk('price/fetch', async () => {
 
 export const getProductsListWithQuery = createAsyncThunk(
   'products/getFilteredProductsList',
-  async (_, store) => {
-    const searchQuery = querySelector(store.getState() as IRootState);
+  async (_, { getState, dispatch }) => {
+    const searchQuery = querySelector(getState() as IRootState);
 
-    const filters = filtersSelector(store.getState() as IRootState);
+    const filters = filtersSelector(getState() as IRootState);
 
-    const minPrice = filterMinPriceSelector(store.getState() as IRootState);
-    const maxPrice = filterMaxPriceSelector(store.getState() as IRootState);
+    const minPrice = filterMinPriceSelector(getState() as IRootState);
+    const maxPrice = filterMaxPriceSelector(getState() as IRootState);
 
     const path = createPath({
       searchQuery,
@@ -74,7 +91,7 @@ export const getProductsListWithQuery = createAsyncThunk(
     });
 
     const { data: products } = await HTTPService.get(path);
-    store.dispatch(setProductList(products));
+    dispatch(setProductList(products));
   },
 );
 
@@ -92,19 +109,35 @@ export const filterSlice = createSlice({
       state.searchQuery = action.payload;
     },
     setFiltersQuery(state, action) {
-      state.filters = action.payload;
+      const { name, categoryGroupName } = action.payload;
+
+      if (state.filters[categoryGroupName]?.includes(name)) {
+        state.filters[categoryGroupName] = state.filters[categoryGroupName]?.filter(
+          (category) => category !== name,
+        );
+      } else {
+        state.filters[categoryGroupName]?.push(name);
+      }
+    },
+    resetFilters(state) {
+      Object.keys(state.filters).forEach((categoryGroup) => (state.filters[categoryGroup] = []));
     },
   },
   extraReducers: (builder) => {
     builder
-      .addCase(getCountriesAsync.fulfilled, (state, action) => {
-        state.categories.countries = [...state.categories.countries, ...action.payload.data];
-      })
-      .addCase(getMaterialsAsync.fulfilled, (state, action) => {
-        state.categories.materials = [...state.categories.materials, ...action.payload.data];
-      })
-      .addCase(getCompaniesAsync.fulfilled, (state, action) => {
-        state.categories.companies = [...state.categories.companies, ...action.payload.data];
+      .addCase(getFiltersAsync.fulfilled, (state, action) => {
+        const categories = action.payload.map(({ categories, categoryGroup }) => ({
+          name: categoryGroup,
+          filterOptions: categories.data,
+        }));
+
+        const defaultFilters = action.payload.reduce((acc, { categoryGroup }) => {
+          const newCategory = { [categoryGroup]: [] };
+          return { ...acc, ...newCategory };
+        }, {});
+
+        state.categories = [...state.categories, ...categories];
+        state.filters = { ...state.filters, ...defaultFilters };
       })
       .addCase(getPriceAsync.fulfilled, (state, action) => {
         const { minPrice, maxPrice } = action.payload;
@@ -115,4 +148,5 @@ export const filterSlice = createSlice({
 });
 
 export const filterReducer = filterSlice.reducer;
-export const { setMinPrice, setMaxPrice, setSearchQuery, setFiltersQuery } = filterSlice.actions;
+export const { setMinPrice, setMaxPrice, setSearchQuery, setFiltersQuery, resetFilters } =
+  filterSlice.actions;

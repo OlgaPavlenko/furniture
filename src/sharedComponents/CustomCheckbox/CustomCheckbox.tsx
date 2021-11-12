@@ -1,18 +1,20 @@
-import { ChangeEvent, DOMAttributes, FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 
-interface ICheckbox extends DOMAttributes<HTMLElement> {
+interface ICheckbox {
   id?: string;
-  name?: string;
+  name: string;
+  categoryGroupName: string;
   checked?: boolean;
   className?: string;
   classNameCustomCheckbox?: string;
-  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+  onChange: (categoryGroupName: string, name: string) => void;
   shouldConcatHref?: boolean;
 }
 
 export const CustomCheckbox: FunctionComponent<ICheckbox> = ({
   name,
   className,
+  categoryGroupName,
   classNameCustomCheckbox,
   checked,
   onChange,
@@ -24,7 +26,9 @@ export const CustomCheckbox: FunctionComponent<ICheckbox> = ({
           type="checkbox"
           name={name}
           className={classNameCustomCheckbox}
-          onChange={onChange}
+          onChange={() => {
+            onChange(categoryGroupName, name);
+          }}
           checked={checked}
         />
         <span>{name}</span>
