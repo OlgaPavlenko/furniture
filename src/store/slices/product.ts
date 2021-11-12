@@ -19,7 +19,11 @@ export const getProductsAsync = createAsyncThunk('products/fetch', async () => {
 export const productSlice = createSlice({
   name: 'product',
   initialState,
-  reducers: {},
+  reducers: {
+    setProductList(state, action) {
+      state.productList = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(getProductsAsync.fulfilled, (state, action) => {
       state.productList = [...state.productList, ...action.payload.data];
@@ -28,3 +32,4 @@ export const productSlice = createSlice({
 });
 
 export const productReducer = productSlice.reducer;
+export const { setProductList } = productSlice.actions;

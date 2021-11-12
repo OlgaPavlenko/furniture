@@ -4,8 +4,8 @@ import { useStyle } from './styles';
 import { Input } from 'sharedComponents/Input/Input';
 import { SearchType } from 'utils/interfaces/enums';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProductsWithQuery } from 'store/slices/search';
-import { querySelector } from 'store/selectors/search';
+import { getProductsListWithQuery, setSearchQuery } from 'store/slices/filter';
+import { querySelector } from 'store/selectors/filter';
 
 export const Search: FunctionComponent = () => {
   const classes = useStyle();
@@ -15,11 +15,12 @@ export const Search: FunctionComponent = () => {
 
   const getSearchQuery = (event: ChangeEvent<HTMLInputElement>): void => {
     event.preventDefault();
-    dispatch(getProductsWithQuery(event.target?.value));
+    dispatch(setSearchQuery(event.target?.value));
+    dispatch(getProductsListWithQuery());
   };
 
   useEffect(() => {
-    searchQuery ? dispatch(getProductsWithQuery(searchQuery)) : null;
+    searchQuery ? dispatch(setSearchQuery(searchQuery)) : null;
   }, [searchQuery]);
 
   return (
