@@ -11,6 +11,7 @@ import {
   getProductsListWithQuery,
   ICategoryGroup,
   setFiltersQuery,
+  resetFilters,
 } from 'store/slices/filter';
 import {
   categoriesSelector,
@@ -39,7 +40,7 @@ export const Filter: FunctionComponent = () => {
 
   const resetFilter = (e: SyntheticEvent) => {
     e.preventDefault();
-    dispatch(setFiltersQuery([]));
+    dispatch(resetFilters());
     dispatch(getProductsListWithQuery());
   };
 

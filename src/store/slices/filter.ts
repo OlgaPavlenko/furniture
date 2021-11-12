@@ -1,3 +1,4 @@
+import { FilterOption } from './../../sharedComponents/Filter/FilterOption';
 import { ICategory } from './../../utils/interfaces/product';
 import { IRootState } from './../store';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
@@ -40,7 +41,10 @@ const initialState: IInitialFilterState = {
 
 export const getFiltersAsync = createAsyncThunk('categories/fetch', () => {
   const response = Promise.all(
-    Object.values(PATH.categories).map(async (category) => await HTTPService.get(category)),
+    Object.entries(PATH.categories).map(async ([categoryGroup, category]) => ({
+      categoryGroup: categoryGroup,
+      categories: await HTTPService.get(category),
+    })),
   );
   return response;
 });
@@ -112,19 +116,22 @@ export const filterSlice = createSlice({
           (category) => category !== name,
         );
       } else {
-        state.filters[categoryGroupName].push(name);
+        state.filters[categoryGroupName]?.push(name);
       }
+    },
+    resetFilters(state) {
+      Object.keys(state.filters).forEach((categoryGroup) => (state.filters[categoryGroup] = []));
     },
   },
   extraReducers: (builder) => {
     builder
       .addCase(getFiltersAsync.fulfilled, (state, action) => {
-        state.categories = [
-          ...state.categories,
-          { name: 'countries', filterOptions: [...action.payload[0].data] },
-          { name: 'materials', filterOptions: [...action.payload[2].data] },
-          { name: 'companies', filterOptions: [...action.payload[1].data] },
-        ];
+        const categories = action.payload.map(({ categories, categoryGroup }) => ({
+          name: categoryGroup,
+          filterOptions: categories.data,
+        }));
+
+        state.categories = [...state.categories, ...categories];
         state.filters = { ...state.filters, countries: [], materials: [], companies: [] };
       })
       .addCase(getPriceAsync.fulfilled, (state, action) => {
@@ -136,4 +143,5 @@ export const filterSlice = createSlice({
 });
 
 export const filterReducer = filterSlice.reducer;
-export const { setMinPrice, setMaxPrice, setSearchQuery, setFiltersQuery } = filterSlice.actions;
+export const { setMinPrice, setMaxPrice, setSearchQuery, setFiltersQuery, resetFilters } =
+  filterSlice.actions;
