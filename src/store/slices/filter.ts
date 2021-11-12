@@ -131,8 +131,13 @@ export const filterSlice = createSlice({
           filterOptions: categories.data,
         }));
 
+        const defaultFilters = action.payload.reduce((acc, { categoryGroup }) => {
+          const newCategory = { [categoryGroup]: [] };
+          return { ...acc, ...newCategory };
+        }, {});
+
         state.categories = [...state.categories, ...categories];
-        state.filters = { ...state.filters, countries: [], materials: [], companies: [] };
+        state.filters = { ...state.filters, ...defaultFilters };
       })
       .addCase(getPriceAsync.fulfilled, (state, action) => {
         const { minPrice, maxPrice } = action.payload;
