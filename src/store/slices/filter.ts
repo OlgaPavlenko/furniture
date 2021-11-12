@@ -38,18 +38,25 @@ const initialState: IInitialFilterState = {
   maxPrice: 500,
 };
 
+export const getFiltersAsync = createAsyncThunk('categories/fetch', () => {
+  const response = Promise.all(
+    Object.values(PATH.categories).map(async (category) => await HTTPService.get(category)),
+  );
+  return response;
+});
+
 export const getCountriesAsync = createAsyncThunk('countries/fetch', async () => {
-  const response = await HTTPService.get(PATH.countries);
+  const response = await HTTPService.get(PATH.categories.countries);
   return response;
 });
 
 export const getCompaniesAsync = createAsyncThunk('companies/fetch', async () => {
-  const response = await HTTPService.get(PATH.companies);
+  const response = await HTTPService.get(PATH.categories.companies);
   return response;
 });
 
 export const getMaterialsAsync = createAsyncThunk('materials/fetch', async () => {
-  const response = await HTTPService.get(PATH.materials);
+  const response = await HTTPService.get(PATH.categories.materials);
   return response;
 });
 
@@ -111,26 +118,14 @@ export const filterSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(getCountriesAsync.fulfilled, (state, action) => {
+      .addCase(getFiltersAsync.fulfilled, (state, action) => {
         state.categories = [
           ...state.categories,
-          { name: 'countries', filterOptions: [...action.payload.data] },
+          { name: 'countries', filterOptions: [...action.payload[0].data] },
+          { name: 'materials', filterOptions: [...action.payload[2].data] },
+          { name: 'companies', filterOptions: [...action.payload[1].data] },
         ];
-        state.filters = { ...state.filters, countries: [] };
-      })
-      .addCase(getMaterialsAsync.fulfilled, (state, action) => {
-        state.categories = [
-          ...state.categories,
-          { name: 'materials', filterOptions: [...action.payload.data] },
-        ];
-        state.filters = { ...state.filters, materials: [] };
-      })
-      .addCase(getCompaniesAsync.fulfilled, (state, action) => {
-        state.categories = [
-          ...state.categories,
-          { name: 'companies', filterOptions: [...action.payload.data] },
-        ];
-        state.filters = { ...state.filters, companies: [] };
+        state.filters = { ...state.filters, countries: [], materials: [], companies: [] };
       })
       .addCase(getPriceAsync.fulfilled, (state, action) => {
         const { minPrice, maxPrice } = action.payload;

@@ -6,13 +6,10 @@ import { FilterOption } from './FilterOption';
 import { PriceInputs } from './PriceInputs';
 import { Button } from '../Button';
 import {
-  getCompaniesAsync,
-  getCountriesAsync,
-  getMaterialsAsync,
+  getFiltersAsync,
   getPriceAsync,
   getProductsListWithQuery,
   ICategoryGroup,
-  IFilter,
   setFiltersQuery,
 } from 'store/slices/filter';
 import {
@@ -31,9 +28,7 @@ export const Filter: FunctionComponent = () => {
   const filter = useSelector(filtersSelector);
 
   useEffect(() => {
-    dispatch(getCountriesAsync());
-    dispatch(getCompaniesAsync());
-    dispatch(getMaterialsAsync());
+    dispatch(getFiltersAsync());
     dispatch(getPriceAsync());
   }, []);
 
