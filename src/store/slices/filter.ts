@@ -64,13 +64,13 @@ export const getPriceAsync = createAsyncThunk('price/fetch', async () => {
 
 export const getProductsListWithQuery = createAsyncThunk(
   'products/getFilteredProductsList',
-  async (_, store) => {
-    const searchQuery = querySelector(store.getState() as IRootState);
+  async (_, { getState, dispatch }) => {
+    const searchQuery = querySelector(getState() as IRootState);
 
-    const filters = filtersSelector(store.getState() as IRootState);
+    const filters = filtersSelector(getState() as IRootState);
 
-    const minPrice = filterMinPriceSelector(store.getState() as IRootState);
-    const maxPrice = filterMaxPriceSelector(store.getState() as IRootState);
+    const minPrice = filterMinPriceSelector(getState() as IRootState);
+    const maxPrice = filterMaxPriceSelector(getState() as IRootState);
 
     const path = createPath({
       searchQuery,
@@ -80,7 +80,7 @@ export const getProductsListWithQuery = createAsyncThunk(
     });
 
     const { data: products } = await HTTPService.get(path);
-    store.dispatch(setProductList(products));
+    dispatch(setProductList(products));
   },
 );
 

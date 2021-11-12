@@ -9,7 +9,7 @@ interface ICreatePath {
 
 export const createPath = ({ searchQuery, filters, minPrice, maxPrice }: ICreatePath): string => {
   const filtersPath = Object.entries(filters).reduce(
-    (acc, [key, values]) => `${acc}&${key}.name_like=${values.join()}`,
+    (acc, [key, values]) => `${acc}&${key}.name_like=${values}`,
     '',
   );
 
