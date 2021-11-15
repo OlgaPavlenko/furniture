@@ -8,8 +8,6 @@ interface IButtonProps
   className?: string;
   alt?: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-  // | ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void | undefined)
-  // | undefined;
 }
 
 export const Button: FunctionComponent<IButtonProps> = ({
