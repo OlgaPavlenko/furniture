@@ -9,7 +9,7 @@ import { setProductList } from 'store/slices/product';
 
 export const Sort: FunctionComponent = () => {
   const products = useSelector(productListSelector);
-  const [isDown, setIsUp] = useState(true);
+  const [isDown, setIsDown] = useState(true);
   const dispatch = useDispatch();
 
   const sortBy = (type: keyof IProduct) => {
@@ -25,11 +25,11 @@ export const Sort: FunctionComponent = () => {
 
     if (isDown) {
       sortDown(sortedProducts);
-      setIsUp(!isDown);
+      setIsDown(!isDown);
       dispatch(setProductList(sortedProducts));
     } else {
       sortUp(sortedProducts);
-      setIsUp(!isDown);
+      setIsDown(!isDown);
       dispatch(setProductList(sortedProducts));
     }
   };
