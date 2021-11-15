@@ -25,13 +25,11 @@ export const Sort: FunctionComponent = () => {
 
     if (isDown) {
       sortDown(sortedProducts);
-      setIsDown(!isDown);
-      dispatch(setProductList(sortedProducts));
     } else {
       sortUp(sortedProducts);
-      setIsDown(!isDown);
-      dispatch(setProductList(sortedProducts));
     }
+    dispatch(setProductList(sortedProducts));
+    setIsDown(!isDown);
   };
 
   return (

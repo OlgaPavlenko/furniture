@@ -7,7 +7,7 @@ interface IProductMainImg {
   name: string;
   description: string;
   price: number;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 export const ProductDescription: FunctionComponent<IProductMainImg> = ({
