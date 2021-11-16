@@ -16,8 +16,8 @@ export const TOGGLE_BUTTONS_IMG = {
 };
 
 export const SORTING_IMGS = {
-  number: require('assets/icons/sort_price.svg').default as string,
-  alphabet: require('assets/icons/sort_alphabetical.svg').default as string,
+  up: require('assets/icons/arrowUp.svg').default as string,
+  down: require('assets/icons/arrowDown.svg').default as string,
 };
 
 export const CONTACT_ITEMS = [
@@ -44,5 +44,3 @@ export const PATH = {
 };
 
 export const LANGUAGE = ['en', 'ru'];
-
-
