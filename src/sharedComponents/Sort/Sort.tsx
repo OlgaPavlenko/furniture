@@ -12,22 +12,21 @@ export const Sort: FunctionComponent = () => {
   const classes = useStyle();
 
   const products = useSelector(productListSelector);
-  const [ascName, setAscName] = useState(1);
-  const [ascPrice, setAscPrice] = useState(1);
+  const [order, setOrder] = useState({ name: 1, price: 1 });
   const dispatch = useDispatch();
 
   const sort = (type: keyof IProduct) => {
     const sortedProducts = [...products];
 
-    const sortOrder = ascName < 0 || ascPrice < 0 ? -1 : 1;
+    const sortOrder = order.name < 0 || order.price < 0 ? -1 : 1;
     const resultProducts = sortedProducts.sort((prev: IProduct, next: IProduct) =>
       prev[type] > next[type] ? -sortOrder : sortOrder,
     );
-
+    const { name, price } = order;
     if (type === 'price') {
-      setAscPrice(-ascPrice);
+      setOrder({ name, price: -price });
     } else {
-      setAscName(-ascName);
+      setOrder({ name: -name, price: 1 });
     }
 
     dispatch(setProductList(resultProducts));
@@ -37,7 +36,7 @@ export const Sort: FunctionComponent = () => {
     <div className="">
       <Button
         name="Price"
-        badgeSrc={ascPrice === 1 ? SORTING_IMGS.up : SORTING_IMGS.down}
+        badgeSrc={order.price === 1 ? SORTING_IMGS.up : SORTING_IMGS.down}
         className={classes.priceButton}
         onClick={() => {
           sort('price');
@@ -45,7 +44,7 @@ export const Sort: FunctionComponent = () => {
       />
       <Button
         name="Name"
-        badgeSrc={ascName === 1 ? SORTING_IMGS.up : SORTING_IMGS.down}
+        badgeSrc={order.name === 1 ? SORTING_IMGS.up : SORTING_IMGS.down}
         className="buttons"
         onClick={() => {
           sort('name');
