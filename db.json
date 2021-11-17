@@ -138,11 +138,11 @@
           "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-skiftebu-zhovtiy__0325450_pe517970_s5.jpg"
         }
       ],
-      "price": 500
+      "price": 550
     },
     {
       "id": "2",
-      "name": "GURSKEN ГУРСКЕН Germany",
+      "name": "YGURSKEN ГУРСКЕН Germany",
       "category": "1",
       "companies": {
         "id": "2",
@@ -190,11 +190,11 @@
           "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-skiftebu-zhovtiy__0325450_pe517970_s5.jpg"
         }
       ],
-      "price": 500
+      "price": 400
     },
     {
       "id": "3",
-      "name": "GURSKEN ГУРСКЕН Canada",
+      "name": "HAGURSKEN ГУРСКЕН Canada",
       "category": "1",
       "companies": {
         "id": "2",
@@ -243,11 +243,11 @@
           "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-skiftebu-zhovtiy__0325450_pe517970_s5.jpg"
         }
       ],
-      "price": 500
+      "price": 350
     },
     {
       "id": "4",
-      "name": "GURSKEN ГУРСКЕН Italy",
+      "name": "DGURSKEN ГУРСКЕН Italy",
       "category": "1",
       "companies": {
         "id": "3",
@@ -299,7 +299,7 @@
     },
     {
       "id": "5",
-      "name": "GURSKEN ГУРСКЕН Canada",
+      "name": "BGURSKEN ГУРСКЕН Canada",
       "category": "1",
       "companies": {
         "id": "1",

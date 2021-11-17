@@ -5,6 +5,7 @@ import { Footer } from 'sharedComponents/Footer';
 import { Header } from 'sharedComponents/Header';
 import { Filter } from 'sharedComponents/Filter';
 import { ProductCardList } from 'pages/ProductCardList';
+import { Sort } from 'sharedComponents/Sort';
 import { Button } from 'sharedComponents/Button';
 import { TOGGLE_BUTTONS_IMG } from 'constants/constants';
 
@@ -22,6 +23,7 @@ export const Layout: FunctionComponent = () => {
       <div className={classes.main}>
         <Filter />
         <ProductCardList isListVeiw={isListVeiw} />
+        
         <Button
           badgeSrc={isListVeiw ? TOGGLE_BUTTONS_IMG.menu : TOGGLE_BUTTONS_IMG.list}
           onClick={catalogViewToggle}

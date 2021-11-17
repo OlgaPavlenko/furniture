@@ -7,12 +7,14 @@ interface IProductMainImg {
   name: string;
   description: string;
   price: number;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 export const ProductDescription: FunctionComponent<IProductMainImg> = ({
   name,
   description,
   price,
+  onClick,
 }) => {
   const classes = useStyle();
   const cart = require('assets/icons/shopping-cart.svg').default;
@@ -24,7 +26,7 @@ export const ProductDescription: FunctionComponent<IProductMainImg> = ({
         <p className={classes.productCardDescripion}>{description}</p>
         <span className={classes.productCardPrice}>{price} uah</span>
       </div>
-      <Button badgeSrc={cart} className={classes.productCardCartButton} />
+      <Button badgeSrc={cart} className={classes.productCardCartButton} onClick={onClick} />
     </div>
   );
 };
