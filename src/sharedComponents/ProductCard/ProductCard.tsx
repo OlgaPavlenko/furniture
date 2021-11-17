@@ -1,4 +1,4 @@
-import { FunctionComponent, useState } from 'react';
+import { FunctionComponent, SyntheticEvent, useState } from 'react';
 import { IProductImage } from 'utils/interfaces/product';
 import { ProductMainImg } from './ProductMainImg';
 import { useStyle } from './styles';
@@ -6,6 +6,7 @@ import { ProductDescription } from './ProductDescription';
 import { ProductColorVariants } from './ProductColorVariants';
 
 interface IProductCard {
+  id: string;
   name: string;
   description: string;
   images: IProductImage[];
@@ -13,6 +14,7 @@ interface IProductCard {
 }
 
 export const ProductCard: FunctionComponent<IProductCard> = ({
+  id,
   name,
   description,
   images,
@@ -26,9 +28,13 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
     setSrc(url);
   };
 
+  const goToProductDetail = (id: string) => {
+    console.log(id);
+  };
+
   return (
     <li className={classes.productCard}>
-      <a className={classes.productCardUnit} href="#">
+      <a className={classes.productCardUnit} href="#" onClick={() => goToProductDetail(id)}>
         <ProductMainImg src={src} />
         <ProductDescription name={name} description={description} price={price} />
       </a>

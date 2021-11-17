@@ -5,19 +5,19 @@ interface IProductDetailView {}
 export const ProductDetailView: FunctionComponent = () => {
   // const classes = useStyle();
 
-  // const [src, setSrc] = useState(images[0].baseUrl);
-
-  // const switchVariants = (url: string) => {
-  //   setSrc(url);
-  // };
-
   return (
-    <li>
-      {/* <a className={classes.productCardUnit} href="#">
-        <ProductMainImg src={src} />
-        <ProductDescription name={name} description={description} price={price} />
-      </a>
-      <ProductColorVariants images={images} switchVariants={switchVariants} /> */}
-    </li>
+    <div>
+      <img src="" alt="" />
+      <div className="description"></div>
+      <div className="info">
+        <h1 className="productName"></h1>
+        <p>price</p>
+        <div className="colorVars">
+          <p>Color</p>
+          <img src="" alt="" />
+        </div>
+      </div>
+      <button className="add to cart"></button>
+    </div>
   );
 };

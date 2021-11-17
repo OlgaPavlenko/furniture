@@ -20,7 +20,6 @@ export const getProductsAsync = createAsyncThunk('products/fetch', async () => {
 
 export const getProductByIdAsync = createAsyncThunk('productById/fetch', async (id: string) => {
   const response = await HTTPService.get(`${PATH.products}/${id}`);
-  console.log(response);
   return response;
 });
 
@@ -39,7 +38,7 @@ export const productSlice = createSlice({
       })
       .addCase(getProductByIdAsync.fulfilled, (state, action) => {
         console.log(action.payload);
-        state.currentProduct = action.payload;
+        state.currentProduct = action.payload.data;
       });
   },
 });

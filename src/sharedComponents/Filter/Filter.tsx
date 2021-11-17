@@ -19,7 +19,6 @@ import {
   filterMinPriceSelector,
   filtersSelector,
 } from 'store/selectors/filter';
-import { getProductByIdAsync } from 'store/slices/product';
 
 export const Filter: FunctionComponent = () => {
   const categoryGroups: ICategoryGroup[] = useSelector(categoriesSelector);

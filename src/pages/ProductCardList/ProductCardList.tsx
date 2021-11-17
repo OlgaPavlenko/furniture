@@ -1,9 +1,9 @@
 import { FunctionComponent, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useStyle } from './styles';
 
+import { useStyle } from './styles';
 import { ProductCard } from 'sharedComponents/ProductCard';
-import { getProductByIdAsync, getProductsAsync } from 'store/slices/product';
+import { getProductsAsync } from 'store/slices/product';
 import { productListSelector } from 'store/selectors/product';
 import { IProduct } from 'utils/interfaces/product';
 
@@ -18,7 +18,6 @@ export const ProductCardList: FunctionComponent<IProductCardList> = ({ isListVei
 
   useEffect(() => {
     dispatch(getProductsAsync());
-    getProductByIdAsync('1');
   }, []);
 
   return (
@@ -27,6 +26,7 @@ export const ProductCardList: FunctionComponent<IProductCardList> = ({ isListVei
         {productList.map((product: IProduct) => (
           <ProductCard
             key={product.id}
+            id={product.id}
             name={product.name}
             description={product.description}
             images={product.images}
