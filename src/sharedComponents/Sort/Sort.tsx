@@ -12,22 +12,16 @@ export const Sort: FunctionComponent = () => {
   const classes = useStyle();
 
   const products = useSelector(productListSelector);
-  const [order, setOrder] = useState({ name: 1, price: 1 });
+  const [order, setOrder] = useState<{ [key: string]: number }>({ name: 1, price: 1 });
   const dispatch = useDispatch();
 
   const sort = (type: keyof IProduct) => {
     const sortedProducts = [...products];
 
-    const sortOrder = order.name < 0 || order.price < 0 ? -1 : 1;
     const resultProducts = sortedProducts.sort((prev: IProduct, next: IProduct) =>
-      prev[type] > next[type] ? -sortOrder : sortOrder,
+      prev[type] > next[type] ? -order[type] : order[type],
     );
-    const { name, price } = order;
-    if (type === 'price') {
-      setOrder({ name, price: -price });
-    } else {
-      setOrder({ name: -name, price: 1 });
-    }
+    setOrder({ ...order, [type]: -order[type] });
 
     dispatch(setProductList(resultProducts));
   };
