@@ -63,17 +63,17 @@
     {
       "id": "1",
       "name": "Ikea",
-      "countriesId": "3"
+      "countryId": "3"
     },
     {
       "id": "2",
       "name": "Felliny",
-      "countriesId": "1"
+      "countryId": "1"
     },
     {
       "id": "3",
       "name": "Otto",
-      "countriesId": "2"
+      "countryId": "2"
     }
   ],
   "materials": [
@@ -92,21 +92,21 @@
       "id": "1",
       "name": "GURSKEN ГУРСКЕН Italy",
       "category": "2",
-      "companies": {
+      "company": {
         "id": "1",
         "name": "Ikea",
-        "countriesId": "1"
+        "countryId": "1"
       },
       "size": {
         "width": 50,
         "height": 100,
         "length": 50
       },
-      "countries": {
+      "country": {
         "id": "1",
         "name": "Italy"
       },
-      "materials": {
+      "material": {
         "id": "2",
         "name": "metal"
       },
@@ -142,23 +142,23 @@
     },
     {
       "id": "2",
-      "name": "YGURSKEN ГУРСКЕН Germany",
+      "name": "NOLMYRA НОЛЬМЮРА",
       "category": "1",
-      "companies": {
+      "company": {
         "id": "2",
         "name": "Felliny",
-        "countriesId": "1"
+        "countryId": "1"
       },
       "size": {
         "width": 50,
         "height": 100,
         "length": 50
       },
-      "countries": {
+      "country": {
         "id": "2",
         "name": "Germany"
       },
-      "materials": {
+      "material": {
         "id": "2",
         "name": "metal"
       },
@@ -166,51 +166,36 @@
       "images": [
         {
           "color": "white",
-          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kelinge-bezheviy__0950942_pe800822_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kelinge-bezheviy__0950941_pe800821_s5.jpg"
-        },
-        {
-          "color": "blue",
-          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kvillsfors-temno-siniy-siniy__0961699_pe807716_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kvillsfors-temno-siniy-siniy__0961698_pe807715_s5.jpg"
-        },
-        {
-          "color": "gray",
-          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-nordvalla-temno-siriy__0836849_pe601178_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-nordvalla-temno-siriy__0325432_pe517964_s5.jpg"
+          "baseUrl": " https://www.ikea.com/ua/uk/images/products/nolmyra-nolmyura-krislo-berezoviy-shpon-siriy__0836782_pe600883_s5.jpg",
+          "url": " https://www.ikea.com/ua/uk/images/products/nolmyra-nolmyura-krislo-berezoviy-shpon-siriy__0152020_pe310348_s5.jpg"
         },
         {
           "color": "black",
-          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-dyuparp-temno-zeleniy__0841150_pe647266_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-dyuparp-temno-zeleniy__0531313_pe647261_s5.jpg"
-        },
-        {
-          "color": "yellow",
-          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-skiftebu-zhovtiy__0837297_pe601176_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-skiftebu-zhovtiy__0325450_pe517970_s5.jpg"
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/nolmyra-nolmyura-krislo-chorniy-chorniy__0840388_pe600896_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/nolmyra-nolmyura-krislo-chorniy-chorniy__0169629_pe323574_s5.jpg"
         }
       ],
       "price": 400
     },
     {
       "id": "3",
-      "name": "HAGURSKEN ГУРСКЕН Canada",
+      "name": "VIMLE ВІМЛЕ",
       "category": "1",
-      "companies": {
+      "company": {
         "id": "2",
         "name": "Felliny",
-        "countriesId": "1"
+        "countryId": "1"
       },
       "size": {
         "width": 50,
         "height": 100,
         "length": 50
       },
-      "countries": {
+      "country": {
         "id": "3",
         "name": "Canada"
       },
-      "materials": {
+      "material": {
         "id": "1",
         "name": "wood"
       },
@@ -219,103 +204,284 @@
       "images": [
         {
           "color": "white",
-          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kelinge-bezheviy__0950942_pe800822_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kelinge-bezheviy__0950941_pe800821_s5.jpg"
-        },
-        {
-          "color": "blue",
-          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kvillsfors-temno-siniy-siniy__0961699_pe807716_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kvillsfors-temno-siniy-siniy__0961698_pe807715_s5.jpg"
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/vimle-krislo-z-shirokimi-pidlokitnikami-hallarp-bezheviy__1068078_pe852922_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/vimle-krislo-z-shirokimi-pidlokitnikami-hallarp-bezheviy__1068080_pe852904_s5.jpg"
         },
         {
           "color": "gray",
-          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-nordvalla-temno-siriy__0836849_pe601178_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-nordvalla-temno-siriy__0325432_pe517964_s5.jpg"
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/vimle-krislo-z-shirokimi-pidlokitnikami-hallarp-siriy__1068039_pe852950_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/vimle-krislo-z-shirokimi-pidlokitnikami-hallarp-siriy__1068041_pe852903_s5.jpg"
         },
         {
           "color": "black",
-          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-dyuparp-temno-zeleniy__0841150_pe647266_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-dyuparp-temno-zeleniy__0531313_pe647261_s5.jpg"
-        },
-        {
-          "color": "yellow",
-          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-skiftebu-zhovtiy__0837297_pe601176_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-skiftebu-zhovtiy__0325450_pe517970_s5.jpg"
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/vimle-krislo-z-shirokimi-pidlokitnikami-saksemara-chorno-siniy__1068043_pe852905_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/vimle-krislo-z-shirokimi-pidlokitnikami-saksemara-chorno-siniy__1068044_pe852931_s5.jpg"
         }
       ],
-      "price": 350
+      "price": 9380
     },
     {
       "id": "4",
-      "name": "DGURSKEN ГУРСКЕН Italy",
+      "name": "LANDSKRONA ЛАНДСКРУНА",
       "category": "1",
-      "companies": {
+      "company": {
         "id": "3",
         "name": "Otto",
-        "countriesId": "1"
+        "countryId": "1"
       },
       "size": {
         "width": 50,
         "height": 100,
         "length": 50
       },
-      "countries": {
+      "country": {
         "id": "1",
         "name": "Italy"
       },
-      "materials": {
+      "material": {
         "id": "2",
         "name": "metal"
       },
       "description": "Armchair with headrest",
       "images": [
         {
-          "color": "white",
-          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kelinge-bezheviy__0950942_pe800822_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kelinge-bezheviy__0950941_pe800821_s5.jpg"
-        },
-        {
-          "color": "blue",
-          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kvillsfors-temno-siniy-siniy__0961699_pe807716_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kvillsfors-temno-siniy-siniy__0961698_pe807715_s5.jpg"
-        },
-        {
           "color": "gray",
-          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-nordvalla-temno-siriy__0836849_pe601178_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-nordvalla-temno-siriy__0325432_pe517964_s5.jpg"
-        },
-        {
-          "color": "black",
-          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-dyuparp-temno-zeleniy__0841150_pe647266_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-dyuparp-temno-zeleniy__0531313_pe647261_s5.jpg"
-        },
-        {
-          "color": "yellow",
-          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-skiftebu-zhovtiy__0837297_pe601176_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-skiftebu-zhovtiy__0325450_pe517970_s5.jpg"
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/landskrona-landskruna-krislo-gunnared-temno-siriy-pid-derevo__0840562_pe680128_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/landskrona-landskruna-krislo-gunnared-temno-siriy-pid-derevo__0602087_pe680155_s5.jpg"
         }
       ],
-      "price": 50
+      "price": 8049
     },
     {
       "id": "5",
-      "name": "BGURSKEN ГУРСКЕН Canada",
+      "name": "MUREN МУРЕН",
       "category": "1",
-      "companies": {
+      "company": {
         "id": "1",
         "name": "Ikea",
-        "countriesId": "1"
+        "countryId": "1"
       },
       "size": {
         "width": 50,
         "height": 100,
         "length": 50
       },
-      "countries": {
+      "country": {
         "id": "3",
         "name": "Canada"
       },
-      "materials": {
+      "material": {
+        "id": "1",
+        "name": "wood"
+      },
+      "description": "Armchair with headrest",
+      "images": [
+        {
+          "color": "gray",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/muren-krislo-rozkladne-remmarn-svitlo-siriy__0908543_pe783276_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/muren-krislo-rozkladne-remmarn-svitlo-siriy__0908542_pe783275_s5.jpg"
+        },
+        {
+          "color": "black",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/muren-krislo-rozkladne-remmarn-temno-siriy__0908537_pe783270_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/muren-krislo-rozkladne-remmarn-temno-siriy__0908536_pe783303_s5.jpg"
+        }
+      ],
+      "price": 8499
+    },
+    {
+      "id": "6",
+      "name": "POÄNG ПОЕНГ",
+      "category": "2",
+      "company": {
+        "id": "1",
+        "name": "Ikea",
+        "countryId": "1"
+      },
+      "size": {
+        "width": 50,
+        "height": 100,
+        "length": 50
+      },
+      "country": {
+        "id": "3",
+        "name": "Canada"
+      },
+      "material": {
+        "id": "2",
+        "name": "wood"
+      },
+      "description": "Armchair with headrest",
+      "images": [
+        {
+          "color": "white",
+          "baseUrl": " https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-bileniy-duboviy-shpon-hillared-bezheviy__0681516_pe720128_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-berezoviy-shpon-knisa-svitlo-bezheviy__0571500_pe666933_s5.jpg"
+        },
+        {
+          "color": "blue",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo__0840367_pe629080_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo__0497130_pe628957_s5.jpg"
+        },
+        {
+          "color": "gray",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-bileniy-duboviy-shpon-skiftebu-temno-siriy__0937027_pe793533_s5.jpg",
+          "url": " https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-bileniy-duboviy-shpon-skiftebu-temno-siriy__0937026_pe793532_s5.jpg"
+        },
+        {
+          "color": "black",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-berezoviy-shpon-knisa-chorniy__0837326_pe666932_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-berezoviy-shpon-knisa-chorniy__0571496_pe666929_s5.jpg"
+        },
+        {
+          "color": "yellow",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-bileniy-duboviy-shpon-skiftebu-zhovtiy__0937194_pe793617_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-bileniy-duboviy-shpon-skiftebu-zhovtiy__0937193_pe793614_s5.jpg"
+        }
+      ],
+      "price": 2199
+    },
+    {
+      "id": "7",
+      "name": "VEDBO ВЕДБУ",
+      "category": "1",
+      "company": {
+        "id": "2",
+        "name": "Felliny",
+        "countryId": "1"
+      },
+      "size": {
+        "width": 50,
+        "height": 100,
+        "length": 50
+      },
+      "country": {
+        "id": "2",
+        "name": "Germany"
+      },
+      "material": {
+        "id": "2",
+        "name": "metal"
+      },
+      "description": "Armchair with headrest",
+      "images": [
+        {
+          "color": "blue",
+          "baseUrl": " https://www.ikea.com/ua/uk/images/products/vedbo-vedbu-krislo-iz-visokoyu-spinkoyu__0840517_pe697113_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/vedbo-vedbu-krislo-iz-visokoyu-spinkoyu__0635321_pe697114_s5.jpg"
+        },
+        {
+          "color": "gray",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/vedbo-vedbu-krislo-iz-visokoyu-spinkoyu-gunnared-temno-siriy__0837110_pe704423_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/vedbo-vedbu-krislo-iz-visokoyu-spinkoyu-gunnared-temno-siriy__0512775_pe638684_s5.jpg"
+        },
+        {
+          "color": "pink",
+          "baseUrl": " https://www.ikea.com/ua/uk/images/products/vedbo-vedbu-krislo-iz-visokoyu-spinkoyu-gunnared-svitliy-korichnevo-rozheviy__0837079_pe701952_s5.jpg",
+          "url": " https://www.ikea.com/ua/uk/images/products/vedbo-vedbu-krislo-iz-visokoyu-spinkoyu-gunnared-svitliy-korichnevo-rozheviy__0643605_pe701951_s5.jpg"
+        }
+      ],
+      "price": 7499
+    },
+    {
+      "id": "8",
+      "name": "REMSTA РЕМСТА",
+      "category": "1",
+      "company": {
+        "id": "2",
+        "name": "Felliny",
+        "countryId": "1"
+      },
+      "size": {
+        "width": 50,
+        "height": 100,
+        "length": 50
+      },
+      "country": {
+        "id": "2",
+        "name": "Germany"
+      },
+      "material": {
+        "id": "1",
+        "name": "wood"
+      },
+
+      "description": "Armchair with headrest",
+      "images": [
+        {
+          "color": "white",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/remsta-krislo-hakebu-bezheviy__0908600_pe783323_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/remsta-krislo-hakebu-bezheviy__0908599_pe783322_s5.jpg"
+        },
+        {
+          "color": "blue",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/remsta-krislo-dyuparp-temniy-zeleno-siniy__0908608_pe783331_s5.jpg",
+          "url": " https://www.ikea.com/ua/uk/images/products/remsta-krislo-dyuparp-temniy-zeleno-siniy__0908607_pe783330_s5.jpg"
+        },
+        {
+          "color": "gray",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/remsta-krislo-hakebu-temno-siriy__0908604_pe783333_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/remsta-krislo-hakebu-temno-siriy__0908603_pe783326_s5.jpg"
+        }
+      ],
+      "price": 4150
+    },
+    {
+      "id": "9",
+      "name": "DGURSKEN ГУРСКЕН",
+      "category": "1",
+      "company": {
+        "id": "3",
+        "name": "Otto",
+        "countryId": "1"
+      },
+      "size": {
+        "width": 50,
+        "height": 100,
+        "length": 50
+      },
+      "country": {
+        "id": "1",
+        "name": "Italy"
+      },
+      "material": {
+        "id": "2",
+        "name": "metal"
+      },
+      "description": "Armchair with headrest",
+      "images": [
+        {
+          "color": "gray",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/vedbo-vedbu-krislo-gunnared-temno-siriy__0837091_pe704432_s5.jpg",
+          "url": " https://www.ikea.com/ua/uk/images/products/vedbo-vedbu-krislo-gunnared-temno-siriy__0512767_pe638683_s5.jpg"
+        },
+        {
+          "color": "blue",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/vedbo-vedbu-krislo__0837379_pe696808_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/vedbo-vedbu-krislo__0634896_pe696809_s5.jpg"
+        }
+      ],
+      "price": 5999
+    },
+    {
+      "id": "10",
+      "name": "EKTORP ЕКТОРП",
+      "category": "1",
+      "company": {
+        "id": "1",
+        "name": "Ikea",
+        "countryId": "1"
+      },
+      "size": {
+        "width": 50,
+        "height": 100,
+        "length": 50
+      },
+      "country": {
+        "id": "3",
+        "name": "Canada"
+      },
+      "material": {
         "id": "1",
         "name": "wood"
       },
@@ -323,31 +489,115 @@
       "images": [
         {
           "color": "white",
-          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kelinge-bezheviy__0950942_pe800822_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kelinge-bezheviy__0950941_pe800821_s5.jpg"
+          "baseUrl": " https://www.ikea.com/ua/uk/images/products/ektorp-krislo-hallarp-bezheviy__0818470_pe774427_s5.jpg",
+          "url": " https://www.ikea.com/ua/uk/images/products/ektorp-krislo-hallarp-bezheviy__0818468_pe774420_s5.jpg"
         },
         {
-          "color": "blue",
-          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kvillsfors-temno-siniy-siniy__0961699_pe807716_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kvillsfors-temno-siniy-siniy__0961698_pe807715_s5.jpg"
+          "color": "green",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/ektorp-krislo-totebu-temno-biryuzoviy__0818475_pe774412_s5.jpg",
+          "url": " https://www.ikea.com/ua/uk/images/products/ektorp-krislo-totebu-temno-biryuzoviy__0818476_pe774411_s5.jpg"
         },
         {
           "color": "gray",
-          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-nordvalla-temno-siriy__0836849_pe601178_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-nordvalla-temno-siriy__0325432_pe517964_s5.jpg"
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/ektorp-krislo-remmarn-svitlo-siriy__0818472_pe774429_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/ektorp-krislo-remmarn-svitlo-siriy__0818473_pe774430_s5.jpg"
         },
         {
           "color": "black",
-          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-dyuparp-temno-zeleniy__0841150_pe647266_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-dyuparp-temno-zeleniy__0531313_pe647261_s5.jpg"
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/ektorp-krislo-hallarp-siriy__0818466_pe774425_s5.jpg",
+          "url": " https://www.ikea.com/ua/uk/images/products/ektorp-krislo-hallarp-siriy__0818467_pe774418_s5.jpg"
+        },
+        {
+          "color": "red",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/ektorp-krislo-virestad-chervoniy-biliy__0818481_pe774416_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/ektorp-krislo-virestad-chervoniy-biliy__0818482_pe774417_s5.jpg"
+        }
+      ],
+      "price": 6699
+    },
+    {
+      "id": "11",
+      "name": "POÄNG ПОЕНГ",
+      "category": "2",
+      "company": {
+        "id": "1",
+        "name": "Ikea",
+        "countryId": "1"
+      },
+      "size": {
+        "width": 50,
+        "height": 100,
+        "length": 50
+      },
+      "country": {
+        "id": "3",
+        "name": "Canada"
+      },
+      "material": {
+        "id": "2",
+        "name": "wood"
+      },
+      "description": "Armchair with headrest",
+      "images": [
+        {
+          "color": "white",
+          "baseUrl": " https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-bileniy-duboviy-shpon-hillared-bezheviy__0681516_pe720128_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-berezoviy-shpon-knisa-svitlo-bezheviy__0571500_pe666933_s5.jpg"
+        },
+        {
+          "color": "blue",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo__0840367_pe629080_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo__0497130_pe628957_s5.jpg"
+        },
+        {
+          "color": "gray",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-bileniy-duboviy-shpon-skiftebu-temno-siriy__0937027_pe793533_s5.jpg",
+          "url": " https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-bileniy-duboviy-shpon-skiftebu-temno-siriy__0937026_pe793532_s5.jpg"
+        },
+        {
+          "color": "black",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-berezoviy-shpon-knisa-chorniy__0837326_pe666932_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-berezoviy-shpon-knisa-chorniy__0571496_pe666929_s5.jpg"
         },
         {
           "color": "yellow",
-          "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-skiftebu-zhovtiy__0837297_pe601176_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-skiftebu-zhovtiy__0325450_pe517970_s5.jpg"
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-bileniy-duboviy-shpon-skiftebu-zhovtiy__0937194_pe793617_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-bileniy-duboviy-shpon-skiftebu-zhovtiy__0937193_pe793614_s5.jpg"
         }
       ],
-      "price": 200
+      "price": 2199
+    },
+    {
+      "id": "12",
+      "name": "HAVSTEN ХАВСТЕН",
+      "category": "2",
+      "company": {
+        "id": "1",
+        "name": "Ikea",
+        "countryId": "1"
+      },
+      "size": {
+        "width": 50,
+        "height": 100,
+        "length": 50
+      },
+      "country": {
+        "id": "3",
+        "name": "Canada"
+      },
+      "material": {
+        "id": "2",
+        "name": "wood"
+      },
+      "description": "Armchair with headrest",
+      "images": [
+        {
+          "color": "white",
+          "baseUrl": "https://www.ikea.com/ua/uk/images/products/havsten-krislo-kimnatne-vulichne-bezheviy__0684161_pe721041_s5.jpg",
+          "url": "https://www.ikea.com/ua/uk/images/products/havsten-krislo-kimnatne-vulichne-bezheviy__0729301_pe736941_s5.jpg"
+        }
+      ],
+      "price": 7095
     }
   ]
 }

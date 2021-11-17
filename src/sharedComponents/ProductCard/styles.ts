@@ -2,8 +2,8 @@ import { makeStyles } from '@material-ui/core';
 
 export const useStyle = makeStyles(() => ({
   productCard: {
-    minWidth: '300px',
-    maxWidth: '500px',
+    minWidth: '400px',
+    maxWidth: '400px',
   },
 
   productCardImg: {
