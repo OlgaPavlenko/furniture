@@ -1,8 +1,15 @@
 import { FunctionComponent } from 'react';
+import { useHistory } from 'react-router-dom';
 
 interface IProductDetailView {}
 
 export const ProductDetailView: FunctionComponent = () => {
+  const history = useHistory();
+
+  const goToMainPage = (): void => {
+    //   navigate.push(CLIENT_PATHS.main);
+  };
+
   // const classes = useStyle();
 
   return (
@@ -17,7 +24,7 @@ export const ProductDetailView: FunctionComponent = () => {
           <img src="" alt="" />
         </div>
       </div>
-      <button className="add to cart"></button>
+      <button className="add to cart" onClick={goToMainPage}></button>
     </div>
   );
 };

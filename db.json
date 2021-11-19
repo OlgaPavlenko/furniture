@@ -92,21 +92,21 @@
       "id": "1",
       "name": "GURSKEN ГУРСКЕН Italy",
       "category": "2",
-      "company": {
+      "companies": {
         "id": "1",
         "name": "Ikea",
-        "countryId": "1"
+        "countriesId": "1"
       },
       "size": {
         "width": 50,
         "height": 100,
         "length": 50
       },
-      "country": {
+      "countries": {
         "id": "1",
         "name": "Italy"
       },
-      "material": {
+      "materials": {
         "id": "2",
         "name": "metal"
       },
@@ -144,21 +144,21 @@
       "id": "2",
       "name": "NOLMYRA НОЛЬМЮРА",
       "category": "1",
-      "company": {
+      "companies": {
         "id": "2",
         "name": "Felliny",
-        "countryId": "1"
+        "countriesId": "1"
       },
       "size": {
         "width": 50,
         "height": 100,
         "length": 50
       },
-      "country": {
+      "countries": {
         "id": "2",
         "name": "Germany"
       },
-      "material": {
+      "materials": {
         "id": "2",
         "name": "metal"
       },
@@ -181,21 +181,21 @@
       "id": "3",
       "name": "VIMLE ВІМЛЕ",
       "category": "1",
-      "company": {
+      "companies": {
         "id": "2",
         "name": "Felliny",
-        "countryId": "1"
+        "countriesId": "1"
       },
       "size": {
         "width": 50,
         "height": 100,
         "length": 50
       },
-      "country": {
+      "countries": {
         "id": "3",
         "name": "Canada"
       },
-      "material": {
+      "materials": {
         "id": "1",
         "name": "wood"
       },
@@ -224,21 +224,21 @@
       "id": "4",
       "name": "LANDSKRONA ЛАНДСКРУНА",
       "category": "1",
-      "company": {
+      "companies": {
         "id": "3",
         "name": "Otto",
-        "countryId": "1"
+        "countriesId": "1"
       },
       "size": {
         "width": 50,
         "height": 100,
         "length": 50
       },
-      "country": {
+      "countries": {
         "id": "1",
         "name": "Italy"
       },
-      "material": {
+      "materials": {
         "id": "2",
         "name": "metal"
       },
@@ -256,21 +256,21 @@
       "id": "5",
       "name": "MUREN МУРЕН",
       "category": "1",
-      "company": {
+      "companies": {
         "id": "1",
         "name": "Ikea",
-        "countryId": "1"
+        "countriesId": "1"
       },
       "size": {
         "width": 50,
         "height": 100,
         "length": 50
       },
-      "country": {
+      "countries": {
         "id": "3",
         "name": "Canada"
       },
-      "material": {
+      "materials": {
         "id": "1",
         "name": "wood"
       },
@@ -293,21 +293,21 @@
       "id": "6",
       "name": "POÄNG ПОЕНГ",
       "category": "2",
-      "company": {
+      "companies": {
         "id": "1",
         "name": "Ikea",
-        "countryId": "1"
+        "countriesId": "1"
       },
       "size": {
         "width": 50,
         "height": 100,
         "length": 50
       },
-      "country": {
+      "countries": {
         "id": "3",
         "name": "Canada"
       },
-      "material": {
+      "materials": {
         "id": "2",
         "name": "wood"
       },
@@ -345,21 +345,21 @@
       "id": "7",
       "name": "VEDBO ВЕДБУ",
       "category": "1",
-      "company": {
+      "companies": {
         "id": "2",
         "name": "Felliny",
-        "countryId": "1"
+        "countriesId": "1"
       },
       "size": {
         "width": 50,
         "height": 100,
         "length": 50
       },
-      "country": {
+      "countries": {
         "id": "2",
         "name": "Germany"
       },
-      "material": {
+      "materials": {
         "id": "2",
         "name": "metal"
       },
@@ -387,21 +387,21 @@
       "id": "8",
       "name": "REMSTA РЕМСТА",
       "category": "1",
-      "company": {
+      "companies": {
         "id": "2",
         "name": "Felliny",
-        "countryId": "1"
+        "countriesId": "1"
       },
       "size": {
         "width": 50,
         "height": 100,
         "length": 50
       },
-      "country": {
+      "countries": {
         "id": "2",
         "name": "Germany"
       },
-      "material": {
+      "materials": {
         "id": "1",
         "name": "wood"
       },
@@ -430,21 +430,21 @@
       "id": "9",
       "name": "DGURSKEN ГУРСКЕН",
       "category": "1",
-      "company": {
+      "companies": {
         "id": "3",
         "name": "Otto",
-        "countryId": "1"
+        "countriesId": "1"
       },
       "size": {
         "width": 50,
         "height": 100,
         "length": 50
       },
-      "country": {
+      "countries": {
         "id": "1",
         "name": "Italy"
       },
-      "material": {
+      "materials": {
         "id": "2",
         "name": "metal"
       },
@@ -467,21 +467,21 @@
       "id": "10",
       "name": "EKTORP ЕКТОРП",
       "category": "1",
-      "company": {
+      "companies": {
         "id": "1",
         "name": "Ikea",
-        "countryId": "1"
+        "countriesId": "1"
       },
       "size": {
         "width": 50,
         "height": 100,
         "length": 50
       },
-      "country": {
+      "countries": {
         "id": "3",
         "name": "Canada"
       },
-      "material": {
+      "materials": {
         "id": "1",
         "name": "wood"
       },
@@ -519,21 +519,21 @@
       "id": "11",
       "name": "POÄNG ПОЕНГ",
       "category": "2",
-      "company": {
+      "companies": {
         "id": "1",
         "name": "Ikea",
-        "countryId": "1"
+        "countriesId": "1"
       },
       "size": {
         "width": 50,
         "height": 100,
         "length": 50
       },
-      "country": {
+      "countries": {
         "id": "3",
         "name": "Canada"
       },
-      "material": {
+      "materials": {
         "id": "2",
         "name": "wood"
       },
@@ -571,21 +571,21 @@
       "id": "12",
       "name": "HAVSTEN ХАВСТЕН",
       "category": "2",
-      "company": {
+      "companies": {
         "id": "1",
         "name": "Ikea",
-        "countryId": "1"
+        "countriesId": "1"
       },
       "size": {
         "width": 50,
         "height": 100,
         "length": 50
       },
-      "country": {
+      "countries": {
         "id": "3",
         "name": "Canada"
       },
-      "material": {
+      "materials": {
         "id": "2",
         "name": "wood"
       },
