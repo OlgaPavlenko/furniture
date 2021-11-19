@@ -1,10 +1,10 @@
 import { FunctionComponent } from 'react';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 
 interface IProductDetailView {}
 
 export const ProductDetailView: FunctionComponent = () => {
-  const history = useHistory();
+  // const history = useHistory();
 
   const goToMainPage = (): void => {
     //   navigate.push(CLIENT_PATHS.main);

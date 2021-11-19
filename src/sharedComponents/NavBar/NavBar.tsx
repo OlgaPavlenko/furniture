@@ -9,7 +9,7 @@ export const NavBar: FunctionComponent = () => {
     <div>
       <ul className={classes.navigation}>
         {NAV_BAR_LINK.map((option) => {
-          return <NavBarLink key={option} option={option} />;
+          return <NavBarLink key={option.name} option={option.name} to={option.path} />;
         })}
       </ul>
     </div>

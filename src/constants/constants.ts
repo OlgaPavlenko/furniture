@@ -1,7 +1,14 @@
-export const USER_MENU_ITEMS = {
-  login: require('assets/icons/login.svg').default as string,
-  cart: require('assets/icons/shopping-cart.svg').default as string,
-};
+export const USER_MENU_ITEMS = [
+  {
+    src: require('assets/icons/login.svg').default as string,
+    path: '/login',
+  },
+
+  {
+    src: require('assets/icons/shopping-cart.svg').default as string,
+    path: '/cart',
+  },
+];
 
 export const SOCIAL_NETWORK_ITEMS = {
   instagram: require('assets/icons/instagram.svg').default as string,
@@ -31,7 +38,20 @@ export const CONTACT_ITEMS = [
   },
 ];
 
-export const NAV_BAR_LINK = ['Catalog', 'About Us', 'Delivery'];
+export const NAV_BAR_LINK = [
+  {
+    name: 'Catalog',
+    path: '/catalog',
+  },
+  {
+    name: 'About Us',
+    path: '/aboutUs',
+  },
+  {
+    name: 'Delivery',
+    path: '/delivery',
+  },
+];
 
 export const PATH = {
   products: '/products',

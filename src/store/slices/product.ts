@@ -6,11 +6,13 @@ import { IProduct } from 'utils/interfaces/product';
 interface IInitialState {
   productList: IProduct[];
   currentProduct: {};
+  isListVeiw: boolean;
 }
 
 const initialState: IInitialState = {
   productList: [],
   currentProduct: {},
+  isListVeiw: false,
 };
 
 export const getProductsAsync = createAsyncThunk('products/fetch', async () => {
@@ -30,6 +32,9 @@ export const productSlice = createSlice({
     setProductList(state, action) {
       state.productList = action.payload;
     },
+    setIsListVeiw(state) {
+      state.isListVeiw = !state.isListVeiw;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -44,4 +49,4 @@ export const productSlice = createSlice({
 });
 
 export const productReducer = productSlice.reducer;
-export const { setProductList } = productSlice.actions;
+export const { setProductList, setIsListVeiw } = productSlice.actions;
