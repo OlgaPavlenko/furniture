@@ -24,7 +24,7 @@ export const ProductDescription: FunctionComponent<IProductMainImg> = ({
       <div className={classes.productCardInfo}>
         <p className={classes.productCardName}>{name}</p>
         <p className={classes.productCardDescripion}>{description}</p>
-        <span className={classes.productCardPrice}>{price} uah</span>
+        <span className={classes.productCardPrice}>{price}</span>
       </div>
       <Button badgeSrc={cart} className={classes.productCardCartButton} onClick={onClick} />
     </div>

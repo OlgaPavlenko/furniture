@@ -13,12 +13,12 @@ export const PriceInputs: FunctionComponent<IPriceInputs> = ({ minPrice, maxPric
   const classes = useStyle();
   const dispatch = useDispatch();
 
-  const getMinPrice = (event: ChangeEvent<HTMLInputElement>) => {
+  const getMinPrice = (event: ChangeEvent<HTMLInputElement>): void => {
     dispatch(setMinPrice(event.target.value));
     dispatch(getProductsListWithQuery());
   };
 
-  const getMaxPrice = (event: ChangeEvent<HTMLInputElement>) => {
+  const getMaxPrice = (event: ChangeEvent<HTMLInputElement>): void => {
     dispatch(setMaxPrice(event.target.value));
     dispatch(getProductsListWithQuery());
   };

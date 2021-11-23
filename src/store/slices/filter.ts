@@ -1,18 +1,16 @@
-import { FilterOption } from './../../sharedComponents/Filter/FilterOption';
-import { ICategory } from './../../utils/interfaces/product';
-import { IRootState } from './../store';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { PATH } from 'constants/constants';
-import HTTPService from '../../utils/services/httpService';
-import { IProduct } from 'utils/interfaces/product';
+import { IProduct, ICategory } from 'utils/interfaces/product';
 import { createPath } from 'utils/url';
-import { setProductList } from './product';
 import {
   filterMaxPriceSelector,
   filterMinPriceSelector,
   filtersSelector,
   querySelector,
 } from 'store/selectors/filter';
+import { IRootState } from '../store';
+import HTTPService from '../../utils/services/httpService';
+import { setProductList } from './product';
 
 export interface ICategoryGroup {
   name: string;
@@ -42,7 +40,7 @@ const initialState: IInitialFilterState = {
 export const getFiltersAsync = createAsyncThunk('categories/fetch', () => {
   const response = Promise.all(
     Object.entries(PATH.categories).map(async ([categoryGroup, category]) => ({
-      categoryGroup: categoryGroup,
+      categoryGroup,
       categories: await HTTPService.get(category),
     })),
   );
@@ -120,13 +118,15 @@ export const filterSlice = createSlice({
       }
     },
     resetFilters(state) {
-      Object.keys(state.filters).forEach((categoryGroup) => (state.filters[categoryGroup] = []));
+      Object.keys(state.filters).forEach((categoryGroup) => {
+        state.filters[categoryGroup] = [];
+      });
     },
   },
   extraReducers: (builder) => {
     builder
       .addCase(getFiltersAsync.fulfilled, (state, action) => {
-        const categories = action.payload.map(({ categories, categoryGroup }) => ({
+        const categoryList = action.payload.map(({ categories, categoryGroup }) => ({
           name: categoryGroup,
           filterOptions: categories.data,
         }));
@@ -136,7 +136,7 @@ export const filterSlice = createSlice({
           return { ...acc, ...newCategory };
         }, {});
 
-        state.categories = [...state.categories, ...categories];
+        state.categories = [...state.categories, ...categoryList];
         state.filters = { ...state.filters, ...defaultFilters };
       })
       .addCase(getPriceAsync.fulfilled, (state, action) => {

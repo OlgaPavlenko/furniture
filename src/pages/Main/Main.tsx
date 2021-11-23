@@ -1,5 +1,7 @@
 import { TOGGLE_BUTTONS_IMG } from 'constants/constants';
+import { FunctionComponent } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { Button } from 'sharedComponents/Button';
 import { Filter } from 'sharedComponents/Filter';
 import { Routing } from 'sharedComponents/LanguageButtons/Layout/Routing';
@@ -8,12 +10,12 @@ import { setIsListVeiw } from 'store/slices/product';
 
 import { useStyle } from './styles';
 
-export const Main = () => { 
+export const Main: FunctionComponent = () => {
   const classes = useStyle();
   const dispatch = useDispatch();
   const isListVeiw = useSelector(isListVeiwSelector);
 
-  const catalogViewToggle = () => {
+  const catalogViewToggle = (): void => {
     dispatch(setIsListVeiw());
   };
   return (

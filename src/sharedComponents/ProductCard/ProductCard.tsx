@@ -1,14 +1,14 @@
 import { FunctionComponent, useState } from 'react';
+import { useDispatch } from 'react-redux';
+
 import { IProductImage } from 'utils/interfaces/product';
+import { getProductByIdAsync } from 'store/slices/product';
 import { ProductMainImg } from './ProductMainImg';
-import { useStyle } from './styles';
 import { ProductDescription } from './ProductDescription';
 import { ProductColorVariants } from './ProductColorVariants';
-import { useDispatch } from 'react-redux';
-import { getProductByIdAsync } from 'store/slices/product';
-
+import { useStyle } from './styles';
 interface IProductCard {
-  id: string;
+  productId: string;
   name: string;
   description: string;
   images: IProductImage[];
@@ -16,7 +16,7 @@ interface IProductCard {
 }
 
 export const ProductCard: FunctionComponent<IProductCard> = ({
-  id,
+  productId,
   name,
   description,
   images,
@@ -26,20 +26,18 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
 
   const [src, setSrc] = useState(images[0].baseUrl);
   const dispatch = useDispatch();
-  
 
-
-  const switchVariants = (url: string) => {
+  const switchVariants = (url: string): void => {
     setSrc(url);
   };
 
-  const goToProductDetail = (id: string) => {
+  const goToProductDetail = (id: string): void => {
     dispatch(getProductByIdAsync(id));
   };
 
   return (
     <li className={classes.productCard}>
-      <a className={classes.productCardUnit} href="#" onClick={() => goToProductDetail(id)}>
+      <a className={classes.productCardUnit} href="#" onClick={() => goToProductDetail(productId)}>
         <ProductMainImg src={src} />
         <ProductDescription name={name} description={description} price={price} />
       </a>
@@ -47,5 +45,3 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
     </li>
   );
 };
-
-

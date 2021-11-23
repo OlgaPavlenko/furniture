@@ -1,13 +1,14 @@
+import { FunctionComponent } from 'react';
 import { Layout } from './sharedComponents/LanguageButtons/Layout/Layout';
 import './App.css';
 import './reset.css';
 
-function App() {
+const App: FunctionComponent = () => {
   return (
     <div className="App">
       <Layout />
     </div>
   );
-}
+};
 
 export default App;

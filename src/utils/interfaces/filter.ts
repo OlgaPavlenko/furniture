@@ -1,4 +1,4 @@
-import { ICompany, ICountry, IMaterial } from "./product";
+import { ICompany, ICountry, IMaterial } from './product';
 
 export interface ICategories {
   countries: ICountry[];

@@ -5,7 +5,7 @@ import { IProduct } from 'utils/interfaces/product';
 
 interface IInitialState {
   productList: IProduct[];
-  currentProduct: {};
+  currentProduct: Record<string, unknown>;
   isListVeiw: boolean;
 }
 
@@ -42,7 +42,6 @@ export const productSlice = createSlice({
         state.productList = [...state.productList, ...action.payload.data];
       })
       .addCase(getProductByIdAsync.fulfilled, (state, action) => {
-        console.log(action.payload);
         state.currentProduct = action.payload.data;
       });
   },

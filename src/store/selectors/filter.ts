@@ -1,11 +1,12 @@
+import { ICategoryGroup, IFilter } from 'store/slices/filter';
 import { IRootState } from 'store/store';
 
-export const categoriesSelector = (state: IRootState) => state.filter.categories;
+export const categoriesSelector = (state: IRootState): ICategoryGroup[] => state.filter.categories;
 
-export const filterMinPriceSelector = (state: IRootState) => state.filter.minPrice;
+export const filterMinPriceSelector = (state: IRootState): number => state.filter.minPrice;
 
-export const filterMaxPriceSelector = (state: IRootState) => state.filter.maxPrice;
+export const filterMaxPriceSelector = (state: IRootState): number => state.filter.maxPrice;
 
-export const querySelector = (state: IRootState) => state.filter.searchQuery;
+export const querySelector = (state: IRootState): string => state.filter.searchQuery;
 
-export const filtersSelector = (state: IRootState) => state.filter.filters;
+export const filtersSelector = (state: IRootState): IFilter => state.filter.filters;
