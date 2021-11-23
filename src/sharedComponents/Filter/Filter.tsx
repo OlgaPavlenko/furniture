@@ -33,12 +33,12 @@ export const Filter: FunctionComponent = () => {
     dispatch(getPriceAsync());
   }, []);
 
-  const onChange = (categoryGroupName: string, name: string): void => {
+  const onChange = (categoryGroupName: string, name: string) => {
     dispatch(setFiltersQuery({ name, categoryGroupName }));
     dispatch(getProductsListWithQuery());
   };
 
-  const resetFilter = (e: SyntheticEvent): void => {
+  const resetFilter = (e: SyntheticEvent) => {
     e.preventDefault();
     dispatch(resetFilters());
     dispatch(getProductsListWithQuery());

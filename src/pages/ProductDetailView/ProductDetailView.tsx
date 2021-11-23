@@ -1,8 +1,8 @@
 import { FunctionComponent } from 'react';
 
 export const ProductDetailView: FunctionComponent = () => {
-  const goToMainPage = (): void => {
-    'dads';
+  const goToMainPage = () => {
+    // will be implemented in next task
   };
 
   return (

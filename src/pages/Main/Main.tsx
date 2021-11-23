@@ -15,7 +15,7 @@ export const Main: FunctionComponent = () => {
   const dispatch = useDispatch();
   const isListVeiw = useSelector(isListVeiwSelector);
 
-  const catalogViewToggle = (): void => {
+  const catalogViewToggle = () => {
     dispatch(setIsListVeiw());
   };
   return (

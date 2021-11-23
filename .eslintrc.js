@@ -22,6 +22,11 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
+    'typescript/explicit-function-return-type': [
+      {
+        allowVoid: true,
+      },
+    ],
     'global-require': 0,
     'react/button-has-type': 0,
     'no-unused-expressions': 0,
