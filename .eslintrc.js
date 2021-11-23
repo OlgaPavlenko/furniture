@@ -22,6 +22,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
+    'no-unused-vars': 0,
     'global-require': 0,
     'react/button-has-type': 0,
     'no-unused-expressions': 0,
@@ -42,7 +43,6 @@ module.exports = {
     'no-case-declarations': 'off',
     'no-prototype-builtins': 0,
     'operator-linebreak': 0,
-    'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': ['error'],
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],

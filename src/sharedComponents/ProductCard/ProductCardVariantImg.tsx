@@ -4,7 +4,7 @@ import { useStyle } from './styles';
 interface IProductCardImg {
   url: string;
   baseUrl: string;
-  switchVariants: any;
+  switchVariants: (url: string) => void;
 }
 
 export const ProductCardVariantImg: FunctionComponent<IProductCardImg> = ({
