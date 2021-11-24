@@ -2,7 +2,7 @@ import { FunctionComponent } from 'react';
 
 export const ProductDetailView: FunctionComponent = () => {
   const goToMainPage = () => {
-    // will be implemented in next task
+    // will be implemented in the next task
   };
 
   return (

@@ -31,13 +31,13 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
     setSrc(url);
   };
 
-  const goToProductDetail = (id: string) => {
+  const getProductById = (id: string) => {
     dispatch(getProductByIdAsync(id));
   };
 
   return (
     <li className={classes.productCard}>
-      <a className={classes.productCardUnit} href="#" onClick={() => goToProductDetail(productId)}>
+      <a className={classes.productCardUnit} href="#" onClick={() => getProductById(productId)}>
         <ProductMainImg src={src} />
         <ProductDescription name={name} description={description} price={price} />
       </a>
