@@ -13,7 +13,7 @@ export const Search: FunctionComponent = () => {
   const search = require('assets/icons/icon.svg').default as string;
   const searchQuery = useSelector(querySelector);
 
-  const getSearchQuery = (event: ChangeEvent<HTMLInputElement>): void => {
+  const getSearchQuery = (event: ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
     dispatch(setSearchQuery(event.target?.value));
     dispatch(getProductsListWithQuery());

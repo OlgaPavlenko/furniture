@@ -23,6 +23,11 @@ module.exports = {
   plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
     'no-unused-vars': 0,
+    'typescript/explicit-function-return-type': [
+      {
+        allowVoid: 1,
+      },
+    ],
     'global-require': 0,
     'react/button-has-type': 0,
     'no-unused-expressions': 0,

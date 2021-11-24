@@ -8,6 +8,7 @@ import { ProductMainImg } from 'sharedComponents/ProductCard/ProductMainImg';
 import { currentProductSelector } from 'store/selectors/product';
 
 export const ProductDetailView: FunctionComponent = () => {
+<<<<<<< HEAD
   const history = useHistory();
   const product = useSelector(currentProductSelector);
   const goToMainPage = (event: SyntheticEvent): void => {
@@ -19,6 +20,10 @@ export const ProductDetailView: FunctionComponent = () => {
   const [src, setSrc] = useState(product.images[0].baseUrl);
   const switchVariants = (url: string): void => {
     setSrc(url);
+=======
+  const goToMainPage = () => {
+    // will be implemented in the next task
+>>>>>>> 408add701825d6e16e61f38214367e355b9e3cf4
   };
 
   return (

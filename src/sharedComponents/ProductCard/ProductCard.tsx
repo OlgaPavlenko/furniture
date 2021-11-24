@@ -28,11 +28,11 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
   const dispatch = useDispatch();
 
   const [src, setSrc] = useState(images[0].baseUrl);
-  const switchVariants = (url: string): void => {
+  const switchVariants = (url: string) => {
     setSrc(url);
   };
 
-  const goToProductDetail = (id: string): void => {
+  const getProductById = (id: string) => {
     dispatch(getProductByIdAsync(id));
   };
 
@@ -41,7 +41,7 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
       <NavLink
         className={classes.productCardUnit}
         to={`/catalog/${productId}`}
-        onClick={() => goToProductDetail(productId)}
+        onClick={() => getProductById(productId)}
       >
         <ProductMainImg src={src} />
         <ProductDescription name={name} description={description} price={price} />

@@ -6,7 +6,7 @@ import { ProductDetailView } from 'pages/ProductDetailView/ProductDetailView';
 import { FunctionComponent } from 'react';
 import { Switch, Redirect, Route } from 'react-router-dom';
 
-export const Routing: FunctionComponent = () => {
+export const Routes: FunctionComponent = () => {
   return (
     <Switch>
       <Redirect exact from="/" to="/catalog" />
