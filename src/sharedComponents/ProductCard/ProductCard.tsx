@@ -43,7 +43,7 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
         to={`/catalog/${productId}`}
         onClick={() => getProductById(productId)}
       >
-        <ProductMainImg src={src} />
+        <ProductMainImg src={src} className={classes.productCardImg} />
         <ProductDescription name={name} description={description} price={price} />
       </NavLink>
       <ProductColorVariants images={images} switchVariants={switchVariants} />

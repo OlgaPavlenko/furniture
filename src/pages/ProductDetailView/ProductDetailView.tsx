@@ -4,10 +4,12 @@ import { useHistory } from 'react-router-dom';
 import { ProductColorVariants } from 'sharedComponents/ProductCard/ProductColorVariants';
 import { ProductDescription } from 'sharedComponents/ProductCard/ProductDescription';
 import { ProductMainImg } from 'sharedComponents/ProductCard/ProductMainImg';
+import { useStyle } from './styles';
 
 import { currentProductSelector } from 'store/selectors/product';
 
 export const ProductDetailView: FunctionComponent = () => {
+  const classes = useStyle();
   const history = useHistory();
   const product = useSelector(currentProductSelector);
 
@@ -22,15 +24,17 @@ export const ProductDetailView: FunctionComponent = () => {
   };
   console.log(product.images[0].baseUrl);
   return (
-    <div>
-      <ProductMainImg src={src} />
+    <div className={classes.wraper}>
+      <div className={classes.productView}>
+        <ProductMainImg src={src} className={classes.image} />
+        <ProductColorVariants images={product.images} switchVariants={switchVariants} />
+      </div>
       <ProductDescription
         name={product.name}
         description={product.description}
         price={product.price}
       />
-      <ProductColorVariants images={product.images} switchVariants={switchVariants} />
-      <button className="add to cart" onClick={goToMainPage}>
+      <button className={classes.backButton} onClick={goToMainPage}>
         Go Back
       </button>
     </div>
