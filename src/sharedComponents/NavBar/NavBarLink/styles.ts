@@ -1,4 +1,4 @@
-import { makeStyles } from "@material-ui/core";
+import { makeStyles } from '@material-ui/core';
 
 export const useStyle = makeStyles(() => ({
   navigationItem: {
@@ -6,11 +6,11 @@ export const useStyle = makeStyles(() => ({
   },
 
   navigationItemLink: {
-    color: "#15166d",
+    color: '#15166d',
 
-    "&:hover": {
-      color: "#111",
-      textDecoration: "underline",
+    '&:hover': {
+      color: '#111',
+      textDecoration: 'underline',
     },
   },
 }));

@@ -3,10 +3,6 @@ import { FunctionComponent } from 'react';
 import { FooterContact } from 'sharedComponents/Footer/FooterContact';
 import { useStyle } from './style';
 
-interface IFooterContacts {
-  mail: string;
-  phone: string;
-}
 export const FootersContacts: FunctionComponent = () => {
   const classes = useStyle();
   return (

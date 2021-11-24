@@ -1,4 +1,4 @@
-import { IFilter } from './../store/slices/filter';
+import { IFilter } from 'store/slices/filter';
 
 interface ICreatePath {
   searchQuery: string;
@@ -14,6 +14,6 @@ export const createPath = ({ searchQuery, filters, minPrice, maxPrice }: ICreate
   );
 
   const pricePath = `&price_gte=${minPrice}&price_lte=${maxPrice}`;
-  let finalPath = `/products?name_like=${searchQuery}${filtersPath}${pricePath}`;
+  const finalPath = `/products?name_like=${searchQuery}${filtersPath}${pricePath}`;
   return finalPath;
 };

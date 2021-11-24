@@ -1,8 +1,8 @@
 import { FunctionComponent } from 'react';
-import { useStyle } from './style';
 
 import { FootersContacts } from 'sharedComponents/Footer/FooterContacts';
 import { SocialLinks } from 'sharedComponents/SocialLinks';
+import { useStyle } from './style';
 
 export const Footer: FunctionComponent = () => {
   const classes = useStyle();

@@ -1,5 +1,5 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent } from 'react';
 
 export const Cart: FunctionComponent = () => {
-  return <div>Cart</div>;
+  return <div>cart</div>;
 };

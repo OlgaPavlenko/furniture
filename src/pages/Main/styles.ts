@@ -1,9 +1,9 @@
 import { makeStyles } from '@material-ui/core';
 
 export const useStyle = makeStyles(() => ({
-  navigation: {
+  main: {
+    position: 'relative',
     display: 'flex',
-    flexDirection: 'row',
-    columnGap: '20px',
+    rowGap: '15px',
   },
 }));

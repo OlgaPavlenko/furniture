@@ -1,11 +1,11 @@
 import { ChangeEvent, FunctionComponent, useEffect } from 'react';
-import { useStyle } from './styles';
 
 import { Input } from 'sharedComponents/Input/Input';
 import { SearchType } from 'utils/interfaces/enums';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProductsListWithQuery, setSearchQuery } from 'store/slices/filter';
 import { querySelector } from 'store/selectors/filter';
+import { useStyle } from './styles';
 
 export const Search: FunctionComponent = () => {
   const classes = useStyle();
@@ -13,7 +13,7 @@ export const Search: FunctionComponent = () => {
   const search = require('assets/icons/icon.svg').default as string;
   const searchQuery = useSelector(querySelector);
 
-  const getSearchQuery = (event: ChangeEvent<HTMLInputElement>): void => {
+  const getSearchQuery = (event: ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
     dispatch(setSearchQuery(event.target?.value));
     dispatch(getProductsListWithQuery());

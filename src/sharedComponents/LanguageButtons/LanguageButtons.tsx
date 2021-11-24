@@ -1,23 +1,16 @@
 import { FunctionComponent } from 'react';
-import { useStyle } from './styles';
 
 import { Button } from 'sharedComponents/Button';
 import { LANGUAGE } from 'constants/constants';
+import { useStyle } from './styles';
 
 export const LanguageButtons: FunctionComponent = () => {
   const classes = useStyle();
 
   return (
     <div className={classes.localize}>
-      {LANGUAGE.map((LANGUAGE) => {
-        return (
-          <Button
-            key={LANGUAGE}
-            name={LANGUAGE}
-            onClick={() => console.log('eeeeeeeeeeee!')}
-            className={classes.localizeButtons}
-          />
-        );
+      {LANGUAGE.map((lang) => {
+        return <Button key={lang} name={lang} className={classes.localizeButtons} />;
       })}
     </div>
   );

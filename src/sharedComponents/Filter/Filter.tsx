@@ -1,10 +1,5 @@
 import { FunctionComponent, SyntheticEvent, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useStyle } from './style';
-
-import { FilterOption } from './FilterOption';
-import { PriceInputs } from './PriceInputs';
-import { Button } from '../Button';
 import {
   getFiltersAsync,
   getPriceAsync,
@@ -19,6 +14,11 @@ import {
   filterMinPriceSelector,
   filtersSelector,
 } from 'store/selectors/filter';
+import { useStyle } from './style';
+
+import { FilterOption } from './FilterOption';
+import { PriceInputs } from './PriceInputs';
+import { Button } from '../Button';
 
 export const Filter: FunctionComponent = () => {
   const categoryGroups: ICategoryGroup[] = useSelector(categoriesSelector);
@@ -52,7 +52,7 @@ export const Filter: FunctionComponent = () => {
           <FilterOption
             key={categoryGroup.name}
             categoryGroupName={categoryGroup.name}
-            categories={categoryGroup.filterOptions.map((filter) => filter.name)}
+            categories={categoryGroup.filterOptions.map((filterOption) => filterOption.name)}
             filterState={filter}
             onChange={onChange}
           />

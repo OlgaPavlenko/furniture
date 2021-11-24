@@ -1,12 +1,12 @@
 import { FunctionComponent, useState } from 'react';
 
-import { useStyle } from './styles';
 import { Button } from 'sharedComponents/Button';
 import { SORTING_IMGS } from 'constants/constants';
 import { useDispatch, useSelector } from 'react-redux';
 import { productListSelector } from 'store/selectors/product';
 import { IProduct } from 'utils/interfaces/product';
 import { setProductList } from 'store/slices/product';
+import { useStyle } from './styles';
 
 export const Sort: FunctionComponent = () => {
   const classes = useStyle();

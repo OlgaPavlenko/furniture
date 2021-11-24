@@ -8,6 +8,5 @@ interface IInputProps extends DOMAttributes<HTMLElement> {
 }
 
 export const Input: FunctionComponent<IInputProps> = ({ type, onChange, value, className }) => {
-  
   return <input type={type} onChange={onChange} value={value} className={className} />;
 };

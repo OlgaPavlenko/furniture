@@ -17,7 +17,7 @@ export const useStyle = makeStyles(() => ({
 
   searchInput: {
     width: '100%',
-    background: "url('assets/icons/icon.svg') no-repeat scroll 7px 7px",
+    background: "url('/assets/icons/icon.svg') no-repeat scroll 7px 7px",
     paddingLeft: '30px',
 
     '&::-webkit-search-cancel-button': {
@@ -25,7 +25,7 @@ export const useStyle = makeStyles(() => ({
       width: '8px',
       paddingRight: '10px',
       paddingBottom: '10px',
-      backgroundImage: "url('/assets/icons/cross.svg')",
+      backgroundImage: "url('src/assets/icons/cross.svg')",
       backgroundSize: '95%',
       backgroundRepeat: 'no-repeat',
 

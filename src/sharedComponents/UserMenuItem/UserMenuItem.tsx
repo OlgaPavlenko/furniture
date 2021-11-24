@@ -1,12 +1,14 @@
 import { FunctionComponent } from 'react';
+import { NavLink } from 'react-router-dom';
 
 interface IUserMenuItemsSrc {
   src: string;
+  path: string;
 }
-export const UserMenuItem: FunctionComponent<IUserMenuItemsSrc> = ({ src }) => {
+export const UserMenuItem: FunctionComponent<IUserMenuItemsSrc> = ({ src, path }) => {
   return (
-    <a href="#">
+    <NavLink to={path}>
       <img src={src} />
-    </a>
+    </NavLink>
   );
 };

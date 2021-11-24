@@ -1,20 +1,22 @@
 import { FunctionComponent } from 'react';
 import { useStyle } from './styles';
 
-import { ListLink } from 'sharedComponents/ListLink';
+import { LinkForNavBar } from '../NavLink';
 
 interface INavBarLink {
   option: string;
+  to: string;
 }
 
-export const NavBarLink: FunctionComponent<INavBarLink> = ({ option }) => {
+export const NavBarLink: FunctionComponent<INavBarLink> = ({ option, to }) => {
   const classes = useStyle();
 
   return (
-    <ListLink
+    <LinkForNavBar
       className={classes.navigationItem}
       linkClassName={classes.navigationItemLink}
       text={option}
+      to={to}
     />
   );
 };
