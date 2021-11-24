@@ -20,7 +20,7 @@ export const ProductDetailView: FunctionComponent = () => {
   const switchVariants = (url: string) => {
     setSrc(url);
   };
-
+  console.log(product.images[0].baseUrl);
   return (
     <div>
       <ProductMainImg src={src} />

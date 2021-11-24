@@ -5,5 +5,6 @@ export const useStyle = makeStyles(() => ({
     position: 'relative',
     display: 'flex',
     rowGap: '15px',
+    flex: '1 1 auto',
   },
 }));

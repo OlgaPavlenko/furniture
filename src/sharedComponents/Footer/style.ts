@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core';
 export const useStyle = makeStyles(() => ({
   footer: {
     backgroundColor: '#15166d',
+    flexShrink: 0,
   },
 
   container: {
