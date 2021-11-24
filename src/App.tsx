@@ -1,13 +1,20 @@
 import { FunctionComponent } from 'react';
-import { Layout } from './sharedComponents/LanguageButtons/Layout/Layout';
+import { BrowserRouter as Router } from 'react-router-dom';
+
+import { Layout } from './sharedComponents/Layout';
 import './App.css';
 import './reset.css';
+import { Routes } from 'sharedComponents/Layout/Routes';
 
 const App: FunctionComponent = () => {
   return (
-    <div className="App">
-      <Layout />
-    </div>
+    <Router>
+      <div className="App">
+        <Layout>
+          <Routes />
+        </Layout>
+      </div>
+    </Router>
   );
 };
 

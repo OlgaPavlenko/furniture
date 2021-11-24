@@ -1,8 +1,12 @@
 import { makeStyles } from '@material-ui/core';
 
 export const useStyle = makeStyles(() => ({
+  wrap: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+
   main: {
-    position: 'relative',
     display: 'flex',
     flexDirection: 'column',
     rowGap: '15px',
@@ -22,5 +26,13 @@ export const useStyle = makeStyles(() => ({
     flexWrap: 'wrap',
     columnGap: '8%',
     rowGap: '15px',
+  },
+
+  viewToggler: {
+    margin: '15px, 0, 15px, 0',
+  },
+
+  content: {
+    display: 'flex',
   },
 }));
