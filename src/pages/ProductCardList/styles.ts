@@ -2,6 +2,7 @@ import { makeStyles } from '@material-ui/core';
 
 export const useStyle = makeStyles(() => ({
   wrap: {
+    width: '100%',
     display: 'flex',
     flexDirection: 'column',
   },
@@ -29,7 +30,10 @@ export const useStyle = makeStyles(() => ({
   },
 
   viewToggler: {
-    margin: '15px, 0, 15px, 0',
+    marginRight: '52px',
+    marginTop: '15px',
+    marginBottom: '15px',
+    alignSelf: 'flex-end',
   },
 
   content: {
