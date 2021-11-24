@@ -16,9 +16,7 @@ export const Sort: FunctionComponent = () => {
   const dispatch = useDispatch();
 
   const sort = (type: keyof IProduct) => {
-    const sortedProducts = [...products];
-
-    const resultProducts = sortedProducts.sort((prev: IProduct, next: IProduct) =>
+    const resultProducts = products.sort((prev: IProduct, next: IProduct) =>
       prev[type] > next[type] ? -order[type] : order[type],
     );
     setOrder({ ...order, [type]: -order[type] });

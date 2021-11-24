@@ -136,8 +136,8 @@ export const filterSlice = createSlice({
           return { ...acc, ...newCategory };
         }, {});
 
-        state.categories = [...state.categories, ...categoryList];
-        state.filters = { ...state.filters, ...defaultFilters };
+        state.categories = [...categoryList];
+        state.filters = { ...defaultFilters };
       })
       .addCase(getPriceAsync.fulfilled, (state, action) => {
         const { minPrice, maxPrice } = action.payload;

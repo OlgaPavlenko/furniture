@@ -8,27 +8,22 @@ import { ProductMainImg } from 'sharedComponents/ProductCard/ProductMainImg';
 import { currentProductSelector } from 'store/selectors/product';
 
 export const ProductDetailView: FunctionComponent = () => {
-<<<<<<< HEAD
   const history = useHistory();
   const product = useSelector(currentProductSelector);
-  const goToMainPage = (event: SyntheticEvent): void => {
-    event.preventDefault();
 
+  const goToMainPage = (event: SyntheticEvent) => {
+    event.preventDefault();
     history.push('/catalog');
   };
 
   const [src, setSrc] = useState(product.images[0].baseUrl);
-  const switchVariants = (url: string): void => {
+  const switchVariants = (url: string) => {
     setSrc(url);
-=======
-  const goToMainPage = () => {
-    // will be implemented in the next task
->>>>>>> 408add701825d6e16e61f38214367e355b9e3cf4
   };
 
   return (
     <div>
-      <ProductMainImg src={src || product.images[0].baseUrl} />
+      <ProductMainImg src={src} />
       <ProductDescription
         name={product.name}
         description={product.description}
