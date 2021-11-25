@@ -4,9 +4,8 @@ import { useHistory } from 'react-router-dom';
 import { ProductColorVariants } from 'sharedComponents/ProductCard/ProductColorVariants';
 import { ProductDescription } from 'sharedComponents/ProductCard/ProductDescription';
 import { ProductMainImg } from 'sharedComponents/ProductCard/ProductMainImg';
-import { useStyle } from './styles';
-
 import { currentProductSelector } from 'store/selectors/product';
+import { useStyle } from './styles';
 
 export const ProductDetailView: FunctionComponent = () => {
   const classes = useStyle();
@@ -30,18 +29,20 @@ export const ProductDetailView: FunctionComponent = () => {
 
   return (
     <div className={classes.wraper}>
+      <ProductMainImg src={src} className={classes.image} />
       <div className={classes.productView}>
-        <ProductMainImg src={src} className={classes.image} />
+        <h1 className={classes.productName}>{product.name}</h1>
         <ProductColorVariants images={product.images} switchVariants={switchVariants} />
+        <ProductDescription
+          name={product.name}
+          description={product.description}
+          price={product.price}
+          className={classes.description}
+        />
+        <button className={classes.backButton} onClick={goToMainPage}>
+          Go Back
+        </button>
       </div>
-      <ProductDescription
-        name={product.name}
-        description={product.description}
-        price={product.price}
-      />
-      <button className={classes.backButton} onClick={goToMainPage}>
-        Go Back
-      </button>
     </div>
   );
 };
