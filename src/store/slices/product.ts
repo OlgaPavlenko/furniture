@@ -5,13 +5,38 @@ import { IProduct } from 'utils/interfaces/product';
 
 interface IInitialState {
   productList: IProduct[];
-  currentProduct: Record<string, unknown>;
+  currentProduct: IProduct;
   isListVeiw: boolean;
 }
 
 const initialState: IInitialState = {
   productList: [],
-  currentProduct: {},
+  currentProduct: {
+    id: '',
+    name: '',
+    category: {
+      id: '',
+      name: '',
+    },
+    company: {
+      id: '',
+      name: '',
+      countryId: '',
+    },
+    size: {
+      width: '',
+      height: '',
+      length: '',
+    },
+    country: {
+      id: '',
+      name: '',
+    },
+    material: [],
+    description: '',
+    images: [{ color: '', baseUrl: '', url: '' }],
+    price: 0,
+  },
   isListVeiw: false,
 };
 
@@ -39,7 +64,7 @@ export const productSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getProductsAsync.fulfilled, (state, action) => {
-        state.productList = [...state.productList, ...action.payload.data];
+        state.productList = [...action.payload.data];
       })
       .addCase(getProductByIdAsync.fulfilled, (state, action) => {
         state.currentProduct = action.payload.data;

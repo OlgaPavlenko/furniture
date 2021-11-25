@@ -45,13 +45,6 @@ export const useStyle = makeStyles(() => ({
     paddingBottom: '20px',
   },
 
-  productCardDescripion: {
-    letterpacing: 0,
-    fontЦeight: 400,
-    fontЫize: '0.875rem',
-    lineРeight: 1.5,
-  },
-
   productCardPrice: {
     paddingRight: '5px',
     display: 'inline-block',
@@ -60,7 +53,7 @@ export const useStyle = makeStyles(() => ({
   },
 
   productCardVariantsLabel: {
-    paddingBottom: '5px',
+    paddingBottom: '10px',
   },
 
   productCardUnit: {
@@ -88,6 +81,7 @@ export const useStyle = makeStyles(() => ({
   cardVariantContainer: {
     display: 'flex',
     minHeight: '40px',
+    marginBottom: '15px',
   },
 
   variantsCardImg: {

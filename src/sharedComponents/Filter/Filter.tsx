@@ -38,8 +38,8 @@ export const Filter: FunctionComponent = () => {
     dispatch(getProductsListWithQuery());
   };
 
-  const resetFilter = (e: SyntheticEvent) => {
-    e.preventDefault();
+  const resetFilter = (event: SyntheticEvent) => {
+    event.preventDefault();
     dispatch(resetFilters());
     dispatch(getProductsListWithQuery());
   };

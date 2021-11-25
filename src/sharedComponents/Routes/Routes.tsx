@@ -10,8 +10,8 @@ export const Routes: FunctionComponent = () => {
   return (
     <Switch>
       <Redirect exact from="/" to="/catalog" />
+      <Route exact path="/catalog" component={ProductCardList} />
       <Route path="/catalog/:id" component={ProductDetailView} />
-      <Route path="/catalog" component={ProductCardList} />
       <Route path="/aboutUs" component={AboutUs} />
       <Route path="/delivery" component={Delivery} />
       <Route path="/cart" component={Cart} />

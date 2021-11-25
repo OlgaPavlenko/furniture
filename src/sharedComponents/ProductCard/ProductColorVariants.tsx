@@ -5,7 +5,7 @@ import { useStyle } from './styles';
 
 interface IProductMainImg {
   images: IProductImage[];
-  switchVariants: any;
+  switchVariants: (url: string) => void;
 }
 
 export const ProductColorVariants: FunctionComponent<IProductMainImg> = ({

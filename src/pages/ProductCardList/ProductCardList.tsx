@@ -5,10 +5,10 @@ import { ProductCard } from 'sharedComponents/ProductCard';
 import { getProductsAsync, setIsListVeiw } from 'store/slices/product';
 import { isListVeiwSelector, productListSelector } from 'store/selectors/product';
 import { IProduct } from 'utils/interfaces/product';
-import { useStyle } from './styles';
 import { Filter } from 'sharedComponents/Filter';
 import { TOGGLE_BUTTONS_IMG } from 'constants/constants';
 import { Button } from 'sharedComponents/Button';
+import { useStyle } from './styles';
 
 interface IProductCardList {
   isListVeiw: boolean;
