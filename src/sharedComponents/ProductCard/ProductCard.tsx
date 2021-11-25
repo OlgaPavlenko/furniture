@@ -40,8 +40,8 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
     <li className={classes.productCard}>
       <NavLink
         className={classes.productCardUnit}
-        to={`/catalog/${productId}`}
         onClick={() => getProductById(productId)}
+        to={`/catalog/${productId}`}
       >
         <ProductMainImg src={src} className={classes.productCardImg} />
         <ProductDescription name={name} description={description} price={price} />

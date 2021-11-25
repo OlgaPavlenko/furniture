@@ -1,4 +1,4 @@
-import { FunctionComponent, SyntheticEvent, useState } from 'react';
+import { FunctionComponent, SyntheticEvent, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { ProductColorVariants } from 'sharedComponents/ProductCard/ProductColorVariants';
@@ -18,11 +18,16 @@ export const ProductDetailView: FunctionComponent = () => {
     history.push('/catalog');
   };
 
+  useEffect(() => {
+    setSrc(product.images[0].baseUrl);
+  }, [product]);
+
   const [src, setSrc] = useState(product.images[0].baseUrl);
+
   const switchVariants = (url: string) => {
     setSrc(url);
   };
-  console.log(product.images[0].baseUrl);
+
   return (
     <div className={classes.wraper}>
       <div className={classes.productView}>
