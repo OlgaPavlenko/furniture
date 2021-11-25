@@ -8,7 +8,7 @@ interface IProductDescription {
   description: string;
   price: number;
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-  className: string;
+  className?: string;
 }
 
 export const ProductDescription: FunctionComponent<IProductDescription> = ({

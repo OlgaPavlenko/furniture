@@ -15,7 +15,6 @@ interface IProductCard {
   description: string;
   images: IProductImage[];
   price: number;
-  className: string;
 }
 
 export const ProductCard: FunctionComponent<IProductCard> = ({
@@ -24,7 +23,6 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
   description,
   images,
   price,
-  className,
 }) => {
   const classes = useStyle();
   const dispatch = useDispatch();
@@ -46,12 +44,7 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
         to={`/catalog/${productId}`}
       >
         <ProductMainImg src={src} className={classes.productCardImg} />
-        <ProductDescription
-          name={name}
-          description={description}
-          price={price}
-          className={className}
-        />
+        <ProductDescription name={name} description={description} price={price} />
       </NavLink>
       <ProductColorVariants images={images} switchVariants={switchVariants} />
     </li>

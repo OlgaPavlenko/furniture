@@ -47,7 +47,6 @@ export const ProductCardList: FunctionComponent<IProductCardList> = () => {
                 description={product.description}
                 images={product.images}
                 price={product.price}
-                className=""
               />
             ))}
           </ul>
