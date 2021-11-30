@@ -1,5 +1,5 @@
 import { AboutUs } from 'pages/AboutUs/AboutUs';
-import { Cart } from 'pages/Cart/Cart';
+import { Cart } from 'pages/Cart';
 import { Delivery } from 'pages/Delivery/Delivery';
 import { ProductCardList } from 'pages/ProductCardList';
 import { ProductDetailView } from 'pages/ProductDetailView/ProductDetailView';

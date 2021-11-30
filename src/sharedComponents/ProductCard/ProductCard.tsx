@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { IProductImage } from 'utils/interfaces/product';
 import { NavLink } from 'react-router-dom';
 import { getProductByIdAsync } from 'store/slices/product';
+import { Button } from 'sharedComponents/Button';
 import { ProductMainImg } from './ProductMainImg';
 import { ProductDescription } from './ProductDescription';
 import { ProductColorVariants } from './ProductColorVariants';
@@ -25,6 +26,7 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
   price,
 }) => {
   const classes = useStyle();
+  const cart = require('assets/icons/shopping-cart.svg').default;
   const dispatch = useDispatch();
 
   const [src, setSrc] = useState(images[0].baseUrl);
@@ -46,6 +48,7 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
         <ProductMainImg src={src} className={classes.productCardImg} />
         <ProductDescription name={name} description={description} price={price} />
       </NavLink>
+      <Button badgeSrc={cart} className={classes.productCardCartButton} />
       <ProductColorVariants images={images} switchVariants={switchVariants} />
     </li>
   );
