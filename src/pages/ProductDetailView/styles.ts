@@ -39,4 +39,15 @@ export const useStyle = makeStyles(() => ({
     fontWeight: 'bold',
     color: '#15166d',
   },
+
+  productCardCartButton: {
+    border: '1px solid #15166d',
+    borderRadius: '4px',
+    minWidth: '50px',
+    height: '35px',
+
+    '&:hover': {
+      backgroundColor: 'rgb(233, 230, 230)',
+    },
+  },
 }));

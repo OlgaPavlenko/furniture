@@ -4,6 +4,7 @@ export const useStyle = makeStyles(() => ({
   productCard: {
     minWidth: '400px',
     maxWidth: '400px',
+    textAlign: 'right',
   },
 
   productCardImg: {
@@ -32,8 +33,8 @@ export const useStyle = makeStyles(() => ({
 
   productCardCartButton: {
     border: '1px solid #15166d',
-    borderRadius: '50%',
-    width: '35px',
+    borderRadius: '4px',
+    minWidth: '35px',
     height: '35px',
 
     '&:hover': {

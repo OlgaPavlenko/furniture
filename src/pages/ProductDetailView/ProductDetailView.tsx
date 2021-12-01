@@ -1,6 +1,7 @@
 import { FunctionComponent, SyntheticEvent, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { Button } from 'sharedComponents/Button';
 import { ProductColorVariants } from 'sharedComponents/ProductCard/ProductColorVariants';
 import { ProductDescription } from 'sharedComponents/ProductCard/ProductDescription';
 import { ProductMainImg } from 'sharedComponents/ProductCard/ProductMainImg';
@@ -10,6 +11,7 @@ import { useStyle } from './styles';
 export const ProductDetailView: FunctionComponent = () => {
   const classes = useStyle();
   const history = useHistory();
+  const cart = require('assets/icons/shopping-cart.svg').default;
   const product = useSelector(currentProductSelector);
   const [src, setSrc] = useState(product.images[0].baseUrl);
 
@@ -38,6 +40,7 @@ export const ProductDetailView: FunctionComponent = () => {
           price={product.price}
           className={classes.description}
         />
+        <Button badgeSrc={cart} className={classes.productCardCartButton} />
         <button className={classes.backButton} onClick={goToMainPage}>
           Go Back
         </button>
