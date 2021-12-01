@@ -68,8 +68,6 @@ export const useStyle = makeStyles(() => ({
   productCartList: {},
   wraper: {
     width: '65%',
-    display: 'flex',
-    justifyContent: 'space-between',
   },
 
   productName: {
@@ -118,6 +116,10 @@ export const useStyle = makeStyles(() => ({
   },
 
   leftBar: {
+    display: 'flex',
+  },
+
+  product: {
     display: 'flex',
   },
 }));
