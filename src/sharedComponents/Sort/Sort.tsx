@@ -4,7 +4,7 @@ import { Button } from 'sharedComponents/Button';
 import { SORTING_IMGS } from 'constants/constants';
 import { useDispatch, useSelector } from 'react-redux';
 import { productListSelector } from 'store/selectors/product';
-import { IProduct } from 'utils/interfaces/product';
+import { IProduct } from 'store/utils/interfaces/product';
 import { setProductList } from 'store/slices/product';
 import { useStyle } from './styles';
 

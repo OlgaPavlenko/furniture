@@ -1,14 +1,16 @@
 import { FunctionComponent, useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
 import { ProductColorVariants } from 'sharedComponents/ProductCard/ProductColorVariants';
 import { ProductDescription } from 'sharedComponents/ProductCard/ProductDescription';
 import { ProductMainImg } from 'sharedComponents/ProductCard/ProductMainImg';
-import { currentProductSelector } from 'store/selectors/product';
+import { IProduct } from 'store/utils/interfaces/product';
 import { useStyle } from './styles';
 
-export const ProductCartView: FunctionComponent = () => {
+interface IProps {
+  product: IProduct;
+}
+
+export const ProductCartView: FunctionComponent<IProps> = ({ product }) => {
   const classes = useStyle();
-  const product = useSelector(currentProductSelector);
   const [src, setSrc] = useState(product.images[0].baseUrl);
 
   useEffect(() => {

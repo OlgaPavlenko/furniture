@@ -33,7 +33,7 @@ export const useStyle = makeStyles(() => ({
 
   productCardCartButton: {
     border: '1px solid #15166d',
-    borderRadius: '4px',
+    borderRadius: '50%',
     minWidth: '35px',
     height: '35px',
 

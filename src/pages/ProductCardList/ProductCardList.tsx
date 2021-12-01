@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ProductCard } from 'sharedComponents/ProductCard';
 import { getProductsAsync, setIsListVeiw } from 'store/slices/product';
 import { isListVeiwSelector, productListSelector } from 'store/selectors/product';
-import { IProduct } from 'utils/interfaces/product';
+import { IProduct } from 'store/utils/interfaces/product';
 import { Filter } from 'sharedComponents/Filter';
 import { TOGGLE_BUTTONS_IMG } from 'constants/constants';
 import { Button } from 'sharedComponents/Button';

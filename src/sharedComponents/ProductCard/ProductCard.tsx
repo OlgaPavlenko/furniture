@@ -1,10 +1,11 @@
 import { FunctionComponent, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { IProductImage } from 'utils/interfaces/product';
+import { IProductImage } from 'store/utils/interfaces/product';
 import { NavLink } from 'react-router-dom';
 import { getProductByIdAsync } from 'store/slices/product';
 import { Button } from 'sharedComponents/Button';
+import { addProductToCart } from 'store/slices/cart';
 import { ProductMainImg } from './ProductMainImg';
 import { ProductDescription } from './ProductDescription';
 import { ProductColorVariants } from './ProductColorVariants';
@@ -38,6 +39,10 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
     dispatch(getProductByIdAsync(id));
   };
 
+  const addToCart = (id: string) => {
+    dispatch(addProductToCart(id));
+  };
+
   return (
     <li className={classes.productCard}>
       <NavLink
@@ -48,7 +53,11 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
         <ProductMainImg src={src} className={classes.productCardImg} />
         <ProductDescription name={name} description={description} price={price} />
       </NavLink>
-      <Button badgeSrc={cart} className={classes.productCardCartButton} />
+      <Button
+        badgeSrc={cart}
+        className={classes.productCardCartButton}
+        onClick={() => addToCart(productId)}
+      />
       <ProductColorVariants images={images} switchVariants={switchVariants} />
     </li>
   );

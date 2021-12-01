@@ -116,4 +116,8 @@ export const useStyle = makeStyles(() => ({
   select: {
     maxWidth: '50px',
   },
+
+  leftBar: {
+    display: 'flex',
+  },
 }));
