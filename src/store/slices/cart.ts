@@ -21,7 +21,6 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     deleteProduct(state, action) {
-      console.log(action.payload);
       state.cartList = state.cartList.filter((product) => product.id !== action.payload);
     },
     deleteAllProducts(state) {
