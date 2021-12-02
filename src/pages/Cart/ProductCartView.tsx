@@ -3,7 +3,6 @@ import { ProductColorVariants } from 'sharedComponents/ProductCard/ProductColorV
 import { ProductDescription } from 'sharedComponents/ProductCard/ProductDescription';
 import { ProductMainImg } from 'sharedComponents/ProductCard/ProductMainImg';
 import { Button } from 'sharedComponents/Button';
-import { IProduct } from 'store/utils/interfaces/product';
 import { deleteProduct, IProps } from 'store/slices/cart';
 import { useDispatch, useSelector } from 'react-redux';
 import { productCartSelector } from 'store/selectors/cart';
