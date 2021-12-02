@@ -31,6 +31,7 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
   const dispatch = useDispatch();
 
   const [src, setSrc] = useState(images[0].baseUrl);
+
   const switchVariants = (url: string) => {
     setSrc(url);
   };

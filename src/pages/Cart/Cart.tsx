@@ -10,7 +10,10 @@ import { useStyle } from './styles';
 
 export const Cart: FunctionComponent = () => {
   const products = useSelector(productCartSelector);
+  // const quantity = useSelector(productQuantitySelector);
   const classes = useStyle();
+
+  // const totalPrice = products.reduce((acc, product) => acc + product.price * quantity, 0);
 
   return (
     <div className={classes.cart}>
@@ -19,10 +22,9 @@ export const Cart: FunctionComponent = () => {
         <EmptyCart />
       ) : (
         <>
-          {' '}
           <div className={classes.totalPrice}>
             <div>Total for this order</div>
-            <div>price</div>
+            <div>totalPrice</div>
           </div>
           <Button name="BUY" className={classes.buyButton} />
           <ProductCartList />

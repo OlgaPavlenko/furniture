@@ -1,15 +1,24 @@
-import { FunctionComponent } from 'react';
+import { ChangeEvent, FunctionComponent } from 'react';
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import NativeSelect from '@mui/material/NativeSelect';
 import { QUANTITY_SELECT } from 'constants/constants';
+import { useDispatch } from 'react-redux';
+import { setQuantity } from 'store/slices/cart';
 
 interface IProps {
   className: string;
+  productId: string;
 }
 
-export const QuantitySelect: FunctionComponent<IProps> = ({ className }) => {
+export const QuantitySelect: FunctionComponent<IProps> = ({ className, productId }) => {
+  const dispatch = useDispatch();
+
+  const getQuantity = (e: ChangeEvent<HTMLSelectElement>) => {
+    dispatch(setQuantity({ quantity: Number(e.target.value), productId }));
+  };
+
   return (
     <Box className={className}>
       <FormControl fullWidth>
@@ -17,6 +26,7 @@ export const QuantitySelect: FunctionComponent<IProps> = ({ className }) => {
           Quantity
         </InputLabel>
         <NativeSelect
+          onChange={getQuantity}
           defaultValue={1}
           inputProps={{
             name: 'quantity',
