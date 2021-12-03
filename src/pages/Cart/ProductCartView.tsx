@@ -3,14 +3,15 @@ import { ProductColorVariants } from 'sharedComponents/ProductCard/ProductColorV
 import { ProductDescription } from 'sharedComponents/ProductCard/ProductDescription';
 import { ProductMainImg } from 'sharedComponents/ProductCard/ProductMainImg';
 import { Button } from 'sharedComponents/Button';
-import { deleteProduct, IProps } from 'store/slices/cart';
+import { deleteProduct } from 'store/slices/cart';
 import { useDispatch, useSelector } from 'react-redux';
 import { productCartSelector } from 'store/selectors/cart';
+import { IProductWithQuantity } from 'store/utils/interfaces/product';
 import { QuantitySelect } from './QuantitySelect';
 import { useStyle } from './styles';
 
 interface IProductCartView {
-  product: IProps;
+  product: IProductWithQuantity;
 }
 
 export const ProductCartView: FunctionComponent<IProductCartView> = ({ product }) => {

@@ -1,15 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { PATH } from 'constants/constants';
 import HTTPService from 'store/utils/services/httpService';
-import { IProduct } from 'store/utils/interfaces/product';
-
-export interface IProps {
-  product: IProduct;
-  quantity: number;
-}
+import { IProductWithQuantity } from 'store/utils/interfaces/product';
 
 export interface ICart {
-  cartList: IProps[];
+  cartList: IProductWithQuantity[];
 }
 
 const initialState: ICart = {

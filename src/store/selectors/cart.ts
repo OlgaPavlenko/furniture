@@ -1,4 +1,5 @@
-import { IProps } from 'store/slices/cart';
 import { IRootState } from 'store/store';
+import { IProductWithQuantity } from 'store/utils/interfaces/product';
 
-export const productCartSelector = (state: IRootState): IProps[] => state.cart.cartList;
+export const productCartSelector = (state: IRootState): IProductWithQuantity[] =>
+  state.cart.cartList;

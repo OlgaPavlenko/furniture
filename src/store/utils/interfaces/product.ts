@@ -44,3 +44,8 @@ export interface IProduct {
   images: IProductImage[];
   price: number;
 }
+
+export interface IProductWithQuantity {
+  product: IProduct;
+  quantity: number;
+}
