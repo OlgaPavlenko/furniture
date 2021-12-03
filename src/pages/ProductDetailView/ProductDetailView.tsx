@@ -1,11 +1,12 @@
 import { FunctionComponent, SyntheticEvent, useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { Button } from 'sharedComponents/Button';
 import { ProductColorVariants } from 'sharedComponents/ProductCard/ProductColorVariants';
 import { ProductDescription } from 'sharedComponents/ProductCard/ProductDescription';
 import { ProductMainImg } from 'sharedComponents/ProductCard/ProductMainImg';
 import { currentProductSelector } from 'store/selectors/product';
+import { addProductToCart } from 'store/slices/cart';
 import { useStyle } from './styles';
 
 export const ProductDetailView: FunctionComponent = () => {
@@ -14,6 +15,7 @@ export const ProductDetailView: FunctionComponent = () => {
   const cart = require('assets/icons/shopping-cart.svg').default;
   const product = useSelector(currentProductSelector);
   const [src, setSrc] = useState(product.images[0].baseUrl);
+  const dispatch = useDispatch();
 
   const goToMainPage = (event: SyntheticEvent) => {
     event.preventDefault();
@@ -28,6 +30,10 @@ export const ProductDetailView: FunctionComponent = () => {
     setSrc(url);
   };
 
+  const addToCart = (id: string) => {
+    dispatch(addProductToCart(id));
+  };
+
   return (
     <div className={classes.wraper}>
       <ProductMainImg src={src} className={classes.image} />
@@ -40,7 +46,11 @@ export const ProductDetailView: FunctionComponent = () => {
           price={product.price}
           className={classes.description}
         />
-        <Button badgeSrc={cart} className={classes.productCardCartButton} />
+        <Button
+          badgeSrc={cart}
+          className={classes.productCardCartButton}
+          onClick={() => addToCart(product.id)}
+        />
         <button className={classes.backButton} onClick={goToMainPage}>
           Go Back
         </button>
