@@ -34,7 +34,7 @@ const initialState: IInitialState = {
     },
     material: [],
     description: '',
-    images: [{ color: '', baseUrl: '', url: '' }],
+    images: [{ id: '', color: '', baseUrl: '', url: '', price: 0 }],
     price: 0,
   },
   isListVeiw: false,

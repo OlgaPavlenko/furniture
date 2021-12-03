@@ -3,6 +3,33 @@ import { PATH } from 'constants/constants';
 import HTTPService from 'store/utils/services/httpService';
 import { IProductWithQuantity } from 'store/utils/interfaces/product';
 
+export interface ICartProduct {
+  id: '';
+  name: '';
+  category: {
+    id: '';
+    name: '';
+  };
+  company: {
+    id: '';
+    name: '';
+    countryId: '';
+  };
+  size: {
+    width: '';
+    height: '';
+    length: '';
+  };
+  country: {
+    id: '';
+    name: '';
+  };
+  material: [];
+  description: '';
+  images: { id: ''; color: ''; baseUrl: ''; url: ''; price: 0 };
+  price: 0;
+}
+
 export interface ICart {
   cartList: IProductWithQuantity[];
 }

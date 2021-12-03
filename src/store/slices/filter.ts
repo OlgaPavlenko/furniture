@@ -65,7 +65,7 @@ export const getMaterialsAsync = createAsyncThunk('materials/fetch', async () =>
 export const getPriceAsync = createAsyncThunk('price/fetch', async () => {
   const { data: products } = await HTTPService.get(PATH.products);
 
-  const prices = products.map((product: IProduct) => product.price);
+  const prices = products.map((product: IProduct) => product.images[0].price);
   const minPrice = Math.min(...prices);
   const maxPrice = Math.max(...prices);
   return { minPrice, maxPrice };

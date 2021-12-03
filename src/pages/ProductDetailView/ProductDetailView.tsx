@@ -14,8 +14,8 @@ export const ProductDetailView: FunctionComponent = () => {
   const history = useHistory();
   const cart = require('assets/icons/shopping-cart.svg').default;
   const product = useSelector(currentProductSelector);
-  const [src, setSrc] = useState(product.images[0].baseUrl);
   const dispatch = useDispatch();
+  const [src, setSrc] = useState(product.images[0].baseUrl);
 
   const goToMainPage = (event: SyntheticEvent) => {
     event.preventDefault();
