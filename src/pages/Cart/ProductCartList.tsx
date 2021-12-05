@@ -7,7 +7,7 @@ import { ProductCartView } from './ProductCartView';
 import { useStyle } from './styles';
 
 export const ProductCartList: FunctionComponent = () => {
-  const products = useSelector(productCartSelector);
+  const productList = useSelector(productCartSelector);
   const dispatch = useDispatch();
   const classes = useStyle();
 
@@ -16,8 +16,13 @@ export const ProductCartList: FunctionComponent = () => {
   };
   return (
     <div className={classes.productCartList}>
-      {products.length &&
-        products.map((product) => <ProductCartView key={product.product.id} product={product} />)}
+      {productList.length &&
+        productList.map((productObjWithQuantity) => (
+          <ProductCartView
+            key={`${productObjWithQuantity.product.id}${productObjWithQuantity.product.image}`}
+            product={productObjWithQuantity}
+          />
+        ))}
       <Button
         name="Remove All Products"
         className={classes.removeAllProducts}

@@ -5,7 +5,7 @@ import { IProductImage } from 'store/utils/interfaces/product';
 import { NavLink } from 'react-router-dom';
 import { getProductByIdAsync } from 'store/slices/product';
 import { Button } from 'sharedComponents/Button';
-import { addProductToCart } from 'store/slices/cart';
+import { addProduct } from 'store/slices/cart';
 import { ProductMainImg } from './ProductMainImg';
 import { ProductDescription } from './ProductDescription';
 import { ProductColorVariants } from './ProductColorVariants';
@@ -16,7 +16,6 @@ interface IProductCard {
   name: string;
   description: string;
   images: IProductImage[];
-  price: number;
 }
 
 export const ProductCard: FunctionComponent<IProductCard> = ({
@@ -24,24 +23,38 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
   name,
   description,
   images,
-  price,
 }) => {
   const classes = useStyle();
   const cart = require('assets/icons/shopping-cart.svg').default;
   const dispatch = useDispatch();
 
   const [src, setSrc] = useState(images[0].baseUrl);
+  const [srcId, setSrcId] = useState(images[0].id);
 
-  const switchVariants = (url: string) => {
-    setSrc(url);
+  const getPrice = (): number | undefined => {
+    const currentImage = images.find((image) => image.id === srcId);
+    return currentImage?.price;
+  };
+
+  const getImage = (): string | undefined => {
+    const currentImage = images.find((image) => image.id === srcId);
+    return currentImage?.baseUrl;
+  };
+
+  const switchVariants = (id: string): void => {
+    const productImage = images.find((image) => image.id === id);
+    if (productImage?.baseUrl) {
+      setSrc(productImage.baseUrl);
+    }
+    setSrcId(id);
   };
 
   const getProductById = (id: string) => {
     dispatch(getProductByIdAsync(id));
   };
 
-  const addToCart = (id: string) => {
-    dispatch(addProductToCart(id));
+  const addToCart = (id: string, image: string | undefined, price: number | undefined) => {
+    dispatch(addProduct({ id, name, image, price, description }));
   };
 
   return (
@@ -52,12 +65,12 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
         to={`/catalog/${productId}`}
       >
         <ProductMainImg src={src} className={classes.productCardImg} />
-        <ProductDescription name={name} description={description} price={price} />
+        <ProductDescription name={name} description={description} price={getPrice()} />
       </NavLink>
       <Button
         badgeSrc={cart}
         className={classes.productCardCartButton}
-        onClick={() => addToCart(productId)}
+        onClick={() => addToCart(productId, getImage(), getPrice())}
       />
       <ProductColorVariants images={images} switchVariants={switchVariants} />
     </li>

@@ -1,34 +1,6 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { PATH } from 'constants/constants';
-import HTTPService from 'store/utils/services/httpService';
-import { IProductWithQuantity } from 'store/utils/interfaces/product';
+import { createSlice } from '@reduxjs/toolkit';
 
-export interface ICartProduct {
-  id: '';
-  name: '';
-  category: {
-    id: '';
-    name: '';
-  };
-  company: {
-    id: '';
-    name: '';
-    countryId: '';
-  };
-  size: {
-    width: '';
-    height: '';
-    length: '';
-  };
-  country: {
-    id: '';
-    name: '';
-  };
-  material: [];
-  description: '';
-  images: { id: ''; color: ''; baseUrl: ''; url: ''; price: 0 };
-  price: 0;
-}
+import { IProductWithQuantity } from 'store/utils/interfaces/product';
 
 export interface ICart {
   cartList: IProductWithQuantity[];
@@ -38,17 +10,16 @@ const initialState: ICart = {
   cartList: [],
 };
 
-export const addProductToCart = createAsyncThunk('addProductToCart/fetch', async (id: string) => {
-  const response = await HTTPService.get(`${PATH.products}/${id}`);
-  return response;
-});
-
 export const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
     deleteProduct(state, action) {
-      state.cartList = state.cartList.filter((product) => product.product.id !== action.payload);
+      state.cartList = state.cartList.filter(
+        (product) =>
+          product.product.id !== action.payload.id ||
+          product.product.image !== action.payload.image,
+      );
     },
     deleteAllProducts(state) {
       state.cartList = [];
@@ -61,13 +32,11 @@ export const cartSlice = createSlice({
         return product;
       });
     },
-  },
-  extraReducers: (builder) => {
-    builder.addCase(addProductToCart.fulfilled, (state, action) => {
-      state.cartList = [...state.cartList, { product: action.payload.data, quantity: 1 }];
-    });
+    addProduct(state, action) {
+      state.cartList.push({ product: action.payload, quantity: 1 });
+    },
   },
 });
 
 export const cartReducer = cartSlice.reducer;
-export const { deleteAllProducts, deleteProduct, setQuantity } = cartSlice.actions;
+export const { deleteAllProducts, deleteProduct, setQuantity, addProduct } = cartSlice.actions;

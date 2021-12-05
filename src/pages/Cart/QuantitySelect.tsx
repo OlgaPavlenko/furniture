@@ -10,15 +10,19 @@ import { setQuantity } from 'store/slices/cart';
 interface IProps {
   className: string;
   productId: string;
+  defaultQuantity: number;
 }
 
-export const QuantitySelect: FunctionComponent<IProps> = ({ className, productId }) => {
+export const QuantitySelect: FunctionComponent<IProps> = ({
+  className,
+  productId,
+  defaultQuantity,
+}) => {
   const dispatch = useDispatch();
 
   const getQuantity = (e: ChangeEvent<HTMLSelectElement>) => {
     dispatch(setQuantity({ quantity: Number(e.target.value), productId }));
   };
-
   return (
     <Box className={className}>
       <FormControl fullWidth>
@@ -27,7 +31,7 @@ export const QuantitySelect: FunctionComponent<IProps> = ({ className, productId
         </InputLabel>
         <NativeSelect
           onChange={getQuantity}
-          defaultValue={1}
+          defaultValue={defaultQuantity}
           inputProps={{
             name: 'quantity',
             id: 'uncontrolled-native',

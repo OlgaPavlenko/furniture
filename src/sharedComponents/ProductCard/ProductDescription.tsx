@@ -4,7 +4,7 @@ import { useStyle } from './styles';
 interface IProductDescription {
   name: string;
   description: string;
-  price: number;
+  price: number | undefined;
   className?: string;
 }
 

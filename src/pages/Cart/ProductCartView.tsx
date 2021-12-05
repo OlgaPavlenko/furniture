@@ -1,10 +1,9 @@
-import { FunctionComponent, useEffect } from 'react';
+import { FunctionComponent, useMemo } from 'react';
 import { ProductDescription } from 'sharedComponents/ProductCard/ProductDescription';
 import { ProductMainImg } from 'sharedComponents/ProductCard/ProductMainImg';
 import { Button } from 'sharedComponents/Button';
 import { deleteProduct } from 'store/slices/cart';
-import { useDispatch, useSelector } from 'react-redux';
-import { productCartSelector } from 'store/selectors/cart';
+import { useDispatch } from 'react-redux';
 import { IProductWithQuantity } from 'store/utils/interfaces/product';
 import { QuantitySelect } from './QuantitySelect';
 import { useStyle } from './styles';
@@ -13,40 +12,41 @@ interface IProductCartView {
   product: IProductWithQuantity;
 }
 
-export const ProductCartView: FunctionComponent<IProductCartView> = ({ product }) => {
+export const ProductCartView: FunctionComponent<IProductCartView> = ({
+  product: { product, quantity },
+}) => {
   const classes = useStyle();
   const bin = require('assets/icons/bin.svg').default as string;
   const dispatch = useDispatch();
-  const quantity = useSelector(productCartSelector);
 
-  const deleteCurrentProduct = (id: string) => {
-    dispatch(deleteProduct(id));
+  const deleteCurrentProduct = (id: string, image: string) => {
+    dispatch(deleteProduct({ id, image }));
   };
 
-  const getPrice = (): number => {
-    return product.quantity * product.product.price;
-  };
-
-  useEffect(() => {
-    getPrice();
+  const price = useMemo((): number => {
+    return quantity * product.price;
   }, [quantity]);
 
   return (
     <div className={classes.wraper}>
       <div className={classes.selectBox}>
         <div className={classes.leftBar}>
-          <QuantitySelect className={classes.select} productId={product.product.id} />
-          <Button badgeSrc={bin} onClick={() => deleteCurrentProduct(product.product.id)} />
+          <QuantitySelect
+            className={classes.select}
+            productId={product.id}
+            defaultQuantity={quantity}
+          />
+          <Button badgeSrc={bin} onClick={() => deleteCurrentProduct(product.id, product.image)} />
         </div>
       </div>
       <div className={classes.product}>
-        <ProductMainImg src={product.product.images.baseUrl} className={classes.image} />
+        <ProductMainImg src={product.image} className={classes.image} />
         <div className={classes.productView}>
-          <h1 className={classes.productName}>{product.product.name}</h1>
+          <h1 className={classes.productName}>{product.name}</h1>
           <ProductDescription
-            name={product.product.name}
-            description={product.product.description}
-            price={getPrice()}
+            name={product.name}
+            description={product.description}
+            price={price}
             className={classes.description}
           />
         </div>

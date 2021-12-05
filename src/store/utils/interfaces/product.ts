@@ -1,5 +1,3 @@
-import { ICartProduct } from 'store/slices/cart';
-
 export interface ICategory {
   id: string;
   name: string;
@@ -46,6 +44,14 @@ export interface IProduct {
   material: IMaterial[];
   description: string;
   images: IProductImage[];
+  price: number;
+}
+
+export interface ICartProduct {
+  id: string;
+  name: string;
+  image: string;
+  description: string;
   price: number;
 }
 

@@ -5,7 +5,7 @@ import { useStyle } from './styles';
 
 interface IProductMainImg {
   images: IProductImage[];
-  switchVariants: (url: string, color: string) => void;
+  switchVariants: (id: string) => void;
 }
 
 export const ProductColorVariants: FunctionComponent<IProductMainImg> = ({
@@ -23,7 +23,7 @@ export const ProductColorVariants: FunctionComponent<IProductMainImg> = ({
             key={image.color}
             url={image.url}
             baseUrl={image.baseUrl}
-            switchVariants={() => switchVariants(image.baseUrl, image.color)}
+            switchVariants={() => switchVariants(image.id)}
           />
         ))}
       </div>

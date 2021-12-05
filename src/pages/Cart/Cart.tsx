@@ -2,7 +2,7 @@ import { FunctionComponent } from 'react';
 import { CART_IMG, CART_SVG } from 'constants/constants';
 import { Button } from 'sharedComponents/Button';
 import { useSelector } from 'react-redux';
-import { productCartSelector } from 'store/selectors/cart';
+import { productCartSelector, totalPriceSelector } from 'store/selectors/cart';
 import { CartInfo } from './CartInfo';
 import { ProductCartList } from './ProductCartList';
 import { EmptyCart } from './EmptyCart';
@@ -10,12 +10,8 @@ import { useStyle } from './styles';
 
 export const Cart: FunctionComponent = () => {
   const products = useSelector(productCartSelector);
+  const totalPrice = useSelector(totalPriceSelector);
   const classes = useStyle();
-
-  // const totalPrice = products.reduce(
-  // (acc, product) => acc + product.product.images * product.quantity,
-  // 0,
-  // );
 
   return (
     <div className={classes.cart}>
@@ -26,7 +22,7 @@ export const Cart: FunctionComponent = () => {
         <>
           <div className={classes.totalPrice}>
             <div>Total for this order</div>
-            <div>totalPrice</div>
+            <div>{totalPrice}</div>
           </div>
           <Button name="BUY" className={classes.buyButton} />
           <ProductCartList />
