@@ -1,4 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 
 import { IProductWithQuantity } from 'store/utils/interfaces/product';
 
@@ -9,6 +11,8 @@ export interface ICart {
 const initialState: ICart = {
   cartList: [],
 };
+
+toast.configure();
 
 export const cartSlice = createSlice({
   name: 'cart',
@@ -32,8 +36,19 @@ export const cartSlice = createSlice({
         return product;
       });
     },
+
     addProduct(state, action) {
-      state.cartList.push({ product: action.payload, quantity: 1 });
+      let isInCart = false;
+      state.cartList.find(({ product }) => {
+        if (product.id === action.payload.id && product.image === action.payload.image) {
+          toast('product already in the cart!');
+          isInCart = true;
+        }
+        return isInCart;
+      });
+      if (!isInCart) {
+        state.cartList.push({ product: action.payload, quantity: 1 });
+      }
     },
   },
 });

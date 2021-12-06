@@ -1,5 +1,4 @@
 import { ButtonHTMLAttributes, DOMAttributes, FunctionComponent } from 'react';
-
 interface IButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     DOMAttributes<HTMLButtonElement> {
@@ -14,6 +13,7 @@ export const Button: FunctionComponent<IButtonProps> = ({
   name,
   badgeSrc,
   className,
+
   alt,
   onClick,
 }) => {
