@@ -41,7 +41,9 @@ export const cartSlice = createSlice({
       let isInCart = false;
       state.cartList.find(({ product }) => {
         if (product.id === action.payload.id && product.image === action.payload.image) {
-          toast('product already in the cart!');
+          toast('product already in the cart!', {
+            position: toast.POSITION.TOP_CENTER,
+          });
           isInCart = true;
         }
         return isInCart;
