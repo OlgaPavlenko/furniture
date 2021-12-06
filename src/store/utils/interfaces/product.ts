@@ -58,4 +58,5 @@ export interface ICartProduct {
 export interface IProductWithQuantity {
   product: ICartProduct;
   quantity: number;
+  isInCart: boolean;
 }

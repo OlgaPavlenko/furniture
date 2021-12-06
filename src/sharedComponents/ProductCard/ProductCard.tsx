@@ -1,5 +1,5 @@
 import { FunctionComponent, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { IProductImage } from 'store/utils/interfaces/product';
 import { NavLink } from 'react-router-dom';
@@ -27,9 +27,11 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
   const classes = useStyle();
   const cart = require('assets/icons/shopping-cart.svg').default;
   const dispatch = useDispatch();
+  // const productsInCart = useSelector(productCartSelector);
 
   const [src, setSrc] = useState(images[0].baseUrl);
   const [srcId, setSrcId] = useState(images[0].id);
+  const [isActive, setIsActive] = useState(false);
 
   const getPrice = (): number | undefined => {
     const currentImage = images.find((image) => image.id === srcId);
@@ -40,6 +42,8 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
     const currentImage = images.find((image) => image.id === srcId);
     return currentImage?.baseUrl;
   };
+
+  const getIsInCart = (): boolean => {};
 
   const switchVariants = (id: string): void => {
     const productImage = images.find((image) => image.id === id);
@@ -55,6 +59,7 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
 
   const addToCart = (id: string, image: string | undefined, price: number | undefined) => {
     dispatch(addProduct({ id, name, image, price, description }));
+    setIsActive(!isActive);
   };
 
   return (
@@ -68,6 +73,7 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
         <ProductDescription name={name} description={description} price={getPrice()} />
       </NavLink>
       <Button
+        disabled={isActive}
         badgeSrc={cart}
         className={classes.productCardCartButton}
         onClick={() => addToCart(productId, getImage(), getPrice())}

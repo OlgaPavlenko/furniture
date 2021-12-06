@@ -28,6 +28,7 @@ export const cartSlice = createSlice({
     deleteAllProducts(state) {
       state.cartList = [];
     },
+
     setQuantity(state, action) {
       state.cartList.forEach((product) => {
         if (product.product.id === action.payload.productId) {
@@ -39,8 +40,8 @@ export const cartSlice = createSlice({
 
     addProduct(state, action) {
       let isInCart = false;
-      state.cartList.find(({ product }) => {
-        if (product.id === action.payload.id && product.image === action.payload.image) {
+      state.cartList.find((product) => {
+        if (product.isInCart) {
           toast('product already in the cart!', {
             position: toast.POSITION.TOP_CENTER,
           });
@@ -49,9 +50,21 @@ export const cartSlice = createSlice({
         return isInCart;
       });
       if (!isInCart) {
-        state.cartList.push({ product: action.payload, quantity: 1 });
+        state.cartList.push({ product: action.payload, quantity: 1, isInCart: true });
       }
     },
+    // addProduct(state, action) {
+    //   state.cartList.find((product) => {
+    //     if (product.isInCart) {
+    //       toast('product already in the cart!', {
+    //         position: toast.POSITION.TOP_CENTER,
+    //       });
+    //     }
+    //   });
+    //   if (!product.isInCart) {
+    //     state.cartList.push({ product: action.payload, quantity: 1, isInCart: true });
+    //   }
+    // },
   },
 });
 

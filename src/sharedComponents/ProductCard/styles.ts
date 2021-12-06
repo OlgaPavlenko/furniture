@@ -42,6 +42,12 @@ export const useStyle = makeStyles(() => ({
     },
   },
 
+  disabled: {
+    opacity: 0.5,
+    cursor: 'not-allowed',
+    pointerEvents: 'none',
+  },
+
   productCardInfo: {
     paddingBottom: '20px',
   },
