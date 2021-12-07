@@ -40,8 +40,8 @@ export const cartSlice = createSlice({
 
     addProduct(state, action) {
       let isInCart = false;
-      state.cartList.find((product) => {
-        if (product.isInCart) {
+      state.cartList.find(({ product }) => {
+        if (product.id === action.payload.id && product.image === action.payload.image) {
           toast('product already in the cart!', {
             position: toast.POSITION.TOP_CENTER,
           });
@@ -50,21 +50,9 @@ export const cartSlice = createSlice({
         return isInCart;
       });
       if (!isInCart) {
-        state.cartList.push({ product: action.payload, quantity: 1, isInCart: true });
+        state.cartList.push({ product: action.payload, quantity: 1 });
       }
     },
-    // addProduct(state, action) {
-    //   state.cartList.find((product) => {
-    //     if (product.isInCart) {
-    //       toast('product already in the cart!', {
-    //         position: toast.POSITION.TOP_CENTER,
-    //       });
-    //     }
-    //   });
-    //   if (!product.isInCart) {
-    //     state.cartList.push({ product: action.payload, quantity: 1, isInCart: true });
-    //   }
-    // },
   },
 });
 

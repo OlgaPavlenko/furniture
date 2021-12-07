@@ -1,5 +1,5 @@
 import { FunctionComponent, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { IProductImage } from 'store/utils/interfaces/product';
 import { NavLink } from 'react-router-dom';
@@ -27,7 +27,6 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
   const classes = useStyle();
   const cart = require('assets/icons/shopping-cart.svg').default;
   const dispatch = useDispatch();
-  // const productsInCart = useSelector(productCartSelector);
 
   const [src, setSrc] = useState(images[0].baseUrl);
   const [srcId, setSrcId] = useState(images[0].id);
@@ -42,8 +41,6 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
     const currentImage = images.find((image) => image.id === srcId);
     return currentImage?.baseUrl;
   };
-
-  const getIsInCart = (): boolean => {};
 
   const switchVariants = (id: string): void => {
     const productImage = images.find((image) => image.id === id);
