@@ -31,7 +31,10 @@ export const cartSlice = createSlice({
 
     setQuantity(state, action) {
       state.cartList.forEach((product) => {
-        if (product.product.id === action.payload.productId) {
+        if (
+          product.product.id === action.payload.productId &&
+          product.product.image === action.payload.image
+        ) {
           product.quantity = action.payload.quantity;
         }
         return product;
@@ -39,7 +42,6 @@ export const cartSlice = createSlice({
     },
 
     setIsInCart(state, action) {
-      console.log(action.payload.image);
       state.cartList.forEach((product) => {
         if (
           product.product.id === action.payload.id ||

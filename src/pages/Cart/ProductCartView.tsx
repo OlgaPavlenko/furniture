@@ -34,6 +34,7 @@ export const ProductCartView: FunctionComponent<IProductCartView> = ({
           <QuantitySelect
             className={classes.select}
             productId={product.id}
+            image={product.image}
             defaultQuantity={quantity}
           />
           <Button badgeSrc={bin} onClick={() => deleteCurrentProduct(product.id, product.image)} />

@@ -1,11 +1,12 @@
 import { FunctionComponent, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { IProductImage } from 'store/utils/interfaces/product';
 import { NavLink } from 'react-router-dom';
 import { getProductByIdAsync } from 'store/slices/product';
 import { Button } from 'sharedComponents/Button';
 import { addProduct, setIsInCart } from 'store/slices/cart';
+import { productCartSelector } from 'store/selectors/cart';
 import { ProductMainImg } from './ProductMainImg';
 import { ProductDescription } from './ProductDescription';
 import { ProductColorVariants } from './ProductColorVariants';
@@ -27,10 +28,11 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
   const classes = useStyle();
   const cart = require('assets/icons/shopping-cart.svg').default;
   const dispatch = useDispatch();
+  const cartProduct = useSelector(productCartSelector);
 
   const [src, setSrc] = useState(images[0].baseUrl);
   const [srcId, setSrcId] = useState(images[0].id);
-  const [isActive, setIsActive] = useState(false);
+  const isActive = false;
 
   const getPrice = (): number | undefined => {
     const currentImage = images.find((image) => image.id === srcId);
@@ -54,12 +56,17 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
     dispatch(getProductByIdAsync(id));
   };
 
+  const setActiveProduct = (): boolean => {
+    const currentProduct = cartProduct.find((product) =>
+      product.product.id === productId && product.product.image === src ? product.isInCart : null,
+    );
+    return currentProduct?.isInCart as boolean;
+  };
+
   const addToCart = (id: string, image: string | undefined, price: number | undefined) => {
     dispatch(addProduct({ id, name, image, price, description }));
-    setIsActive(isActive);
     dispatch(setIsInCart({ isActive, id, image }));
   };
-  console.log(isActive);
   return (
     <li className={classes.productCard}>
       <NavLink
@@ -71,9 +78,13 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
         <ProductDescription name={name} description={description} price={getPrice()} />
       </NavLink>
       <Button
-        disabled={isActive}
+        disabled={setActiveProduct()}
         badgeSrc={cart}
-        className={classes.productCardCartButton}
+        className={
+          setActiveProduct()
+            ? classes.productCardCartButton + classes.disabled
+            : classes.productCardCartButton
+        }
         onClick={() => addToCart(productId, getImage(), getPrice())}
       />
       <ProductColorVariants images={images} switchVariants={switchVariants} />
