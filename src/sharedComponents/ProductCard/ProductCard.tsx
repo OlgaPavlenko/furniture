@@ -5,7 +5,7 @@ import { IProductImage } from 'store/utils/interfaces/product';
 import { NavLink } from 'react-router-dom';
 import { getProductByIdAsync } from 'store/slices/product';
 import { Button } from 'sharedComponents/Button';
-import { addProduct } from 'store/slices/cart';
+import { addProduct, setIsInCart } from 'store/slices/cart';
 import { ProductMainImg } from './ProductMainImg';
 import { ProductDescription } from './ProductDescription';
 import { ProductColorVariants } from './ProductColorVariants';
@@ -56,9 +56,10 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
 
   const addToCart = (id: string, image: string | undefined, price: number | undefined) => {
     dispatch(addProduct({ id, name, image, price, description }));
-    setIsActive(!isActive);
+    setIsActive(isActive);
+    dispatch(setIsInCart({ isActive, id, image }));
   };
-
+  console.log(isActive);
   return (
     <li className={classes.productCard}>
       <NavLink

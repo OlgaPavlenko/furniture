@@ -38,23 +38,41 @@ export const cartSlice = createSlice({
       });
     },
 
+    setIsInCart(state, action) {
+      console.log(action.payload.image);
+      state.cartList.forEach((product) => {
+        if (
+          product.product.id === action.payload.id ||
+          product.product.image === action.payload.image
+        ) {
+          product.isInCart = !action.payload.isActive;
+        }
+        return product;
+      });
+    },
+
     addProduct(state, action) {
-      let isInCart = false;
-      state.cartList.find(({ product }) => {
-        if (product.id === action.payload.id && product.image === action.payload.image) {
+      let isInCartFlag = false;
+      state.cartList.find((product) => {
+        if (
+          product.product.id === action.payload.id &&
+          product.product.image === action.payload.image &&
+          product.isInCart
+        ) {
           toast('product already in the cart!', {
             position: toast.POSITION.TOP_CENTER,
           });
-          isInCart = true;
+          isInCartFlag = true;
         }
-        return isInCart;
+        return isInCartFlag;
       });
-      if (!isInCart) {
-        state.cartList.push({ product: action.payload, quantity: 1 });
+      if (!isInCartFlag) {
+        state.cartList.push({ product: action.payload, quantity: 1, isInCart: true });
       }
     },
   },
 });
 
 export const cartReducer = cartSlice.reducer;
-export const { deleteAllProducts, deleteProduct, setQuantity, addProduct } = cartSlice.actions;
+export const { deleteAllProducts, deleteProduct, setQuantity, addProduct, setIsInCart } =
+  cartSlice.actions;
