@@ -29,6 +29,7 @@ module.exports = {
         allowVoid: true,
       },
     ],
+    'default-param-last': 'off',
     'react/jsx-one-expression-per-line': 'warn',
     'global-require': 0,
     'react/button-has-type': 0,

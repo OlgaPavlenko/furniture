@@ -1,3 +1,4 @@
+import { CLIENT_PATHS } from 'constants/constants';
 import { FunctionComponent } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useStyle } from './styles';
@@ -9,7 +10,7 @@ export const EmptyCart: FunctionComponent = () => {
       <div className={classes.message}>Your shopping trolley is empty.</div>
       <div className={classes.login}>
         If you
-        <NavLink to="/login"> log in </NavLink>
+        <NavLink to={CLIENT_PATHS.register}> log in </NavLink>
         log in the products you have added from other devices will show up here.
       </div>
       <div className={classes.browsing}>

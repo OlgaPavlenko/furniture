@@ -1,4 +1,5 @@
 {
+  "users": [],
   "categories": [
     {
       "id": "1",
@@ -86,7 +87,6 @@
       "name": "metal"
     }
   ],
-
   "products": [
     {
       "id": "1",
@@ -211,7 +211,6 @@
         "id": "1",
         "name": "wood"
       },
-
       "description": "Armchair with headrest",
       "images": [
         {
@@ -441,7 +440,6 @@
         "id": "1",
         "name": "wood"
       },
-
       "description": "Armchair with headrest",
       "images": [
         {

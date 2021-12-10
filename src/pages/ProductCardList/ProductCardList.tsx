@@ -10,11 +10,7 @@ import { TOGGLE_BUTTONS_IMG } from 'constants/constants';
 import { Button } from 'sharedComponents/Button';
 import { useStyle } from './styles';
 
-interface IProductCardList {
-  isListVeiw: boolean;
-}
-
-export const ProductCardList: FunctionComponent<IProductCardList> = () => {
+export const ProductCardList: FunctionComponent = () => {
   const classes = useStyle();
   const dispatch = useDispatch();
   const productList: IProduct[] = useSelector(productListSelector);

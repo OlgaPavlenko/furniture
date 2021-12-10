@@ -19,4 +19,21 @@ export default class HTTPService {
         throw new Error(err);
       });
   }
+
+  static post(path: string | number = '', data: any): Promise<any> {
+    return axios({
+      method: 'post',
+      url: baseUrl(path),
+      data,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response: AxiosResponse) => {
+        return response;
+      })
+      .catch((error: Record<string, any>) => {
+        throw new Error(JSON.stringify(error.response));
+      });
+  }
 }
