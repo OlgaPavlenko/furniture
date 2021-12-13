@@ -28,7 +28,7 @@ export const RegisterForm: FunctionComponent = () => {
   ): Promise<void> => {
     await dispatch(registration(values));
     setSubmitting(false);
-    history.push(`${CLIENT_PATHS.register}`);
+    history.push(`${CLIENT_PATHS.catalog}`);
   };
 
   const formik = useFormik({

@@ -1,5 +1,11 @@
 {
-  "users": [],
+  "users": [
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$AfJOsBa.wCbnAawoFEuvDuq5N2U21gEC2wiBnBj5sMGskBKqBF8Ma",
+      "id": 1
+    }
+  ],
   "categories": [
     {
       "id": "1",
