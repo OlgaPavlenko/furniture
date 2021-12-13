@@ -4,10 +4,10 @@ import { FormikHelpers, useFormik } from 'formik';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import { useHistory } from 'react-router-dom';
-import { registrationFormValidationSchema } from 'store/utils/validations/registerValidation';
-import { IField, registrationFormFields } from 'store/utils/interfaces/auth';
 import { registration } from 'store/slices/auth';
 import { CLIENT_PATHS } from 'constants/constants';
+import { registrationFormValidationSchema } from 'utils/validations/registerValidation';
+import { IField, registrationFormFields } from 'utils/interfaces/auth';
 import { useStyle } from './styles';
 
 interface IFormInputs {

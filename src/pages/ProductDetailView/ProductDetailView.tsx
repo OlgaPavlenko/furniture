@@ -7,6 +7,7 @@ import { ProductDescription } from 'sharedComponents/ProductCard/ProductDescript
 import { ProductMainImg } from 'sharedComponents/ProductCard/ProductMainImg';
 import { currentProductSelector } from 'store/selectors/product';
 import { addProduct } from 'store/slices/cart';
+import { IProductImage } from 'utils/interfaces/product';
 import { useStyle } from './styles';
 
 export const ProductDetailView: FunctionComponent = () => {
@@ -24,12 +25,12 @@ export const ProductDetailView: FunctionComponent = () => {
   };
 
   const getPrice = (): number | undefined => {
-    const price = product.images.find((image) => image.id === srcId);
+    const price = product.images.find((image: IProductImage) => image.id === srcId);
     return price?.price;
   };
 
   const getImage = (): string | undefined => {
-    const currentImage = product.images.find((image) => image.id === srcId);
+    const currentImage = product.images.find((image: IProductImage) => image.id === srcId);
     return currentImage?.baseUrl;
   };
 
@@ -39,7 +40,7 @@ export const ProductDetailView: FunctionComponent = () => {
   }, [product]);
 
   const switchVariants = (id: string) => {
-    const productImage = product.images.find((image) => image.id === id);
+    const productImage = product.images.find((image: IProductImage) => image.id === id);
     if (productImage?.baseUrl) {
       setSrc(productImage.baseUrl);
     }

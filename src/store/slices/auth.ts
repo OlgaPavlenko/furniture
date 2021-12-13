@@ -1,9 +1,9 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
-import HTTPService from 'store/utils/services/httpService';
-import { IAuthData, IAuthInitialState } from 'store/utils/interfaces/auth';
 import { CLIENT_PATHS } from 'constants/constants';
+import HTTPService from 'utils/services/httpService';
+import { IAuthData, IAuthInitialState } from 'utils/interfaces/auth';
 
 toast.configure();
 

@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { IProductImage } from 'store/utils/interfaces/product';
+import { IProductImage } from 'utils/interfaces/product';
 import { ProductCardVariantImg } from './ProductCardVariantImg';
 import { useStyle } from './styles';
 

@@ -4,7 +4,7 @@ import { ProductMainImg } from 'sharedComponents/ProductCard/ProductMainImg';
 import { Button } from 'sharedComponents/Button';
 import { deleteProduct } from 'store/slices/cart';
 import { useDispatch } from 'react-redux';
-import { IProductWithQuantity } from 'store/utils/interfaces/product';
+import { IProductWithQuantity } from 'utils/interfaces/product';
 import { QuantitySelect } from './QuantitySelect';
 import { useStyle } from './styles';
 

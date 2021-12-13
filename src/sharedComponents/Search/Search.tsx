@@ -1,10 +1,10 @@
 import { ChangeEvent, FunctionComponent, useEffect } from 'react';
 
 import { Input } from 'sharedComponents/Input/Input';
-import { SearchType } from 'store/utils/interfaces/enums';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProductsListWithQuery, setSearchQuery } from 'store/slices/filter';
 import { querySelector } from 'store/selectors/filter';
+import { SearchType } from 'utils/interfaces/enums';
 import { useStyle } from './styles';
 
 export const Search: FunctionComponent = () => {
