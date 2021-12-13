@@ -18,20 +18,6 @@ export const registration = createAsyncThunk(
   },
 );
 
-// export const login = createAsyncThunk('auth/login', async ({ email, password }: ILoginData) => {
-//   return async ({ password, email }: ILoginData): Promise<any> => {
-//     const data = await HTTPService.post(`${process.env.REACT_APP_API_URL}/signin`, {
-//       password,
-//       email,
-//     });
-//     return data;
-//   };
-// });
-
-// export const logout = createAsyncThunk('auth/logout', async () => {
-//   return logoutUser();
-// });
-
 const initialState: IAuthInitialState = {
   userId: null,
 };
@@ -67,20 +53,6 @@ export const authSlice = createSlice({
         }
         return null;
       });
-    // .addCase(login.fulfilled, (state, action) => {
-    //   // state.userId = action.payload;
-    // })
-    // .addCase(login.rejected, (state, action) => {
-    //   const { message } = action.error;
-    //   if (message) {
-    //     toast(JSON.parse(message).data);
-    //   } else {
-    //     toast('AuthStatuses:error');
-    //   }
-    // });
-    //   .addCase(logout.fulfilled, (state) => {
-    //     state.userId = null;
-    //   });
   },
 });
 

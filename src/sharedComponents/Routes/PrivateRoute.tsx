@@ -7,7 +7,6 @@ import { userSelector } from 'store/selectors/auth';
 
 export const PrivateRoute: FunctionComponent<IPrivateRouteProps> = ({ path, component }) => {
   const isLoggedIn = useSelector(userSelector);
-  console.log(isLoggedIn);
   return isLoggedIn ? (
     <Route exact path={path} component={component} />
   ) : (
