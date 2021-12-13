@@ -14,6 +14,7 @@ import {
   filterMinPriceSelector,
   filtersSelector,
 } from 'store/selectors/filter';
+import { useTranslation } from 'react-i18next';
 import { useStyle } from './style';
 
 import { FilterOption } from './FilterOption';
@@ -27,6 +28,7 @@ export const Filter: FunctionComponent = () => {
   const classes = useStyle();
   const dispatch = useDispatch();
   const filter = useSelector(filtersSelector);
+  const { t } = useTranslation(['FilterCategories', 'FilterNames']);
 
   useEffect(() => {
     dispatch(getFiltersAsync());
@@ -51,8 +53,10 @@ export const Filter: FunctionComponent = () => {
         return (
           <FilterOption
             key={categoryGroup.name}
-            categoryGroupName={categoryGroup.name}
-            categories={categoryGroup.filterOptions.map((filterOption) => filterOption.name)}
+            categoryGroupName={t(categoryGroup.name, { ns: 'FilterCategories' })}
+            categories={categoryGroup.filterOptions.map((filterOption) => {
+              return t(filterOption.name, { ns: 'FilterNames' });
+            })}
             filterState={filter}
             onChange={onChange}
           />

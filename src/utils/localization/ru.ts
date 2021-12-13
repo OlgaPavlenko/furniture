@@ -1,9 +1,12 @@
 export const ru = {
   AppBar: {
-    cart: 'Корзина',
-    signOut: 'Выход',
-    signIn: 'Вход',
-    signUp: 'Регистрация',
+    Catalog: 'Каталог',
+    'About Us': 'О Нас',
+    Delivery: 'Доставка',
+  },
+  Sort: {
+    price: 'цена',
+    name: 'название',
   },
   SignUp: {
     name: 'Имя',
@@ -17,10 +20,8 @@ export const ru = {
     password: 'Пароль',
     submit: 'Войти',
   },
-  Cart: {
-    emptyCart: 'Ваша корзина пуста',
-    buyButton: 'Купить',
-    totalPrice: 'Итого',
+  AboutUs: {
+    AboutUs: 'O НАС',
   },
   PaymentForm: {
     paymentDetails: 'Данные карты',
@@ -47,19 +48,22 @@ export const ru = {
     actors: 'в ролях',
     description: 'Описание',
   },
-  Filtration: {
-    genres: 'Жанры',
-    categories: 'Категории',
-    countries: 'Страны',
-    voteAverage: 'Средняя оценка',
-    year: 'Год',
+  FilterCategories: {
+    countries: 'страны',
+    companies: 'компании',
+    materials: 'материалы',
   },
-  AuthStatuses: {
-    '100': 'идет обработка. Ожидайте',
-    '400': 'Залогинтесь, пожалуйста',
-    '500': 'Данный пользователь уже существует',
-    error: 'Ошибка',
+  FilterNames: {
+    Italy: 'Италия',
+    Germany: 'Германия',
+    Canada: 'Канада',
+    Ikea: 'Икеа',
+    Felliny: 'Феллини',
+    Otto: 'Отто',
+    wood: 'дерево',
+    metal: 'метал',
   },
+
   CartStatuses: {
     noCart: 'Корзины для данного пользователя не существует',
   },

@@ -1,6 +1,5 @@
 import { FunctionComponent } from 'react';
 import { useStyle } from './styles';
-
 import { LinkForNavBar } from '../NavLink';
 
 interface INavBarLink {

@@ -1,9 +1,12 @@
 export const en = {
   AppBar: {
-    cart: 'Cart',
-    signOut: 'SignOut',
-    signIn: 'SignIn',
-    signUp: 'SignUp',
+    Catalog: 'Catalog',
+    'About Us': 'About Us',
+    Delivery: 'Delivery',
+  },
+  Sort: {
+    price: 'price',
+    name: 'name',
   },
   SignUp: {
     name: 'Name',
@@ -17,10 +20,8 @@ export const en = {
     password: 'Password',
     submit: 'SignIn',
   },
-  Cart: {
-    emptyCart: 'Your cart is empty',
-    buyButton: 'Buy',
-    totalPrice: 'Total Price',
+  AboutUs: {
+    AboutUs: 'About Us',
   },
   PaymentForm: {
     paymentDetails: 'Payment details',
@@ -47,19 +48,22 @@ export const en = {
     actors: 'actors',
     description: 'Description',
   },
-  Filtration: {
-    genres: 'Genres',
-    categories: 'Categories',
-    countries: 'Countries',
-    voteAverage: 'Vote average',
-    year: 'Year',
+  FilterCategories: {
+    countries: 'countries',
+    companies: 'companies',
+    materials: 'materials',
   },
-  AuthStatuses: {
-    '100': 'processing. Just wait for a while',
-    '400': 'SignIn, please',
-    '500': 'Such user already exists',
-    error: 'Error',
+  FilterNames: {
+    Italy: 'Italy',
+    Germany: 'Germany',
+    Canada: 'Canada',
+    Ikea: 'Ikea',
+    Felliny: 'Felliny',
+    Otto: 'Otto',
+    wood: 'wood',
+    metal: 'metal',
   },
+
   CartStatuses: {
     noCart: 'No cart for current user exists',
   },

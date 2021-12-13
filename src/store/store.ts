@@ -17,7 +17,7 @@ export interface IRootState {
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['product', 'cart'],
+  whitelist: ['product', 'cart', 'auth'],
 };
 
 const reducers = combineReducers({

@@ -1,15 +1,17 @@
 import { FunctionComponent, useState } from 'react';
 
 import { Button } from 'sharedComponents/Button';
-import { SORTING_IMGS } from 'constants/constants';
+import { SORTING_IMGS, SORT_OPTIONS } from 'constants/constants';
 import { useDispatch, useSelector } from 'react-redux';
 import { productListSelector } from 'store/selectors/product';
 import { setProductList } from 'store/slices/product';
 import { IProduct } from 'utils/interfaces/product';
+import { useTranslation } from 'react-i18next';
 import { useStyle } from './styles';
 
 export const Sort: FunctionComponent = () => {
   const classes = useStyle();
+  const { t } = useTranslation(['Sort']);
 
   const products = useSelector(productListSelector);
   const [order, setOrder] = useState<{ [key: string]: number }>({ name: 1, price: 1 });
@@ -29,19 +31,19 @@ export const Sort: FunctionComponent = () => {
   return (
     <div className="">
       <Button
-        name="Price"
+        name={t(SORT_OPTIONS.price)}
         badgeSrc={order.price === 1 ? SORTING_IMGS.up : SORTING_IMGS.down}
         className={classes.priceButton}
         onClick={() => {
-          sort('price');
+          sort(SORT_OPTIONS.price as keyof IProduct);
         }}
       />
       <Button
-        name="Name"
+        name={t(SORT_OPTIONS.name)}
         badgeSrc={order.name === 1 ? SORTING_IMGS.up : SORTING_IMGS.down}
         className="buttons"
         onClick={() => {
-          sort('name');
+          sort(SORT_OPTIONS.name as keyof IProduct);
         }}
       />
     </div>

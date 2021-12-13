@@ -90,3 +90,8 @@ export const CLIENT_PATHS = {
   aboutUs: '/aboutUs',
   main: '/',
 };
+
+export const SORT_OPTIONS = {
+  price: 'price',
+  name: 'name',
+};
