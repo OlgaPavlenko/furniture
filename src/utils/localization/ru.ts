@@ -4,55 +4,31 @@ export const ru = {
     'About Us': 'О Нас',
     Delivery: 'Доставка',
   },
+
+  Delivery: {
+    delivery: 'доставка',
+  },
+
   Sort: {
     price: 'цена',
     name: 'название',
   },
-  SignUp: {
-    name: 'Имя',
-    email: 'Эл. почта',
-    password: 'Пароль',
-    confirmPassword: 'Подтвердите пароль',
-    submit: 'Зарегистрироваться',
-  },
-  SignIn: {
-    email: 'Эл. почта',
-    password: 'Пароль',
-    submit: 'Войти',
-  },
+
   AboutUs: {
     AboutUs: 'O НАС',
   },
-  PaymentForm: {
-    paymentDetails: 'Данные карты',
-    cardNumber: 'Номер карты',
-    expirationDate: 'Срок Действия',
-    cvv: 'CVV',
-    submit: 'Подтвердить',
-  },
+
   Search: {
     search: 'поиск',
     selectOption: 'поиск по...',
   },
-  MoviePage: {
-    submit: 'Отправить',
-    feedback: 'Написать отзыв',
-    goHome: 'Вернуться на главную',
-    country: 'страна',
-    duration: 'продолжительность',
-    releaseDate: 'год',
-    productionCompanies: 'кинокомпания',
-    genres: 'жанр',
-    categories: 'категория',
-    director: 'режиссёр',
-    actors: 'в ролях',
-    description: 'Описание',
-  },
+
   FilterCategories: {
     countries: 'страны',
     companies: 'компании',
     materials: 'материалы',
   },
+
   FilterNames: {
     Italy: 'Италия',
     Germany: 'Германия',
@@ -64,30 +40,45 @@ export const ru = {
     metal: 'метал',
   },
 
-  CartStatuses: {
-    noCart: 'Корзины для данного пользователя не существует',
+  FilterButton: {
+    'reset options': 'сбросить все фильтры',
   },
-  UserMenu: {
-    adminPanel: 'Админ панель',
-    profile: 'Профиль',
-    orders: 'Мои заказы',
-    favorites: 'Избранное',
-    signout: 'Выйти',
+
+  ProductButton: {
+    'go back': 'назад',
   },
-  mockAdmin: {
-    adminPanel: 'Админ панель',
-    goBack: 'ВЕРНУТЬСЯ НАЗАД',
+
+  Variants: {
+    'more variants': 'больше цветов',
   },
-  mockFavorites: {
-    favoritesPage: 'Избранное',
-    goBack: 'ВЕРНУТЬСЯ НАЗАД',
+
+  Currency: {
+    currency: 'грн',
   },
-  mockOrders: {
-    orderPage: 'Мои заказы',
-    goBack: 'ВЕРНУТЬСЯ НАЗАД',
+
+  EmptyCart: {
+    'shopping trolley': 'ваша корзина пуста',
+    'if you': 'если вы',
+    'log in': 'залогинитесь',
+    'added products': ', продукты, которые вы добавили в корзину будут доступны с других устройств',
+    shoppingcart: 'вы также можете добавить продукты в корзину с помощью поиска или',
+    browsing: 'выбора продуктов',
   },
-  mockProfile: {
-    profilePage: 'Профиль',
-    goBack: 'ВЕРНУТЬСЯ НАЗАД',
+
+  Сart: {
+    purchases: 'безопасные покупки с SSL data',
+    currency: 'грн',
+    'Shopping cart': 'Корзина',
+    'total price': 'общая стоимость заказа',
+    buttonName: 'КУПИТЬ',
+    quantity: 'количество',
+    removeAllProducts: 'удалить все товары',
+  },
+
+  Registration: {
+    email: 'адрес электронной почты',
+    password: 'пароль',
+    confirmPassword: 'подтвердите пароль',
+    submit: 'ОТПРАВИТЬ',
   },
 };

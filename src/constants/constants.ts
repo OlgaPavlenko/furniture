@@ -95,3 +95,7 @@ export const SORT_OPTIONS = {
   price: 'price',
   name: 'name',
 };
+
+export const RESET_BUTTON_NAME = {
+  name: 'reset options',
+};

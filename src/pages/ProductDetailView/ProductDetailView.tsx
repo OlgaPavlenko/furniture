@@ -8,6 +8,7 @@ import { ProductMainImg } from 'sharedComponents/ProductCard/ProductMainImg';
 import { currentProductSelector } from 'store/selectors/product';
 import { addProduct } from 'store/slices/cart';
 import { IProductImage } from 'utils/interfaces/product';
+import { useTranslation } from 'react-i18next';
 import { useStyle } from './styles';
 
 export const ProductDetailView: FunctionComponent = () => {
@@ -18,6 +19,8 @@ export const ProductDetailView: FunctionComponent = () => {
   const dispatch = useDispatch();
   const [src, setSrc] = useState(product.images[0].baseUrl);
   const [srcId, setSrcId] = useState(product.images[0].id);
+
+  const { t } = useTranslation(['ProductButton']);
 
   const goToMainPage = (event: SyntheticEvent): void => {
     event.preventDefault();
@@ -77,7 +80,7 @@ export const ProductDetailView: FunctionComponent = () => {
           }
         />
         <button className={classes.backButton} onClick={goToMainPage}>
-          Go Back
+          {t('go back')}
         </button>
       </div>
     </div>

@@ -6,6 +6,7 @@ import NativeSelect from '@mui/material/NativeSelect';
 import { QUANTITY_SELECT } from 'constants/constants';
 import { useDispatch } from 'react-redux';
 import { setQuantity } from 'store/slices/cart';
+import { useTranslation } from 'react-i18next';
 
 interface IProps {
   className: string;
@@ -22,6 +23,8 @@ export const QuantitySelect: FunctionComponent<IProps> = ({
 }) => {
   const dispatch = useDispatch();
 
+  const { t } = useTranslation(['Сart']);
+
   const getQuantity = (e: ChangeEvent<HTMLSelectElement>) => {
     dispatch(setQuantity({ quantity: Number(e.target.value), productId, image }));
   };
@@ -29,7 +32,7 @@ export const QuantitySelect: FunctionComponent<IProps> = ({
     <Box className={className}>
       <FormControl fullWidth>
         <InputLabel variant="standard" htmlFor="uncontrolled-native">
-          Quantity
+          {t('quantity')}
         </InputLabel>
         <NativeSelect
           onChange={getQuantity}

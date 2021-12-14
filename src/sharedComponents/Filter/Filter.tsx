@@ -15,6 +15,7 @@ import {
   filtersSelector,
 } from 'store/selectors/filter';
 import { useTranslation } from 'react-i18next';
+import { RESET_BUTTON_NAME } from 'constants/constants';
 import { useStyle } from './style';
 
 import { FilterOption } from './FilterOption';
@@ -28,7 +29,7 @@ export const Filter: FunctionComponent = () => {
   const classes = useStyle();
   const dispatch = useDispatch();
   const filter = useSelector(filtersSelector);
-  const { t } = useTranslation(['FilterCategories', 'FilterNames']);
+  const { t } = useTranslation(['FilterCategories', 'FilterNames', 'FilterButton']);
 
   useEffect(() => {
     dispatch(getFiltersAsync());
@@ -62,7 +63,11 @@ export const Filter: FunctionComponent = () => {
           />
         );
       })}
-      <Button name="Reset Options" className={classes.clearButton} onClick={resetFilter} />
+      <Button
+        name={t(RESET_BUTTON_NAME.name, { ns: 'FilterButton' })}
+        className={classes.clearButton}
+        onClick={resetFilter}
+      />
     </form>
   );
 };

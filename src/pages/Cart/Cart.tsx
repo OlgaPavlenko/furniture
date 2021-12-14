@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { productCartSelector, totalPriceSelector } from 'store/selectors/cart';
 import { deleteAllProducts } from 'store/slices/cart';
 import { toast } from 'react-toastify';
+import { useTranslation } from 'react-i18next';
 import { CartInfo } from './CartInfo';
 import { ProductCartList } from './ProductCartList';
 import { EmptyCart } from './EmptyCart';
@@ -18,8 +19,10 @@ export const Cart: FunctionComponent = () => {
   const dispatch = useDispatch();
   const classes = useStyle();
 
+  const { t } = useTranslation(['Сart']);
+
   const buyProduct = (): void => {
-    toast(`You just bought an item worth ${totalPrice} uah`, {
+    toast(`You just bought an item worth ${totalPrice} ${t('currency')}`, {
       position: toast.POSITION.TOP_CENTER,
     });
     setTimeout(() => {
@@ -29,16 +32,16 @@ export const Cart: FunctionComponent = () => {
 
   return (
     <div className={classes.cart}>
-      <h1 className={classes.name}>Shopping cart</h1>
+      <h1 className={classes.name}>{t('Shopping cart')}</h1>
       {!products.length ? (
         <EmptyCart />
       ) : (
         <>
           <div className={classes.totalPrice}>
-            <div>Total for this order</div>
+            <div>{t('total price')}</div>
             <div>{totalPrice}</div>
           </div>
-          <Button name="BUY" className={classes.buyButton} onClick={buyProduct} />
+          <Button name={t('buttonName')} className={classes.buyButton} onClick={buyProduct} />
           <ProductCartList />
         </>
       )}
@@ -46,7 +49,7 @@ export const Cart: FunctionComponent = () => {
         <CartInfo object={CART_IMG} />
         <CartInfo object={CART_SVG} />
       </div>
-      <div className={classes.secure}>Secure purchases with SSL data</div>
+      <div className={classes.secure}>{t('purchases')}</div>
     </div>
   );
 };

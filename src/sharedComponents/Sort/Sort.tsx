@@ -41,7 +41,7 @@ export const Sort: FunctionComponent = () => {
       <Button
         name={t(SORT_OPTIONS.name)}
         badgeSrc={order.name === 1 ? SORTING_IMGS.up : SORTING_IMGS.down}
-        className="buttons"
+        className={classes.priceButton}
         onClick={() => {
           sort(SORT_OPTIONS.name as keyof IProduct);
         }}

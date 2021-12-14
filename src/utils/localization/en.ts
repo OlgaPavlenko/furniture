@@ -4,55 +4,31 @@ export const en = {
     'About Us': 'About Us',
     Delivery: 'Delivery',
   },
+
+  Delivery: {
+    delivery: 'delivery',
+  },
+
   Sort: {
     price: 'price',
     name: 'name',
   },
-  SignUp: {
-    name: 'Name',
-    email: 'Email',
-    password: 'Password',
-    confirmPassword: 'Confirm password',
-    submit: 'SignUp',
-  },
-  SignIn: {
-    email: 'Email',
-    password: 'Password',
-    submit: 'SignIn',
-  },
+
   AboutUs: {
     AboutUs: 'About Us',
   },
-  PaymentForm: {
-    paymentDetails: 'Payment details',
-    cardNumber: 'Card number',
-    expirationDate: 'Expiration date',
-    cvv: 'CVV',
-    submit: 'Submit',
-  },
+
   Search: {
     search: 'search',
     selectOption: 'select option',
   },
-  MoviePage: {
-    submit: 'Submit',
-    feedback: 'Give feedback',
-    goHome: 'Go home',
-    country: 'country',
-    duration: 'duration',
-    releaseDate: 'release date (year)',
-    productionCompanies: 'production companies',
-    genres: 'genres',
-    categories: 'categories',
-    director: 'director',
-    actors: 'actors',
-    description: 'Description',
-  },
+
   FilterCategories: {
     countries: 'countries',
     companies: 'companies',
     materials: 'materials',
   },
+
   FilterNames: {
     Italy: 'Italy',
     Germany: 'Germany',
@@ -64,30 +40,45 @@ export const en = {
     metal: 'metal',
   },
 
-  CartStatuses: {
-    noCart: 'No cart for current user exists',
+  FilterButton: {
+    'reset options': 'reset options',
   },
-  UserMenu: {
-    adminPanel: 'Admin panel',
-    profile: 'Profile',
-    orders: 'Orders',
-    favorites: 'Favorites',
-    signout: 'Sign Out',
+
+  ProductButton: {
+    'go back': 'go back',
   },
-  mockAdmin: {
-    adminPanel: 'Admin panel',
-    goBack: 'GO BACK',
+
+  Variants: {
+    'more variants': 'more variants',
   },
-  mockFavorites: {
-    favoritesPage: 'Favorites page',
-    goBack: 'GO BACK',
+
+  Currency: {
+    currency: 'uah',
   },
-  mockOrders: {
-    orderPage: 'Order page',
-    goBack: 'GO BACK',
+
+  EmptyCart: {
+    'shopping trolley': 'your shopping trolley is empty.',
+    'if you': 'if you',
+    'log in': 'log in',
+    'added products': 'the products you have added from other devices will show up here.',
+    shoppingcart: 'You can add products to your shoppingcart, either by searching or by',
+    browsing: 'browsing products',
   },
-  mockProfile: {
-    profilePage: 'Profile page',
-    goBack: 'GO BACK',
+
+  Сart: {
+    purchases: 'Secure purchases with SSL data',
+    currency: 'uah',
+    'Shopping cart': 'Shopping cart',
+    'total price': 'total price for this order',
+    buttonName: 'BUY',
+    quantity: 'quantity',
+    removeAllProducts: 'remove all products',
+  },
+
+  Registration: {
+    email: 'email',
+    password: 'password',
+    confirmPassword: 'confirm password',
+    submit: 'SUBMIT',
   },
 };

@@ -8,6 +8,7 @@ import { registration } from 'store/slices/auth';
 import { CLIENT_PATHS } from 'constants/constants';
 import { registrationFormValidationSchema } from 'utils/validations/registerValidation';
 import { IField, registrationFormFields } from 'utils/interfaces/auth';
+import { useTranslation } from 'react-i18next';
 import { useStyle } from './styles';
 
 interface IFormInputs {
@@ -19,6 +20,8 @@ interface IFormInputs {
 export const RegisterForm: FunctionComponent = () => {
   const history = useHistory();
   const classes = useStyle();
+
+  const { t } = useTranslation(['Registration']);
 
   const dispatch = useDispatch();
 
@@ -51,7 +54,7 @@ export const RegisterForm: FunctionComponent = () => {
               fullWidth={field.fullWidth}
               id={field.name}
               name={field.name}
-              label={field.name}
+              label={t(field.label)}
               type={field.type}
               value={formik.values[field.name]}
               onChange={formik.handleChange}
@@ -69,7 +72,7 @@ export const RegisterForm: FunctionComponent = () => {
           type="submit"
           disabled={formik.isSubmitting}
         >
-          submit
+          {t('submit')}
         </Button>
       </form>
     </div>
