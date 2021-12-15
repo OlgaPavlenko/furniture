@@ -13,7 +13,7 @@ export const createPath = ({ searchQuery, filters, minPrice, maxPrice }: ICreate
     '',
   );
 
-  const pricePath = `&price_gte=${minPrice}&price_lte=${maxPrice}`;
+  const pricePath = `&images.0.price_gte=${minPrice}&images.0.price_lte=${maxPrice}`;
   const finalPath = `/products?name_like=${searchQuery}${filtersPath}${pricePath}`;
   return finalPath;
 };

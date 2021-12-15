@@ -8,7 +8,6 @@ interface IProductMainImg {
 
 export const ProductMainImg: FunctionComponent<IProductMainImg> = ({ src, className }) => {
   const classes = useStyle();
-
   return (
     <div className={classes.media}>
       <img src={src} alt="chair" className={className} />

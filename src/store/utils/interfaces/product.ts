@@ -15,9 +15,11 @@ export interface ICountry {
 }
 
 export interface IProductImage {
+  id: string;
   color: string;
   baseUrl: string;
   url: string;
+  price: number;
 }
 
 export interface IMaterial {
@@ -43,4 +45,18 @@ export interface IProduct {
   description: string;
   images: IProductImage[];
   price: number;
+}
+
+export interface ICartProduct {
+  id: string;
+  name: string;
+  productVariant: string;
+  description: string;
+  price: number;
+}
+
+export interface IProductWithQuantity {
+  product: ICartProduct;
+  quantity: number;
+  isInCart: boolean;
 }
