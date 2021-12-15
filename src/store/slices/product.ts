@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { PATH } from 'constants/constants';
-import HTTPService from 'utils/services/httpService';
-import { IProduct } from 'utils/interfaces/product';
+import HTTPService from 'store/utils/services/httpService';
+import { IProduct } from 'store/utils/interfaces/product';
 
 interface IInitialState {
   productList: IProduct[];
@@ -34,7 +34,7 @@ const initialState: IInitialState = {
     },
     material: [],
     description: '',
-    images: [{ color: '', baseUrl: '', url: '' }],
+    images: [{ id: '', color: '', baseUrl: '', url: '', price: 0 }],
     price: 0,
   },
   isListVeiw: false,

@@ -113,32 +113,41 @@
       "description": "Armchair with headrest",
       "images": [
         {
+          "id": "1",
           "color": "white",
           "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kelinge-bezheviy__0950942_pe800822_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kelinge-bezheviy__0950941_pe800821_s5.jpg"
+          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kelinge-bezheviy__0950941_pe800821_s5.jpg",
+          "price": 550
         },
         {
+          "id": "2",
           "color": "blue",
           "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kvillsfors-temno-siniy-siniy__0961699_pe807716_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kvillsfors-temno-siniy-siniy__0961698_pe807715_s5.jpg"
+          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-kvillsfors-temno-siniy-siniy__0961698_pe807715_s5.jpg",
+          "price": 650
         },
         {
+          "id": "3",
           "color": "gray",
           "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-nordvalla-temno-siriy__0836849_pe601178_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-nordvalla-temno-siriy__0325432_pe517964_s5.jpg"
+          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-nordvalla-temno-siriy__0325432_pe517964_s5.jpg",
+          "price": 750
         },
         {
+          "id": "4",
           "color": "black",
           "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-dyuparp-temno-zeleniy__0841150_pe647266_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-dyuparp-temno-zeleniy__0531313_pe647261_s5.jpg"
+          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-dyuparp-temno-zeleniy__0531313_pe647261_s5.jpg",
+          "price": 850
         },
         {
+          "id": "5",
           "color": "yellow",
           "baseUrl": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-skiftebu-zhovtiy__0837297_pe601176_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-skiftebu-zhovtiy__0325450_pe517970_s5.jpg"
+          "url": "https://www.ikea.com/ua/uk/images/products/strandmon-krislo-z-pidgolivnikom-skiftebu-zhovtiy__0325450_pe517970_s5.jpg",
+          "price": 950
         }
-      ],
-      "price": 550
+      ]
     },
     {
       "id": "2",
@@ -165,17 +174,20 @@
       "description": "Armchair with headrest",
       "images": [
         {
+          "id": "1",
           "color": "white",
           "baseUrl": " https://www.ikea.com/ua/uk/images/products/nolmyra-nolmyura-krislo-berezoviy-shpon-siriy__0836782_pe600883_s5.jpg",
-          "url": " https://www.ikea.com/ua/uk/images/products/nolmyra-nolmyura-krislo-berezoviy-shpon-siriy__0152020_pe310348_s5.jpg"
+          "url": " https://www.ikea.com/ua/uk/images/products/nolmyra-nolmyura-krislo-berezoviy-shpon-siriy__0152020_pe310348_s5.jpg",
+          "price": 550
         },
         {
+          "id": "2",
           "color": "black",
           "baseUrl": "https://www.ikea.com/ua/uk/images/products/nolmyra-nolmyura-krislo-chorniy-chorniy__0840388_pe600896_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/nolmyra-nolmyura-krislo-chorniy-chorniy__0169629_pe323574_s5.jpg"
+          "url": "https://www.ikea.com/ua/uk/images/products/nolmyra-nolmyura-krislo-chorniy-chorniy__0169629_pe323574_s5.jpg",
+          "price": 550
         }
-      ],
-      "price": 400
+      ]
     },
     {
       "id": "3",
@@ -203,19 +215,25 @@
       "description": "Armchair with headrest",
       "images": [
         {
+          "id": "1",
           "color": "white",
           "baseUrl": "https://www.ikea.com/ua/uk/images/products/vimle-krislo-z-shirokimi-pidlokitnikami-hallarp-bezheviy__1068078_pe852922_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/vimle-krislo-z-shirokimi-pidlokitnikami-hallarp-bezheviy__1068080_pe852904_s5.jpg"
+          "url": "https://www.ikea.com/ua/uk/images/products/vimle-krislo-z-shirokimi-pidlokitnikami-hallarp-bezheviy__1068080_pe852904_s5.jpg",
+          "price": 9380
         },
         {
+          "id": "2",
           "color": "gray",
           "baseUrl": "https://www.ikea.com/ua/uk/images/products/vimle-krislo-z-shirokimi-pidlokitnikami-hallarp-siriy__1068039_pe852950_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/vimle-krislo-z-shirokimi-pidlokitnikami-hallarp-siriy__1068041_pe852903_s5.jpg"
+          "url": "https://www.ikea.com/ua/uk/images/products/vimle-krislo-z-shirokimi-pidlokitnikami-hallarp-siriy__1068041_pe852903_s5.jpg",
+          "price": 9380
         },
         {
+          "id": "3",
           "color": "black",
           "baseUrl": "https://www.ikea.com/ua/uk/images/products/vimle-krislo-z-shirokimi-pidlokitnikami-saksemara-chorno-siniy__1068043_pe852905_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/vimle-krislo-z-shirokimi-pidlokitnikami-saksemara-chorno-siniy__1068044_pe852931_s5.jpg"
+          "url": "https://www.ikea.com/ua/uk/images/products/vimle-krislo-z-shirokimi-pidlokitnikami-saksemara-chorno-siniy__1068044_pe852931_s5.jpg",
+          "price": 9380
         }
       ],
       "price": 9380
@@ -245,12 +263,13 @@
       "description": "Armchair with headrest",
       "images": [
         {
+          "id": "1",
           "color": "gray",
           "baseUrl": "https://www.ikea.com/ua/uk/images/products/landskrona-landskruna-krislo-gunnared-temno-siriy-pid-derevo__0840562_pe680128_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/landskrona-landskruna-krislo-gunnared-temno-siriy-pid-derevo__0602087_pe680155_s5.jpg"
+          "url": "https://www.ikea.com/ua/uk/images/products/landskrona-landskruna-krislo-gunnared-temno-siriy-pid-derevo__0602087_pe680155_s5.jpg",
+          "price": 8049
         }
-      ],
-      "price": 8049
+      ]
     },
     {
       "id": "5",
@@ -277,17 +296,20 @@
       "description": "Armchair with headrest",
       "images": [
         {
+          "id": "1",
           "color": "gray",
           "baseUrl": "https://www.ikea.com/ua/uk/images/products/muren-krislo-rozkladne-remmarn-svitlo-siriy__0908543_pe783276_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/muren-krislo-rozkladne-remmarn-svitlo-siriy__0908542_pe783275_s5.jpg"
+          "url": "https://www.ikea.com/ua/uk/images/products/muren-krislo-rozkladne-remmarn-svitlo-siriy__0908542_pe783275_s5.jpg",
+          "price": 8499
         },
         {
+          "id": "2",
           "color": "black",
           "baseUrl": "https://www.ikea.com/ua/uk/images/products/muren-krislo-rozkladne-remmarn-temno-siriy__0908537_pe783270_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/muren-krislo-rozkladne-remmarn-temno-siriy__0908536_pe783303_s5.jpg"
+          "url": "https://www.ikea.com/ua/uk/images/products/muren-krislo-rozkladne-remmarn-temno-siriy__0908536_pe783303_s5.jpg",
+          "price": 8499
         }
-      ],
-      "price": 8499
+      ]
     },
     {
       "id": "6",
@@ -314,32 +336,41 @@
       "description": "Armchair with headrest",
       "images": [
         {
+          "id": "1",
           "color": "white",
           "baseUrl": " https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-bileniy-duboviy-shpon-hillared-bezheviy__0681516_pe720128_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-berezoviy-shpon-knisa-svitlo-bezheviy__0571500_pe666933_s5.jpg"
+          "url": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-berezoviy-shpon-knisa-svitlo-bezheviy__0571500_pe666933_s5.jpg",
+          "price": 2199
         },
         {
+          "id": "2",
           "color": "blue",
           "baseUrl": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo__0840367_pe629080_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo__0497130_pe628957_s5.jpg"
+          "url": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo__0497130_pe628957_s5.jpg",
+          "price": 2199
         },
         {
+          "id": "3",
           "color": "gray",
           "baseUrl": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-bileniy-duboviy-shpon-skiftebu-temno-siriy__0937027_pe793533_s5.jpg",
-          "url": " https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-bileniy-duboviy-shpon-skiftebu-temno-siriy__0937026_pe793532_s5.jpg"
+          "url": " https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-bileniy-duboviy-shpon-skiftebu-temno-siriy__0937026_pe793532_s5.jpg",
+          "price": 2199
         },
         {
+          "id": "4",
           "color": "black",
           "baseUrl": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-berezoviy-shpon-knisa-chorniy__0837326_pe666932_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-berezoviy-shpon-knisa-chorniy__0571496_pe666929_s5.jpg"
+          "url": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-berezoviy-shpon-knisa-chorniy__0571496_pe666929_s5.jpg",
+          "price": 2199
         },
         {
+          "id": "5",
           "color": "yellow",
           "baseUrl": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-bileniy-duboviy-shpon-skiftebu-zhovtiy__0937194_pe793617_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-bileniy-duboviy-shpon-skiftebu-zhovtiy__0937193_pe793614_s5.jpg"
+          "url": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-bileniy-duboviy-shpon-skiftebu-zhovtiy__0937193_pe793614_s5.jpg",
+          "price": 2199
         }
-      ],
-      "price": 2199
+      ]
     },
     {
       "id": "7",
@@ -366,22 +397,27 @@
       "description": "Armchair with headrest",
       "images": [
         {
+          "id": "1",
           "color": "blue",
           "baseUrl": " https://www.ikea.com/ua/uk/images/products/vedbo-vedbu-krislo-iz-visokoyu-spinkoyu__0840517_pe697113_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/vedbo-vedbu-krislo-iz-visokoyu-spinkoyu__0635321_pe697114_s5.jpg"
+          "url": "https://www.ikea.com/ua/uk/images/products/vedbo-vedbu-krislo-iz-visokoyu-spinkoyu__0635321_pe697114_s5.jpg",
+          "price": 7499
         },
         {
+          "id": "2",
           "color": "gray",
           "baseUrl": "https://www.ikea.com/ua/uk/images/products/vedbo-vedbu-krislo-iz-visokoyu-spinkoyu-gunnared-temno-siriy__0837110_pe704423_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/vedbo-vedbu-krislo-iz-visokoyu-spinkoyu-gunnared-temno-siriy__0512775_pe638684_s5.jpg"
+          "url": "https://www.ikea.com/ua/uk/images/products/vedbo-vedbu-krislo-iz-visokoyu-spinkoyu-gunnared-temno-siriy__0512775_pe638684_s5.jpg",
+          "price": 7499
         },
         {
+          "id": "3",
           "color": "pink",
           "baseUrl": " https://www.ikea.com/ua/uk/images/products/vedbo-vedbu-krislo-iz-visokoyu-spinkoyu-gunnared-svitliy-korichnevo-rozheviy__0837079_pe701952_s5.jpg",
-          "url": " https://www.ikea.com/ua/uk/images/products/vedbo-vedbu-krislo-iz-visokoyu-spinkoyu-gunnared-svitliy-korichnevo-rozheviy__0643605_pe701951_s5.jpg"
+          "url": " https://www.ikea.com/ua/uk/images/products/vedbo-vedbu-krislo-iz-visokoyu-spinkoyu-gunnared-svitliy-korichnevo-rozheviy__0643605_pe701951_s5.jpg",
+          "price": 7499
         }
-      ],
-      "price": 7499
+      ]
     },
     {
       "id": "8",
@@ -409,22 +445,27 @@
       "description": "Armchair with headrest",
       "images": [
         {
+          "id": "1",
           "color": "white",
           "baseUrl": "https://www.ikea.com/ua/uk/images/products/remsta-krislo-hakebu-bezheviy__0908600_pe783323_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/remsta-krislo-hakebu-bezheviy__0908599_pe783322_s5.jpg"
+          "url": "https://www.ikea.com/ua/uk/images/products/remsta-krislo-hakebu-bezheviy__0908599_pe783322_s5.jpg",
+          "price": 4150
         },
         {
+          "id": "2",
           "color": "blue",
           "baseUrl": "https://www.ikea.com/ua/uk/images/products/remsta-krislo-dyuparp-temniy-zeleno-siniy__0908608_pe783331_s5.jpg",
-          "url": " https://www.ikea.com/ua/uk/images/products/remsta-krislo-dyuparp-temniy-zeleno-siniy__0908607_pe783330_s5.jpg"
+          "url": " https://www.ikea.com/ua/uk/images/products/remsta-krislo-dyuparp-temniy-zeleno-siniy__0908607_pe783330_s5.jpg",
+          "price": 4150
         },
         {
+          "id": "3",
           "color": "gray",
           "baseUrl": "https://www.ikea.com/ua/uk/images/products/remsta-krislo-hakebu-temno-siriy__0908604_pe783333_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/remsta-krislo-hakebu-temno-siriy__0908603_pe783326_s5.jpg"
+          "url": "https://www.ikea.com/ua/uk/images/products/remsta-krislo-hakebu-temno-siriy__0908603_pe783326_s5.jpg",
+          "price": 4150
         }
-      ],
-      "price": 4150
+      ]
     },
     {
       "id": "9",
@@ -451,17 +492,20 @@
       "description": "Armchair with headrest",
       "images": [
         {
+          "id": "1",
           "color": "gray",
           "baseUrl": "https://www.ikea.com/ua/uk/images/products/vedbo-vedbu-krislo-gunnared-temno-siriy__0837091_pe704432_s5.jpg",
-          "url": " https://www.ikea.com/ua/uk/images/products/vedbo-vedbu-krislo-gunnared-temno-siriy__0512767_pe638683_s5.jpg"
+          "url": " https://www.ikea.com/ua/uk/images/products/vedbo-vedbu-krislo-gunnared-temno-siriy__0512767_pe638683_s5.jpg",
+          "price": 5999
         },
         {
+          "id": "2",
           "color": "blue",
           "baseUrl": "https://www.ikea.com/ua/uk/images/products/vedbo-vedbu-krislo__0837379_pe696808_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/vedbo-vedbu-krislo__0634896_pe696809_s5.jpg"
+          "url": "https://www.ikea.com/ua/uk/images/products/vedbo-vedbu-krislo__0634896_pe696809_s5.jpg",
+          "price": 5999
         }
-      ],
-      "price": 5999
+      ]
     },
     {
       "id": "10",
@@ -488,32 +532,38 @@
       "description": "Armchair with headrest",
       "images": [
         {
+          "id": "1",
           "color": "white",
           "baseUrl": " https://www.ikea.com/ua/uk/images/products/ektorp-krislo-hallarp-bezheviy__0818470_pe774427_s5.jpg",
-          "url": " https://www.ikea.com/ua/uk/images/products/ektorp-krislo-hallarp-bezheviy__0818468_pe774420_s5.jpg"
+          "url": " https://www.ikea.com/ua/uk/images/products/ektorp-krislo-hallarp-bezheviy__0818468_pe774420_s5.jpg",
+          "price": 6699
         },
         {
+          "id": "2",
           "color": "green",
           "baseUrl": "https://www.ikea.com/ua/uk/images/products/ektorp-krislo-totebu-temno-biryuzoviy__0818475_pe774412_s5.jpg",
-          "url": " https://www.ikea.com/ua/uk/images/products/ektorp-krislo-totebu-temno-biryuzoviy__0818476_pe774411_s5.jpg"
+          "url": " https://www.ikea.com/ua/uk/images/products/ektorp-krislo-totebu-temno-biryuzoviy__0818476_pe774411_s5.jpg",
+          "price": 6699
         },
         {
+          "id": "3",
           "color": "gray",
           "baseUrl": "https://www.ikea.com/ua/uk/images/products/ektorp-krislo-remmarn-svitlo-siriy__0818472_pe774429_s5.jpg",
           "url": "https://www.ikea.com/ua/uk/images/products/ektorp-krislo-remmarn-svitlo-siriy__0818473_pe774430_s5.jpg"
         },
         {
+          "id": "4",
           "color": "black",
           "baseUrl": "https://www.ikea.com/ua/uk/images/products/ektorp-krislo-hallarp-siriy__0818466_pe774425_s5.jpg",
           "url": " https://www.ikea.com/ua/uk/images/products/ektorp-krislo-hallarp-siriy__0818467_pe774418_s5.jpg"
         },
         {
+          "id": "5",
           "color": "red",
           "baseUrl": "https://www.ikea.com/ua/uk/images/products/ektorp-krislo-virestad-chervoniy-biliy__0818481_pe774416_s5.jpg",
           "url": "https://www.ikea.com/ua/uk/images/products/ektorp-krislo-virestad-chervoniy-biliy__0818482_pe774417_s5.jpg"
         }
-      ],
-      "price": 6699
+      ]
     },
     {
       "id": "11",
@@ -540,32 +590,41 @@
       "description": "Armchair with headrest",
       "images": [
         {
+          "id": "1",
           "color": "white",
           "baseUrl": " https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-bileniy-duboviy-shpon-hillared-bezheviy__0681516_pe720128_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-berezoviy-shpon-knisa-svitlo-bezheviy__0571500_pe666933_s5.jpg"
+          "url": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-berezoviy-shpon-knisa-svitlo-bezheviy__0571500_pe666933_s5.jpg",
+          "price": 2199
         },
         {
+          "id": "2",
           "color": "blue",
           "baseUrl": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo__0840367_pe629080_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo__0497130_pe628957_s5.jpg"
+          "url": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo__0497130_pe628957_s5.jpg",
+          "price": 2199
         },
         {
+          "id": "3",
           "color": "gray",
           "baseUrl": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-bileniy-duboviy-shpon-skiftebu-temno-siriy__0937027_pe793533_s5.jpg",
-          "url": " https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-bileniy-duboviy-shpon-skiftebu-temno-siriy__0937026_pe793532_s5.jpg"
+          "url": " https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-bileniy-duboviy-shpon-skiftebu-temno-siriy__0937026_pe793532_s5.jpg",
+          "price": 2199
         },
         {
+          "id": "4",
           "color": "black",
           "baseUrl": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-berezoviy-shpon-knisa-chorniy__0837326_pe666932_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-berezoviy-shpon-knisa-chorniy__0571496_pe666929_s5.jpg"
+          "url": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-berezoviy-shpon-knisa-chorniy__0571496_pe666929_s5.jpg",
+          "price": 2199
         },
         {
+          "id": "5",
           "color": "yellow",
           "baseUrl": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-bileniy-duboviy-shpon-skiftebu-zhovtiy__0937194_pe793617_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-bileniy-duboviy-shpon-skiftebu-zhovtiy__0937193_pe793614_s5.jpg"
+          "url": "https://www.ikea.com/ua/uk/images/products/poaeng-poeng-krislo-bileniy-duboviy-shpon-skiftebu-zhovtiy__0937193_pe793614_s5.jpg",
+          "price": 2199
         }
-      ],
-      "price": 2199
+      ]
     },
     {
       "id": "12",
@@ -592,12 +651,13 @@
       "description": "Armchair with headrest",
       "images": [
         {
+          "id": "1",
           "color": "white",
           "baseUrl": "https://www.ikea.com/ua/uk/images/products/havsten-krislo-kimnatne-vulichne-bezheviy__0684161_pe721041_s5.jpg",
-          "url": "https://www.ikea.com/ua/uk/images/products/havsten-krislo-kimnatne-vulichne-bezheviy__0729301_pe736941_s5.jpg"
+          "url": "https://www.ikea.com/ua/uk/images/products/havsten-krislo-kimnatne-vulichne-bezheviy__0729301_pe736941_s5.jpg",
+          "price": 7095
         }
-      ],
-      "price": 7095
+      ]
     }
   ]
 }

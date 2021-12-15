@@ -1,5 +1,5 @@
 import { IRootState } from 'store/store';
-import { IProduct } from 'utils/interfaces/product';
+import { IProduct } from 'store/utils/interfaces/product';
 
 export const productListSelector = (state: IRootState): IProduct[] => state.product.productList;
 

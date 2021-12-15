@@ -1,11 +1,11 @@
 import { FunctionComponent } from 'react';
-import { IProductImage } from 'utils/interfaces/product';
+import { IProductImage } from 'store/utils/interfaces/product';
 import { ProductCardVariantImg } from './ProductCardVariantImg';
 import { useStyle } from './styles';
 
 interface IProductMainImg {
   images: IProductImage[];
-  switchVariants: (url: string) => void;
+  switchVariants: (id: string) => void;
 }
 
 export const ProductColorVariants: FunctionComponent<IProductMainImg> = ({
@@ -23,7 +23,7 @@ export const ProductColorVariants: FunctionComponent<IProductMainImg> = ({
             key={image.color}
             url={image.url}
             baseUrl={image.baseUrl}
-            switchVariants={() => switchVariants(image.baseUrl)}
+            switchVariants={() => switchVariants(image.id)}
           />
         ))}
       </div>

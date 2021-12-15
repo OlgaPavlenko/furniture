@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { PATH } from 'constants/constants';
-import { IProduct, ICategory } from 'utils/interfaces/product';
-import { createPath } from 'utils/url';
+import { IProduct, ICategory } from 'store/utils/interfaces/product';
+import { createPath } from 'store/utils/url';
 import {
   filterMaxPriceSelector,
   filterMinPriceSelector,
@@ -9,7 +9,7 @@ import {
   querySelector,
 } from 'store/selectors/filter';
 import { IRootState } from '../store';
-import HTTPService from '../../utils/services/httpService';
+import HTTPService from '../utils/services/httpService';
 import { setProductList } from './product';
 
 export interface ICategoryGroup {
@@ -65,7 +65,7 @@ export const getMaterialsAsync = createAsyncThunk('materials/fetch', async () =>
 export const getPriceAsync = createAsyncThunk('price/fetch', async () => {
   const { data: products } = await HTTPService.get(PATH.products);
 
-  const prices = products.map((product: IProduct) => product.price);
+  const prices = products.map((product: IProduct) => product.images[0].price);
   const minPrice = Math.min(...prices);
   const maxPrice = Math.max(...prices);
   return { minPrice, maxPrice };
