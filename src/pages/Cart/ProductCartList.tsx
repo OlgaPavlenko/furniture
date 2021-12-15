@@ -19,7 +19,7 @@ export const ProductCartList: FunctionComponent = () => {
       {productList.length &&
         productList.map((productObjWithQuantity) => (
           <ProductCartView
-            key={`${productObjWithQuantity.product.id}${productObjWithQuantity.product.image}`}
+            key={`${productObjWithQuantity.product.id}${productObjWithQuantity.product.productVariant}`}
             product={productObjWithQuantity}
           />
         ))}

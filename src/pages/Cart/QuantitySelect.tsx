@@ -10,20 +10,20 @@ import { setQuantity } from 'store/slices/cart';
 interface IProps {
   className: string;
   productId: string;
-  image: string;
+  productVariant: string;
   defaultQuantity: number;
 }
 
 export const QuantitySelect: FunctionComponent<IProps> = ({
   className,
   productId,
-  image,
+  productVariant,
   defaultQuantity,
 }) => {
   const dispatch = useDispatch();
 
   const getQuantity = (e: ChangeEvent<HTMLSelectElement>) => {
-    dispatch(setQuantity({ quantity: Number(e.target.value), productId, image }));
+    dispatch(setQuantity({ quantity: Number(e.target.value), productId, productVariant }));
   };
   return (
     <Box className={className}>

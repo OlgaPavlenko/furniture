@@ -50,7 +50,7 @@ export interface IProduct {
 export interface ICartProduct {
   id: string;
   name: string;
-  image: string;
+  productVariant: string;
   description: string;
   price: number;
 }

@@ -22,7 +22,7 @@ export const cartSlice = createSlice({
       state.cartList = state.cartList.filter(
         (product) =>
           product.product.id !== action.payload.id ||
-          product.product.image !== action.payload.image,
+          product.product.productVariant !== action.payload.productVariant,
       );
     },
     deleteAllProducts(state) {
@@ -33,7 +33,7 @@ export const cartSlice = createSlice({
       state.cartList.forEach((product) => {
         if (
           product.product.id === action.payload.productId &&
-          product.product.image === action.payload.image
+          product.product.productVariant === action.payload.productVariant
         ) {
           product.quantity = action.payload.quantity;
         }
@@ -41,24 +41,12 @@ export const cartSlice = createSlice({
       });
     },
 
-    setIsInCart(state, action) {
-      state.cartList.forEach((product) => {
-        if (
-          product.product.id === action.payload.id ||
-          product.product.image === action.payload.image
-        ) {
-          product.isInCart = !action.payload.isActive;
-        }
-        return product;
-      });
-    },
-
     addProduct(state, action) {
       let isInCartFlag = false;
-      state.cartList.find((product) => {
+      state.cartList.forEach((product) => {
         if (
           product.product.id === action.payload.id &&
-          product.product.image === action.payload.image &&
+          product.product.productVariant === action.payload.productVariant &&
           product.isInCart
         ) {
           toast('product already in the cart!', {
@@ -76,5 +64,4 @@ export const cartSlice = createSlice({
 });
 
 export const cartReducer = cartSlice.reducer;
-export const { deleteAllProducts, deleteProduct, setQuantity, addProduct, setIsInCart } =
-  cartSlice.actions;
+export const { deleteAllProducts, deleteProduct, setQuantity, addProduct } = cartSlice.actions;

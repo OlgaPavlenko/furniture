@@ -16,26 +16,26 @@ export const ProductDetailView: FunctionComponent = () => {
   const product = useSelector(currentProductSelector);
   const dispatch = useDispatch();
   const [src, setSrc] = useState(product.images[0].baseUrl);
-  const [srcId, setSrcId] = useState(product.images[0].id);
+  const [productVariantId, setProductVariantId] = useState(product.images[0].id);
 
   const goToMainPage = (event: SyntheticEvent): void => {
     event.preventDefault();
     history.push('/catalog');
   };
 
-  const getPrice = (): number | undefined => {
-    const price = product.images.find((image) => image.id === srcId);
-    return price?.price;
+  const getPrice = (): number => {
+    const currentImage = product.images.find((image) => image.id === productVariantId);
+    return currentImage?.price || product.images[0].price;
   };
 
-  const getImage = (): string | undefined => {
-    const currentImage = product.images.find((image) => image.id === srcId);
-    return currentImage?.baseUrl;
+  const getImage = (): string => {
+    const currentImage = product.images.find((image) => image.id === productVariantId);
+    return currentImage?.baseUrl || product.images[0].baseUrl;
   };
 
   useEffect(() => {
     setSrc(product.images[0].baseUrl);
-    setSrcId(product.images[0].id);
+    setProductVariantId(product.images[0].id);
   }, [product]);
 
   const switchVariants = (id: string) => {
@@ -43,17 +43,17 @@ export const ProductDetailView: FunctionComponent = () => {
     if (productImage?.baseUrl) {
       setSrc(productImage.baseUrl);
     }
-    setSrcId(id);
+    setProductVariantId(id);
   };
 
   const addToCart = (
     id: string,
-    image: string | undefined,
-    price: number | undefined,
+    productVariant: string,
+    price: number,
     name: string,
     description: string,
   ) => {
-    dispatch(addProduct({ id, name, image, price, description }));
+    dispatch(addProduct({ id, productVariant, price, name, description }));
   };
 
   return (

@@ -16,13 +16,11 @@ export const Sort: FunctionComponent = () => {
   const dispatch = useDispatch();
 
   const sort = (type: keyof IProduct) => {
-    const tempProducts = [...products];
-    const resultProducts = tempProducts.sort((prev: IProduct, next: IProduct) =>
-      prev[type] > next[type] ? -order[type] : order[type],
-    );
+    const resultProducts = [...products].sort((prev: IProduct, next: IProduct) => {
+      return prev[type] > next[type] ? -order[type] : order[type];
+    });
 
     setOrder({ ...order, [type]: -order[type] });
-
     dispatch(setProductList(resultProducts));
   };
 

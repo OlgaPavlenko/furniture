@@ -5,7 +5,7 @@ import { IProductImage } from 'store/utils/interfaces/product';
 import { NavLink } from 'react-router-dom';
 import { getProductByIdAsync } from 'store/slices/product';
 import { Button } from 'sharedComponents/Button';
-import { addProduct, setIsInCart } from 'store/slices/cart';
+import { addProduct } from 'store/slices/cart';
 import { productCartSelector } from 'store/selectors/cart';
 import { ProductMainImg } from './ProductMainImg';
 import { ProductDescription } from './ProductDescription';
@@ -31,17 +31,16 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
   const cartProduct = useSelector(productCartSelector);
 
   const [src, setSrc] = useState(images[0].baseUrl);
-  const [srcId, setSrcId] = useState(images[0].id);
-  const isActive = false;
+  const [productVariantId, setProductVariantId] = useState(images[0].id);
 
-  const getPrice = (): number | undefined => {
-    const currentImage = images.find((image) => image.id === srcId);
-    return currentImage?.price;
+  const getPrice = (): number => {
+    const currentImage = images.find((image) => image.id === productVariantId);
+    return currentImage?.price || images[0].price;
   };
 
-  const getImage = (): string | undefined => {
-    const currentImage = images.find((image) => image.id === srcId);
-    return currentImage?.baseUrl;
+  const getImage = (): string => {
+    const currentImage = images.find((image) => image.id === productVariantId);
+    return currentImage?.baseUrl || images[0].baseUrl;
   };
 
   const switchVariants = (id: string): void => {
@@ -49,7 +48,7 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
     if (productImage?.baseUrl) {
       setSrc(productImage.baseUrl);
     }
-    setSrcId(id);
+    setProductVariantId(id);
   };
 
   const getProductById = (id: string) => {
@@ -57,15 +56,14 @@ export const ProductCard: FunctionComponent<IProductCard> = ({
   };
 
   const setActiveProduct = (): boolean => {
-    const currentProduct = cartProduct.find((product) =>
-      product.product.id === productId && product.product.image === src ? product.isInCart : null,
+    const currentProduct = cartProduct.find(
+      (product) => product.product.id === productId && product.product.productVariant === src,
     );
-    return currentProduct?.isInCart as boolean;
+    return currentProduct?.isInCart || false;
   };
 
-  const addToCart = (id: string, image: string | undefined, price: number | undefined) => {
-    dispatch(addProduct({ id, name, image, price, description }));
-    dispatch(setIsInCart({ isActive, id, image }));
+  const addToCart = (id: string, productVariant: string, price: number) => {
+    dispatch(addProduct({ id, productVariant, price, name, description }));
   };
   return (
     <li className={classes.productCard}>

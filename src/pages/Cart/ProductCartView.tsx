@@ -19,8 +19,8 @@ export const ProductCartView: FunctionComponent<IProductCartView> = ({
   const bin = require('assets/icons/bin.svg').default as string;
   const dispatch = useDispatch();
 
-  const deleteCurrentProduct = (id: string, image: string) => {
-    dispatch(deleteProduct({ id, image }));
+  const deleteCurrentProduct = (id: string, productVariant: string) => {
+    dispatch(deleteProduct({ id, productVariant }));
   };
 
   const price = useMemo((): number => {
@@ -34,14 +34,17 @@ export const ProductCartView: FunctionComponent<IProductCartView> = ({
           <QuantitySelect
             className={classes.select}
             productId={product.id}
-            image={product.image}
+            productVariant={product.productVariant}
             defaultQuantity={quantity}
           />
-          <Button badgeSrc={bin} onClick={() => deleteCurrentProduct(product.id, product.image)} />
+          <Button
+            badgeSrc={bin}
+            onClick={() => deleteCurrentProduct(product.id, product.productVariant)}
+          />
         </div>
       </div>
       <div className={classes.product}>
-        <ProductMainImg src={product.image} className={classes.image} />
+        <ProductMainImg src={product.productVariant} className={classes.image} />
         <div className={classes.productView}>
           <h1 className={classes.productName}>{product.name}</h1>
           <ProductDescription
