@@ -50,4 +50,7 @@ export const useStyle = makeStyles(() => ({
       backgroundColor: 'rgb(233, 230, 230)',
     },
   },
+  disabled: {
+    backgroundColor: 'green',
+  },
 }));

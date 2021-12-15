@@ -5,6 +5,7 @@ import { Button } from 'sharedComponents/Button';
 import { ProductColorVariants } from 'sharedComponents/ProductCard/ProductColorVariants';
 import { ProductDescription } from 'sharedComponents/ProductCard/ProductDescription';
 import { ProductMainImg } from 'sharedComponents/ProductCard/ProductMainImg';
+import { productCartSelector } from 'store/selectors/cart';
 import { currentProductSelector } from 'store/selectors/product';
 import { addProduct } from 'store/slices/cart';
 import { useStyle } from './styles';
@@ -14,7 +15,9 @@ export const ProductDetailView: FunctionComponent = () => {
   const history = useHistory();
   const cart = require('assets/icons/shopping-cart.svg').default;
   const product = useSelector(currentProductSelector);
+  const cartProduct = useSelector(productCartSelector);
   const dispatch = useDispatch();
+
   const [src, setSrc] = useState(product.images[0].baseUrl);
   const [productVariantId, setProductVariantId] = useState(product.images[0].id);
 
@@ -56,6 +59,15 @@ export const ProductDetailView: FunctionComponent = () => {
     dispatch(addProduct({ id, productVariant, price, name, description }));
   };
 
+  const setActiveProduct = (): boolean => {
+    const currentProduct = cartProduct.find(
+      (currentProductVariant) =>
+        currentProductVariant.product.id === product.id &&
+        currentProductVariant.product.productVariant === src,
+    );
+    return currentProduct?.isInCart || false;
+  };
+
   return (
     <div className={classes.wraper}>
       <ProductMainImg src={src} className={classes.image} />
@@ -69,8 +81,13 @@ export const ProductDetailView: FunctionComponent = () => {
           className={classes.description}
         />
         <Button
+          disabled={setActiveProduct()}
           badgeSrc={cart}
-          className={classes.productCardCartButton}
+          className={
+            setActiveProduct()
+              ? classes.productCardCartButton + classes.disabled
+              : classes.productCardCartButton
+          }
           onClick={() =>
             addToCart(product.id, getImage(), getPrice(), product.name, product.description)
           }
