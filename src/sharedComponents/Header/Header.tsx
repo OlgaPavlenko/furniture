@@ -5,6 +5,7 @@ import { Search } from 'sharedComponents/Search';
 import { Sort } from 'sharedComponents/Sort';
 import { LanguageButtons } from 'sharedComponents/LanguageButtons';
 import { UserMenuItems } from 'sharedComponents/UserMenuItems';
+
 import { useStyle } from './styles';
 
 export const Header: FunctionComponent = () => {

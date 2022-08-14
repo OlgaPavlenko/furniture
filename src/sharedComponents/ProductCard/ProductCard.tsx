@@ -1,12 +1,12 @@
 import { FunctionComponent, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { IProductImage } from 'store/utils/interfaces/product';
 import { NavLink } from 'react-router-dom';
 import { getProductByIdAsync } from 'store/slices/product';
 import { Button } from 'sharedComponents/Button';
 import { addProduct } from 'store/slices/cart';
 import { productCartSelector } from 'store/selectors/cart';
+import { IProductImage } from 'utils/interfaces/product';
 import { ProductMainImg } from './ProductMainImg';
 import { ProductDescription } from './ProductDescription';
 import { ProductColorVariants } from './ProductColorVariants';

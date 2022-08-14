@@ -1,5 +1,8 @@
 import { FunctionComponent } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export const Delivery: FunctionComponent = () => {
-  return <div>Delivery</div>;
+  const { t } = useTranslation(['Delivery']);
+
+  return <div>{t('delivery')}</div>;
 };

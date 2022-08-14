@@ -29,6 +29,7 @@ module.exports = {
         allowVoid: true,
       },
     ],
+    'default-param-last': 'off',
     'react/jsx-one-expression-per-line': 'warn',
     'global-require': 0,
     'react/button-has-type': 0,
@@ -73,12 +74,7 @@ module.exports = {
     ],
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     '@typescript-eslint/no-var-requires': 0,
-    '@typescript-eslint/explicit-function-return-type': [
-      'error',
-      {
-        allowExpressions: true,
-      },
-    ],
+    'no-multiple-empty-lines': [2, { max: 3, maxEOF: 1 }],
   },
   settings: {
     'import/resolver': {
@@ -92,3 +88,4 @@ module.exports = {
     },
   },
 };
+

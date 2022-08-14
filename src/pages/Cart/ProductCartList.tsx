@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Button } from 'sharedComponents/Button';
 import { productCartSelector } from 'store/selectors/cart';
 import { deleteAllProducts } from 'store/slices/cart';
+import { useTranslation } from 'react-i18next';
 import { ProductCartView } from './ProductCartView';
 import { useStyle } from './styles';
 
@@ -10,6 +11,8 @@ export const ProductCartList: FunctionComponent = () => {
   const productList = useSelector(productCartSelector);
   const dispatch = useDispatch();
   const classes = useStyle();
+
+  const { t } = useTranslation(['Сart']);
 
   const removeAllProducts = () => {
     dispatch(deleteAllProducts());
@@ -24,7 +27,7 @@ export const ProductCartList: FunctionComponent = () => {
           />
         ))}
       <Button
-        name="Remove All Products"
+        name={t('removeAllProducts')}
         className={classes.removeAllProducts}
         onClick={removeAllProducts}
       />

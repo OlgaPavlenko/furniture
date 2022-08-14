@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
+import { IProductWithQuantity } from 'utils/interfaces/product';
 
-import { IProductWithQuantity } from 'store/utils/interfaces/product';
 
 export interface ICart {
   cartList: IProductWithQuantity[];

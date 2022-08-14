@@ -1,4 +1,5 @@
 import { FunctionComponent } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useStyle } from './styles';
 
 interface IProductDescription {
@@ -16,12 +17,16 @@ export const ProductDescription: FunctionComponent<IProductDescription> = ({
 }) => {
   const classes = useStyle();
 
+  const { t } = useTranslation(['Currency']);
+
   return (
     <div className={classes.productCardBlock}>
       <div className={classes.productCardInfo}>
         <p className={classes.productCardName}>{name}</p>
         <p className={className}>{description}</p>
-        <span className={classes.productCardPrice}>{price} грн</span>
+        <span className={classes.productCardPrice}>
+          {price} {t('currency')}
+        </span>
       </div>
     </div>
   );

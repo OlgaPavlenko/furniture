@@ -9,5 +9,6 @@ export const useStyle = makeStyles(() => ({
     display: 'flex',
     justifyContent: 'space-between',
     minWidth: '30px',
+    color: '#15166D',
   },
 }));

@@ -1,5 +1,6 @@
 import { FunctionComponent } from 'react';
-import { IProductImage } from 'store/utils/interfaces/product';
+import { IProductImage } from 'utils/interfaces/product';
+import { useTranslation } from 'react-i18next';
 import { ProductCardVariantImg } from './ProductCardVariantImg';
 import { useStyle } from './styles';
 
@@ -14,9 +15,11 @@ export const ProductColorVariants: FunctionComponent<IProductMainImg> = ({
 }) => {
   const classes = useStyle();
 
+  const { t } = useTranslation(['Variants']);
+
   return (
     <div>
-      <p className={classes.productCardVariantsLabel}>More variants</p>
+      <p className={classes.productCardVariantsLabel}>{t('more variants')}</p>
       <div className={classes.cardVariantContainer}>
         {images.map((image) => (
           <ProductCardVariantImg

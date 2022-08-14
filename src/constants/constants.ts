@@ -1,7 +1,7 @@
 export const USER_MENU_ITEMS = [
   {
     src: require('assets/icons/login.svg').default,
-    path: '/login',
+    path: '/register',
   },
 
   {
@@ -80,3 +80,22 @@ export const CART_SVG = {
 export const QUANTITY_SELECT = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 export const LANGUAGE = ['en', 'ru'];
+
+export const CLIENT_PATHS = {
+  cart: '/cart',
+  register: '/register',
+  login: '/login',
+  catalog: '/catalog',
+  delivery: '/delivery',
+  aboutUs: '/aboutUs',
+  main: '/',
+};
+
+export const SORT_OPTIONS = {
+  price: 'price',
+  name: 'name',
+};
+
+export const RESET_BUTTON_NAME = {
+  name: 'reset options',
+};

@@ -8,6 +8,8 @@ import { ProductMainImg } from 'sharedComponents/ProductCard/ProductMainImg';
 import { productCartSelector } from 'store/selectors/cart';
 import { currentProductSelector } from 'store/selectors/product';
 import { addProduct } from 'store/slices/cart';
+import { IProductImage } from 'utils/interfaces/product';
+import { useTranslation } from 'react-i18next';
 import { useStyle } from './styles';
 
 export const ProductDetailView: FunctionComponent = () => {
@@ -19,44 +21,46 @@ export const ProductDetailView: FunctionComponent = () => {
   const dispatch = useDispatch();
 
   const [src, setSrc] = useState(product.images[0].baseUrl);
-  const [productVariantId, setProductVariantId] = useState(product.images[0].id);
+  const [srcId, setSrcId] = useState(product.images[0].id);
+
+  const { t } = useTranslation(['ProductButton']);
 
   const goToMainPage = (event: SyntheticEvent): void => {
     event.preventDefault();
     history.push('/catalog');
   };
 
-  const getPrice = (): number => {
-    const currentImage = product.images.find((image) => image.id === productVariantId);
-    return currentImage?.price || product.images[0].price;
+  const getPrice = (): number | undefined => {
+    const price = product.images.find((image: IProductImage) => image.id === srcId);
+    return price?.price;
   };
 
-  const getImage = (): string => {
-    const currentImage = product.images.find((image) => image.id === productVariantId);
-    return currentImage?.baseUrl || product.images[0].baseUrl;
+  const getImage = (): string | undefined => {
+    const currentImage = product.images.find((image: IProductImage) => image.id === srcId);
+    return currentImage?.baseUrl;
   };
 
   useEffect(() => {
     setSrc(product.images[0].baseUrl);
-    setProductVariantId(product.images[0].id);
+    setSrcId(product.images[0].id);
   }, [product]);
 
-  const switchVariants = (id: string) => {
-    const productImage = product.images.find((image) => image.id === id);
+  const switchVariants = (id: string): void => {
+    const productImage = product.images.find((image: IProductImage) => image.id === id);
     if (productImage?.baseUrl) {
       setSrc(productImage.baseUrl);
     }
-    setProductVariantId(id);
+    setSrcId(id);
   };
 
   const addToCart = (
     id: string,
-    productVariant: string,
-    price: number,
+    image: string | undefined,
+    price: number | undefined,
     name: string,
     description: string,
-  ) => {
-    dispatch(addProduct({ id, productVariant, price, name, description }));
+  ): void => {
+    dispatch(addProduct({ id, name, image, price, description }));
   };
 
   const setActiveProduct = (): boolean => {
@@ -93,9 +97,10 @@ export const ProductDetailView: FunctionComponent = () => {
           }
         />
         <button className={classes.backButton} onClick={goToMainPage}>
-          Go Back
+          {t('go back')}
         </button>
       </div>
     </div>
   );
 };
+
