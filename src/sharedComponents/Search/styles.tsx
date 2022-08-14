@@ -1,5 +1,4 @@
 import { makeStyles } from '@material-ui/core';
-import icon from 'assets/icons/icon.svg';
 
 export const useStyle = makeStyles(() => ({
   searchWrap: {
@@ -18,7 +17,7 @@ export const useStyle = makeStyles(() => ({
 
   searchInput: {
     width: '100%',
-    background: `url(${icon}) no-repeat scroll 7px 7px`,
+    background: "url('/assets/icons/icon.svg') no-repeat scroll 7px 7px",
     paddingLeft: '30px',
 
     '&::-webkit-search-cancel-button': {
@@ -46,3 +45,4 @@ export const useStyle = makeStyles(() => ({
     height: '24px',
   },
 }));
+

@@ -4,6 +4,11 @@
       "email": "admin@gmail.com",
       "password": "$2a$10$8vaLDb6lYc5W7gzCQrzAAeDZn.MBv6NLG30qxUOIw0Vgo1bkNRbrK",
       "id": 1
+    },
+    {
+      "email": "test@gmail.com",
+      "password": "$2a$10$kItnfM0.ZqmmtILfVTtVM.nJhuoQ/LtcgTY5F8AqDVwPV1QyGS61K",
+      "id": 2
     }
   ],
   "categories": [
